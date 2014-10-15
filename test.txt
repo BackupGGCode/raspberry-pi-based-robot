@@ -1,0 +1,6 @@
+- Nyitó oldal
+- Members
+- Saját nevem
+- Ez a profil oldalra vezet, ahol a saját projektek vannak. 
+- Setting fül
+- GoogleCode.com Password
