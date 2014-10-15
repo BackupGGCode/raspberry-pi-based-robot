@@ -4,3 +4,5 @@
 - Ez a profil oldalra vezet, ahol a saját projektek vannak. 
 - Setting fül
 - GoogleCode.com Password
+
+http://logout.hu/cikk/verziokovetes_a_google_code-dal_svn/nyomtatobarat/teljes.html
