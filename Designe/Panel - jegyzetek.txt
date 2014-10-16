@@ -1,0 +1,3 @@
+ - Objektum hátterének mintát beállítva lehet rá grid-et rajzolni (kockás háttér)
+ - Ha a shiftet lenyomva tartom mozgatás közben, akkor csak egyenesen lehet mozgatni. 
+ - A ctrl-t és egy korzor billentyût lenyomva egységnyivel lehet elmozgatni egy objektumot. 
