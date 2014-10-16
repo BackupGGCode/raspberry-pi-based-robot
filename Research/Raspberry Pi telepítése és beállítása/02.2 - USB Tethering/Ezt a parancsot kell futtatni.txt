@@ -1,0 +1,3 @@
+Ezt a parancsot kell futtatni, ha mobilról USB-n keresztűl szeretném megosztani a netet: 
+Miután rádugtam a telefont a Raspberry-re és beállítottam az USB tetheringet: sudo dhclient usb0
+

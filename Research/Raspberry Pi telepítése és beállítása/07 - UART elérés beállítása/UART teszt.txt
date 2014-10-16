@@ -1,0 +1,13 @@
+http://www.raspberry-projects.com/pi/programming-in-c/uart-serial-port/using-the-uart
+
+
+http://www.raspberrypi.org/phpBB3/viewtopic.php?t=15683&p=159083
+
+
+
+Ha echoval küldök adatot, akkor a minicon megkapja, ha egy jumperrel az Rx és a Tx-et összekötöm.
+Ha egy üres stringet küldök ki az ttyAMA0-ra, akkor a programomból korábban kiküldött adatokat is megkapja a minicom.
+
+
+
+wiringSerial-al nem fordul a program, de lehet, hogy az is jó lenne.

@@ -1,0 +1,7 @@
+Ubuntu alól Gparted -el át lehet méretezni a memória kártyán a particiók méretét:
+http://elinux.org/RPi_Resize_Flash_Partitions
+- Manually resizing the SD card using a GUI on Linux
+
+
+-> innen jutottam a fentihez: http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=8581
+

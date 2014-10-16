@@ -1,0 +1,5 @@
+
+Csomag eltávolítása és tisztítás:
+http://www.idealog.us/2007/09/how-to-uninstal.html
+
+sudo apt-get --purge remove package-name

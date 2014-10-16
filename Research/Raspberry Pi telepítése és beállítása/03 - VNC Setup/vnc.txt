@@ -1,0 +1,78 @@
+Csatlakozásnál meg kell adni az előre beállított jelszót, ami nálam most: 2667315
+
+
+
+-------------------------------------------------------------------------------------------------------------
+http://elinux.org/RPi_VNC_Server
+Ez a jó tutorial csak ebből az eleje (VNC install) és az autostartos (init.d) rész kell. 
+
+Amin változtattam az autostart scriptben az az volt, hogy elhelyeztem benne a tightvncserver indítását, ugyanis análkül egyáltalán nem indul el a VNC - fura is, hogy kimaradt a start catch ágból a cikkben. 
+-------------------------------------------------------------------------------------------------------------
+
+Tehát, a kód mostmár így nézzen ki:
+
+### BEGIN INIT INFO
+# Provides: vncboot
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start VNC Server at boot time
+# Description: Start VNC Server at boot time.
+### END INIT INFO
+
+#! /bin/sh
+# /etc/init.d/vncboot
+
+USER=root
+HOME=/root
+
+export USER HOME
+
+case "$1" in
+ start)
+   echo "Starting VNC Server"
+   #Insert your favoured settings for a VNC session
+   /usr/bin/vncserver :1 -geometry 1280x800 -depth 16 -pixelformat rgb565
+   tightvncserver
+   ;;
+
+ stop)
+   echo "Stopping VNC Server"
+   /usr/bin/vncserver -kill :1
+   ;;
+
+ *)
+   echo "Usage: /etc/init.d/vncboot {start|stop}"
+   exit 1
+   ;;
+esac
+
+exit 0
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+A tightvncserver - hiányzik a netes leírásból, de ha ezt kihagyom belőle, akkor csakis azután lehet csatlakozni a szerverhez, hogy a raspberry-in begépeltem a tightvncserver parancsot és lefutott.
+
+Mivel most az autostart miatt ez még azelőtt lefut, hogy bejelentkeztem volna pi -ként (Login: pi / Password: raspberry) ezért a VNC root felhasználóként fut.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+A kódban a vncserver :1 és kill :1 azt jelenti, hogy az 5901-es porton zajlik a kommunikáció. Először 0-val probáltam, de itthon az 5900-as port nem volt jó, talán foglalt. De lehet bármi más is. 
+
+Erre csak csatlakozásnál, a port megadásakor kell figyelni. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+A raspbery-n a raspberry ipv4-es címét a következő parancsokkal lehet leolvasni:
+ip addr show
+vagy
+ifconfig
+
+
+
+
+
+
+ 

@@ -1,0 +1,5 @@
+http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
+
+
+Ennek csak az eleje kell, miutén a driver telepítve van, lehet a GUI wifi beállítást is használni.
+http://www.raspberrypi-tutorials.co.uk/raspberry-pi-easy-wireless-set-instructions/

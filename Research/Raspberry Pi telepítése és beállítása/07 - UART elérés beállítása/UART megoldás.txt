@@ -1,0 +1,17 @@
+Miután elvégeztem a rendszeren a leírásokban foglalt módosításokat, ./ -el indítva a programomat mûködik.
+
+- Az Rx és Tx egy jumperrel össze van kötve
+- Elindítom a programom: ./test
+- Elindítom a minicom-ot: minicom -b 115200 -o -D /dev/ttyAMA0
+
+A programból kiküldött adatok megérkeznek a minicom számára. Viszont ha grafikusan indítom el a programot (dupla klikk a futtatható fájlra, akkor nem tud írni/olvasni az uart-ra/ról).
+
+
+Mivel az olvasással még mindig nem megy lehet, hogy jogosultságot kell adni az uart-hoz való hozzféréshez:
+http://www.raspberry-projects.com/pi/programming-in-c/uart-serial-port/using-the-uart
+sudo chmod a+rw /dev/ttyAMA0
+
+Ezt még nem tettem, meg, mert lehet, hogy csak a kódban írtam el valamit! (javítgatás és tesztelés közben átírtam valamit az olvasásban.)
+
+MEGJEGYZÉS: 
+Most root ként voltam bejelentkezve, ezért volt szerintem elég csak ./-el indítani. Ha sima felhasználó ként vagyok bejelentkezve, akkor sudo ./test -kellene szerintem.

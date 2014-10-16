@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://elinux.org/RPi_VNC_Server -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RPi VNC Server - eLinux.org</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.2">
+<link rel="shortcut icon" href="http://elinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://elinux.org/opensearch_desc.php" title="eLinux.org (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://elinux.org/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="eLinux.org Atom feed" href="http://elinux.org/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="http://elinux.org/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&only=styles&skin=monobook&*">
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><style>.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: elinux:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: elinux:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: elinux:resourceloader:filter:minify-css:7:2e4e16141a9e7454837948088d3654b0 */</style>
+
+<script src="./RPi VNC Server - eLinux.org_files/load.php"></script><script src="./RPi VNC Server - eLinux.org_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"RPi_VNC_Server","wgTitle":"RPi VNC Server","wgCurRevisionId":203108,"wgArticleId":21770,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["RaspberryPi"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"RPi_VNC_Server","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: elinux:resourceloader:filter:minify-js:7:23d5b7cfe9940a4065e599c52bef53cb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./RPi VNC Server - eLinux.org_files/load(2).php"></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-RPi_VNC_Server skin-monobook action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" class="mw-body-primary">
+	<a id="top"></a>
+	<div id="siteNotice"><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\x3e\x3cdiv style=\"margin:0; margin-top:10px; margin-right:10px; border:1px solid #dfdfdf; padding:0 1em 1em 1em; background-color:#ffffcc; align:right;\"\x3e\n\x3cp\x3e\x3cb\x3ePlease note that User Registration has been temporarily disabled due to a recent increase in automated registrations.  If anyone needs an account, please contact request one here: \x3ca href=\"/Special:RequestAccount\" title=\"Special:RequestAccount\"\x3e RequestAccount\x3c/a\x3e. Thanks for your patience!--\x3ca href=\"/User:Wmat\" title=\"User:Wmat\"\x3eWmat\x3c/a\x3e (\x3ca href=\"/User_talk:Wmat\" title=\"User talk:Wmat\"\x3etalk\x3c/a\x3e) 04:16, 27 November 2012 (UTC)\x3cbr /\x3e\x3c/b\x3e\n\x3cspan style=\"color:#FF0000;\"\x3e\x3cb\x3ePlease email \x3ca href=\"/User:Wmat\" title=\"User:Wmat\"\x3eUser:Wmat\x3c/a\x3e if you experience any issues with the Request Account form.\x3c/b\x3e\x3c/span\x3e\n\x3c/p\x3e\n\x3c/div\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script><div id="localNotice" lang="en" dir="ltr"><div style="margin:0; margin-top:10px; margin-right:10px; border:1px solid #dfdfdf; padding:0 1em 1em 1em; background-color:#ffffcc; align:right;">
+<p><b>Please note that User Registration has been temporarily disabled due to a recent increase in automated registrations.  If anyone needs an account, please contact request one here: <a href="http://elinux.org/Special:RequestAccount" title="Special:RequestAccount"> RequestAccount</a>. Thanks for your patience!--<a href="http://elinux.org/User:Wmat" title="User:Wmat">Wmat</a> (<a href="http://elinux.org/User_talk:Wmat" title="User talk:Wmat">talk</a>) 04:16, 27 November 2012 (UTC)<br></b>
+<span style="color:#FF0000;"><b>Please email <a href="http://elinux.org/User:Wmat" title="User:Wmat">User:Wmat</a> if you experience any issues with the Request Account form.</b></span>
+</p>
+</div>
+</div>
+</div>
+	<h1 id="firstHeading" class="firstHeading"><span dir="auto">RPi VNC Server</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">From eLinux.org</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Jump to: <a href="http://elinux.org/RPi_VNC_Server#column-one">navigation</a>, <a href="http://elinux.org/RPi_VNC_Server#searchInput">search</a></div>
+		<!-- start content -->
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Back to <a href="http://elinux.org/RPi_Guides" title="RPi Guides">RPi Guides</a>.
+</p><p><br>
+<b>Raspberry Pi VNC Server</b>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://elinux.org/RPi_VNC_Server#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://elinux.org/RPi_VNC_Server#What_does_it_do.3F"><span class="tocnumber">1</span> <span class="toctext">What does it do?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://elinux.org/RPi_VNC_Server#What_do_you_need.3F"><span class="tocnumber">2</span> <span class="toctext">What do you need?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://elinux.org/RPi_VNC_Server#What_skill_level_is_required.3F"><span class="tocnumber">3</span> <span class="toctext">What skill level is required?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://elinux.org/RPi_VNC_Server#How_does_it_work.3F"><span class="tocnumber">4</span> <span class="toctext">How does it work?</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="http://elinux.org/RPi_VNC_Server#Overview_of_this_project"><span class="tocnumber">5</span> <span class="toctext">Overview of this project</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="http://elinux.org/RPi_VNC_Server#Instructions"><span class="tocnumber">6</span> <span class="toctext">Instructions</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="http://elinux.org/RPi_VNC_Server#Getting_VNC_Server_to_Work_on_a_Specific_User"><span class="tocnumber">7</span> <span class="toctext">Getting VNC Server to Work on a Specific User</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="http://elinux.org/RPi_VNC_Server#Does_Your_Openbox_Configuration_Settings_Not_Start_on_VNC.3F"><span class="tocnumber">8</span> <span class="toctext">Does Your Openbox Configuration Settings Not Start on VNC?</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="http://elinux.org/RPi_VNC_Server#Limitations_and_Alternatives"><span class="tocnumber">9</span> <span class="toctext">Limitations and Alternatives</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="http://elinux.org/RPi_VNC_Server#Security_Considerations"><span class="tocnumber">10</span> <span class="toctext">Security Considerations</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="What_does_it_do.3F">What does it do?</span></h1>
+<p>Sometimes it is not convenient to work directly on the raspberry pi. Maybe you would like to work on it but from another computer by remote control. You can do this and the remote computer can even be anywhere in the world over the internet. This tutorial shows how you can view and control the raspberry pi desktop from your computer's desktop by using special software.
+</p>
+<h1> <span class="mw-headline" id="What_do_you_need.3F">What do you need?</span></h1>
+<ul><li>A Raspberry Pi, model B.
+</li><li>A boot SD card for the Raspberry Pi.
+</li><li>A network connection (Ethernet or WiFi).
+</li><li>Special software on both the Raspberry Pi and the remote, controlling computer
+</li></ul>
+<h1> <span class="mw-headline" id="What_skill_level_is_required.3F">What skill level is required?</span></h1>
+<p>This project does not require any coding or compilation. Very basic Linux and networking knowledge would be useful, but not essential.
+</p><p>You need to...
+</p>
+<ul><li>Install software
+</li><li>Enter basic Linux commands
+</li><li>Use standard software tools (Windows/Linux/Mac) to add software to your PC
+</li><li>Connect computers using ethernet cables
+</li></ul>
+<h1> <span class="mw-headline" id="How_does_it_work.3F">How does it work?</span></h1>
+<p>The commands described below start a "virtual" graphical session. Instead of using a hardware framebuffer, this uses RAM for a framebuffer. It also opens a network channel or port that allows programs on other computers (if they provide the password) to show the framebuffer and provide mouse and keyboard events. 
+</p><p>This way you can run a desktop session on the raspberry pi, but display and control it elsewhere. 
+</p><p>Because the framebuffer isn't the real framebuffer you cannot take advantage of the GPU to accelerate operations on the screen.
+</p>
+<h1> <span class="mw-headline" id="Overview_of_this_project">Overview of this project</span></h1>
+<p>You need to
+</p>
+<ul><li>Install VNC (Virtual Network Computing) server software on the Raspberry Pi
+</li><li>Start the VNC server software
+</li><li>Install a VNC client on another computer
+</li><li>Connect over a network from your computer to the Raspberry Pi
+</li></ul>
+<h1> <span class="mw-headline" id="Instructions">Instructions</span></h1>
+<p>Log in to your Pi and install the Tight VNC Package
+</p>
+<pre>$ sudo apt-get install tightvncserver
+</pre>
+<p>Next Run TightVNC Server which will prompt you to enter a Password and an optional View Only Password
+</p>
+<pre>$ tightvncserver
+</pre>
+<p>Once that is done you can start a VNC server from the shell prompt. This example starts a session on VNC display zero (:0) with full HD resolution at 96 Dots Per Inch (DPI):
+</p>
+<pre>$ vncserver&nbsp;:0 -geometry 1920x1080 -depth 24
+</pre>
+<p>(If fonts appear the wrong size, add '-dpi 96' to the end.)
+Or you could create a script to save typing in the whole thing.
+</p>
+<pre>$ nano svnc.sh (call the file whatever you like)
+</pre>
+<p>Add the lines:
+</p>
+<pre>#!/bin/sh
+vncserver&nbsp;:0 -geometry 1920x1080 -depth 24 -dpi 96
+</pre>
+<p>Ctrl-x y &lt;return&gt; (To Exit Nano and Save)
+</p><p>Set the file to Execute
+</p>
+<pre>$ chmod +x svnc.sh
+</pre>
+<p>then to run
+</p>
+<pre>$ ./svnc.sh
+</pre>
+<p>Run at boot.
+</p><p>Start a root session
+</p>
+<pre>sudo bash
+</pre>
+<p>Create a file in /etc/init.d with a suitable name such as vncboot with the following content.
+</p>
+<pre>### BEGIN INIT INFO
+# Provides: vncboot
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start VNC Server at boot time
+# Description: Start VNC Server at boot time.
+### END INIT INFO
+
+#! /bin/sh
+# /etc/init.d/vncboot
+
+USER=root
+HOME=/root
+
+export USER HOME
+
+case "$1" in
+ start)
+   echo "Starting VNC Server"
+   #Insert your favoured settings for a VNC session
+   /usr/bin/vncserver&nbsp;:0 -geometry 1280x800 -depth 16 -pixelformat rgb565
+  &nbsp;;;
+
+ stop)
+   echo "Stopping VNC Server"
+   /usr/bin/vncserver -kill&nbsp;:0
+  &nbsp;;;
+
+ *)
+   echo "Usage: /etc/init.d/vncboot {start|stop}"
+   exit 1
+  &nbsp;;;
+esac
+
+exit 0
+</pre>
+<p>Modify the file permissions so it can be executed
+</p>
+<pre>chmod 755 /etc/init.d/vncboot
+</pre>
+<p>Enable dependency based boot sequencing
+</p>
+<pre>update-rc.d /etc/init.d/vncboot defaults
+</pre>
+<p>If enabling dependency based boot sequencing was successful, it says
+</p>
+<pre> update-rc.d: using dependency based boot sequencing
+</pre>
+<p>But if it says
+</p>
+<pre>update-rc.d: error: unable to read /etc/init.d//etc/init.d/vncboot
+</pre>
+<p>then try the following command
+</p>
+<pre>update-rc.d vncboot defaults
+</pre>
+<p>Reboot your Raspberry PI and you should find a vncserver already started.
+</p><p><br>
+Install Tight VNC on your desktop from the link below or most VNC clients work I believe.
+</p>
+<pre><a rel="nofollow" class="external free" href="http://www.tightvnc.com/download.php">http://www.tightvnc.com/download.php</a>
+</pre>
+<p>Or install it using your package manager. The following works on my ubuntu 11.10 workstation
+</p>
+<pre>sudo apt-get install xtightvncviewer
+</pre>
+<p>Then use &lt;Your Pi IP&gt;:1 (e.g. 192.168.1.2:1) as the host name when connecting.<sup id="cite_ref-1" class="reference"><a href="http://elinux.org/RPi_VNC_Server#cite_note-1">[1]</a></sup>
+</p><p>Works Great, select full screen from the tool bar and a full 1080p 24bit desktop is yours from anywhere.
+</p>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="http://elinux.org/RPi_VNC_Server#cite_ref-1">↑</a></span> <span class="reference-text">You can put your raspberry pi in /etc/hosts on Linux systems. I think you can make such a file on windows too. Then you can refer to your raspberry pi as "rpi" or whatever you called it.</span>
+</li>
+</ol>
+<h1> <span class="mw-headline" id="Getting_VNC_Server_to_Work_on_a_Specific_User">Getting VNC Server to Work on a Specific User</span></h1>
+<p>Instead of using the script in the Raspberry Pi wiki, use this one provided by "PenguinTutor":
+</p>
+<pre>#!/bin/sh
+# /etc/init.d/tightvncserver
+# Customised by Stewart Watkiss
+#<a rel="nofollow" class="external free" href="http://www.penguintutor.com/linux/tightvnc">http://www.penguintutor.com/linux/tightvnc</a>
+# Set the VNCUSER variable to the name of the user to start tightvncserver under
+VNCUSER='pi'
+eval cd ~$VNCUSER
+case "$1" in
+ start)
+   su $VNCUSER -c '/usr/bin/tightvncserver&nbsp;:1'
+   echo "Starting TightVNC server for $VNCUSER "
+  &nbsp;;;
+ stop)
+   pkill Xtightvnc
+   echo "Tightvncserver stopped"
+  &nbsp;;;
+ *)
+   echo "Usage: /etc/init.d/tightvncserver {start|stop}"
+   exit 1
+  &nbsp;;;
+esac
+exit 0
+</pre>
+<p>Now, change the VNCUSER=pi to your desired username, so for example: VNCUSER=jsmith
+</p><p>That'll make it boot on the username of which you want it to boot on...  but I then received the grey screen error when remotely accessing the Pi from my computer, now the way you fix this is, open up the xstartup file that was created when VNCSERVER executes on your desired username.  Now the way you access it and edit it is by:
+</p>
+<pre>sudo nano .vnc/xstartup 
+</pre>
+<p>.vnc is usually in the home directory.
+</p><p>Delete everything that is in xstartup (or not in as mine was), and add this:
+</p>
+<pre>!/bin/sh
+xrdb $HOME/.Xresources
+xsetroot -solid black
+/usr/bin/lxsession -s LXDE &amp;
+</pre>
+<p>Now it should work.
+</p>
+<h1> <span class="mw-headline" id="Does_Your_Openbox_Configuration_Settings_Not_Start_on_VNC.3F">Does Your Openbox Configuration Settings Not Start on VNC?</span></h1>
+<p>You'll often find yourself in a position where VNC will start, but you'll get things such as multiple virtual desktops appearing, and you try to save it in the "Openbox Configuration Manager," and they go away for a second, but then you find you'll restart the Pi and then they appear again.  Here's how to fix it:
+</p><p>Create, or edit the current autostart.sh file which is located in:
+</p>
+<pre>.config/openbox/autostart.sh
+</pre>
+<p>Edit using "Nano" or any other text editor, I use Nano as it is the most comfortable for me, so do:
+</p>
+<pre>sudo nano .config/openbox/autostart.sh/
+</pre>
+<p>Add the line:
+exec openbox-session
+</p><p>Now add the line
+exec openbox-session again in .vnc/xstartup and now it should work.
+</p><p>But you can't really save the setting in Openbox Configuration Manager on VNC, but you have to do it manually; so you open this file:
+</p>
+<pre>nano .config/openbox/lxde-rc.xml
+</pre>
+<p>Scroll down to:
+&lt;desktops&gt;
+</p><p>You should see a bunch of stuff there, but only focus on this: 
+&lt;number&gt;6&lt;/number&gt; or something similar.
+</p><p>Change the number of desktops you want within the &lt;number&gt;&lt;/number&gt; bit.
+</p><p>I changed mine to 1, because that's all I want.
+</p><p>It should now work!
+</p>
+<h1> <span class="mw-headline" id="Limitations_and_Alternatives">Limitations and Alternatives</span></h1>
+<p>In this example TightVNC has been used. This is a popular and relatively friendly program that uses the VNC protocols and is included in most GNU/Linux distributions. However it does have it's limitations. The biggest of these is that it creates new desktops for each connection. It may be that what you want to do though is view and control the same desktop that shows on the monitor/TV plugged into the Raspberry Pi. To do this a better tool to use is x11vnc. This is more powerful but less easy to use. However if you already have a desktop running it will latch on to it and share it as a default. This too is fairly popular and included in many GNU/Linux distribution repositories such as Raspbian.
+</p>
+<h1> <span class="mw-headline" id="Security_Considerations">Security Considerations</span></h1>
+<p>Be aware that basic VNC is not secure. It is not encrypted unless you are advanced in setting it up. If you use it over the internet it can result in criminals "bouncing" you off your connection and taking over. There are even computer robot tools that try to do this. You must set a password but even then it is sometimes possible to take over someone's connection after they have entered it.
+A good tip is to set the server to shift from the default port 5900 to something else chosen randomly as long as it is spare.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 67/1000000
+Preprocessor generated node count: 134/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key elinux:pcache:idhash:21770-0!*!0!!en!*!* and timestamp 20121222230927 -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://elinux.org/index.php?title=RPi_VNC_Server&oldid=203108">http://elinux.org/index.php?title=RPi_VNC_Server&amp;oldid=203108</a>"</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://elinux.org/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://elinux.org/Category:RaspberryPi" title="Category:RaspberryPi">RaspberryPi</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="./RPi VNC Server - eLinux.org_files/RPi VNC Server - eLinux.org.html" primary="1" context="subject" title="View the content page [alt-c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="http://elinux.org/Talk:RPi_VNC_Server" primary="1" context="talk" title="Discussion about the content page [alt-t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="http://elinux.org/index.php?title=RPi_VNC_Server&action=edit" primary="1" title="This page is protected.
+You can view its source [alt-e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="http://elinux.org/index.php?title=RPi_VNC_Server&action=history" rel="archives" title="Past revisions of this page [alt-h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://elinux.org/index.php?title=Special:UserLogin&returnto=RPi+VNC+Server" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="http://elinux.org/Main_Page" style="background-image: url(/images/3/34/Final_penguin_only_color.jpg);" title="Visit the main page"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://elinux.org/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main Page</a></li>
+				<li id="n-portal"><a href="http://elinux.org/eLinux.org:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="http://elinux.org/eLinux.org:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://elinux.org/Special:RecentChanges" title="A list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-help"><a href="http://elinux.org/Help:Contents" title="The place to find out">Help</a></li>
+				<li id="n-Volunteering"><a href="http://elinux.org/Sitesupport-url">Volunteering</a></li>
+				<li id="n-Popular-Pages"><a href="http://elinux.org/Special:PopularPages">Popular Pages</a></li>
+				<li id="n-Who.27s-Online"><a href="http://elinux.org/Special:WhosOnline">Who's Online</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://elinux.org/index.php" id="searchform">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="search" name="search" title="Search eLinux.org [alt-f]" accesskey="f" id="searchInput" autocomplete="off" placeholder="Search">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://elinux.org/Special:WhatLinksHere/RPi_VNC_Server" title="A list of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://elinux.org/Special:RecentChangesLinked/RPi_VNC_Server" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+				<li id="t-specialpages"><a href="http://elinux.org/Special:SpecialPages" title="A list of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://elinux.org/index.php?title=RPi_VNC_Server&printable=yes" rel="alternate" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li>
+				<li id="t-permalink"><a href="http://elinux.org/index.php?title=RPi_VNC_Server&oldid=203108" title="Permanent link to this revision of the page">Permanent link</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="./RPi VNC Server - eLinux.org_files/88x31.png" alt="a Creative Commons Attribution-ShareAlike 3.0 Unported License" width="88" height="31"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="./RPi VNC Server - eLinux.org_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 20 December 2012, at 23:08.</li>
+		<li id="viewcount">This page has been accessed 52,582 times.</li>
+		<li id="copyright">Content is available under <a class="external" href="http://creativecommons.org/licenses/by-sa/3.0/">a Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+		<li id="privacy"><a href="http://elinux.org/eLinux.org:Privacy_policy" title="eLinux.org:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="http://elinux.org/eLinux.org:About" title="eLinux.org:About">About eLinux.org</a></li>
+		<li id="disclaimer"><a href="http://elinux.org/eLinux.org:General_disclaimer" title="eLinux.org:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script><script src="./RPi VNC Server - eLinux.org_files/load(3).php" type="text/javascript"></script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./RPi VNC Server - eLinux.org_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-119847");
+pageTracker._trackPageview();
+</script><!-- Served in 0.288 secs. --><div style="display: none; font-size: 11px; " class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

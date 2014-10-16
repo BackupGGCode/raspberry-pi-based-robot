@@ -1,0 +1,4 @@
+A windiskImger-el, amivel a "01 - OS Setup" részben felraktam az .img fájlt az sd kártyára, azzal lehet készíteni is a kártyáról, a read gombbal .img képet. 
+
+
+Az iso és img között nincs semmi különbség, csak a kiterjesztés. Ha átírjuk a kiterjesztést, akkor mûködnik a dolog, kipróbáltam. 

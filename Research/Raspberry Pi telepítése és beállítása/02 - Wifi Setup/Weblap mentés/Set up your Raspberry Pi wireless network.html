@@ -1,0 +1,1714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0073)http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Set up your Raspberry Pi  wireless network</title>
+			
+<link rel="stylesheet" type="text/css" media="all" href="./Set up your Raspberry Pi wireless network_files/style.css">
+
+<link rel="pingback" href="http://www.raspberrypi-tutorials.co.uk/xmlrpc.php">
+
+	
+	<style type="text/css"> 
+		#wpadminbar .quicklinks li:hover ul ul {
+		  left: auto;
+		}
+	</style> 
+
+<!-- SEO Ultimate (http://www.seodesignsolutions.com/wordpress-seo/) -->
+	<meta name="description" content="Learn how to set up your Raspberry Pi  wireless network">
+<!-- /SEO Ultimate -->
+
+				
+	<script src="./Set up your Raspberry Pi wireless network_files/quant.js" async="" type="text/javascript"></script><script src="./Set up your Raspberry Pi wireless network_files/cb=gapi.loaded_0" async=""></script><script id="facebook-jssdk" src="./Set up your Raspberry Pi wireless network_files/all.js"></script><script type="text/javascript" async="" src="./Set up your Raspberry Pi wireless network_files/ga.js"></script><script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-29697456-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="stylesheet" id="adminbar_search_css-css" href="./Set up your Raspberry Pi wireless network_files/adminbar_search.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./Set up your Raspberry Pi wireless network_files/sharing.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-form-revisited-plugin-style-css" href="./Set up your Raspberry Pi wireless network_files/style(1).css" type="text/css" media="screen">
+<link rel="stylesheet" id="dropdown-css" href="./Set up your Raspberry Pi wireless network_files/dropdown.css" type="text/css" media="all">
+<link rel="stylesheet" id="advanced-css" href="./Set up your Raspberry Pi wireless network_files/default.advanced.css" type="text/css" media="all">
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/jquery.js"></script>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/comment-reply.js"></script>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/load-scripts.php"></script>
+<link rel="canonical" href="./Set up your Raspberry Pi wireless network_files/Set up your Raspberry Pi wireless network.html">
+<link rel="shortlink" href="http://wp.me/P2gjWu-3T">
+<link rel="shortcut icon" href="http://www.raspberrypi-tutorials.co.uk/wp-content/uploads/2012/03/pi_logo.png"><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/library.js"></script>
+<meta property="og:site_name" content="Raspberry Pi Tutorials">
+<meta property="og:title" content="Set up your Raspberry Pi wireless network.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/">
+<meta property="og:description" content=" Portable TV For Your Raspberry PI Learn how to set up a wireless network using your Raspberry Pi and learn how to manage and use the various networking options that are available. NOTE:  ** These instructions can now be bypassed by using the...">
+<meta property="og:image" content="http://www.raspberrypi-tutorials.co.uk/wp-content/uploads/2012/06/wireless-banner-n-150x150.png">
+
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Set up your Raspberry Pi wireless network_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Set up your Raspberry Pi wireless network_files/services.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+/* @noflip */
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+/* @noflip */
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+/* @noflip */
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+/* @noflip */
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/x/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yc/x/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_iframe_widget span{position:relative;display:inline-block;vertical-align:text-bottom;text-align:justify}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yH/x/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size:24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size:13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size:11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size:10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size:10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size:22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yP/x/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size:10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size:11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}</style><link type="text/css" rel="stylesheet" href="./Set up your Raspberry Pi wireless network_files/site-wide-9152250919._V1_.css"><style type="text/css">
+/* non-sprited */
+.ap_popover_unsprited .ap_body   .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_left_17._V248144977_.png); }
+.ap_popover_unsprited .ap_body   .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_right_17._V248144979_.png); }
+.ap_popover_unsprited .ap_header .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_left._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_right._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top._V265110086_.png); }
+.ap_popover_unsprited .ap_footer .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_left._V265110084_.png); }
+.ap_popover_unsprited .ap_footer .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_right._V265110087_.png); }
+.ap_popover_unsprited .ap_footer .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom._V265110084_.png); }
+
+/* Everything else -- sprited */
+.ap_popover_sprited .ap_body .ap_left, 
+.ap_popover_sprited .ap_body .ap_right {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-v._V219326283_.png);
+}
+
+
+.ap_popover_sprited .ap_header .ap_left, 
+.ap_popover_sprited .ap_header .ap_right,
+.ap_popover_sprited .ap_header .ap_middle,
+.ap_popover_sprited .ap_footer .ap_left, 
+.ap_popover_sprited .ap_footer .ap_right,
+.ap_popover_sprited .ap_footer .ap_middle,
+.ap_popover_sprited .ap_closebutton {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-h._V219326280_.png);
+}
+
+.ap_popover_sprited .ap_body .ap_right-arrow, .ap_popover_sprited .ap_body .ap_left-arrow {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-arrow-v._V219326286_.png);
+}
+
+</style><link type="text/css" rel="stylesheet" href="./Set up your Raspberry Pi wireless network_files/site-wide-7002449915._V1_.css"><style type="text/css">
+/* non-sprited */
+.ap_popover_unsprited .ap_body   .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_left_17._V248144977_.png); }
+.ap_popover_unsprited .ap_body   .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_right_17._V248144979_.png); }
+.ap_popover_unsprited .ap_header .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_left._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_right._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top._V265110086_.png); }
+.ap_popover_unsprited .ap_footer .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_left._V265110084_.png); }
+.ap_popover_unsprited .ap_footer .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_right._V265110087_.png); }
+.ap_popover_unsprited .ap_footer .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom._V265110084_.png); }
+
+/* Everything else -- sprited */
+.ap_popover_sprited .ap_body .ap_left, 
+.ap_popover_sprited .ap_body .ap_right {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-v._V219326283_.png);
+}
+
+
+.ap_popover_sprited .ap_header .ap_left, 
+.ap_popover_sprited .ap_header .ap_right,
+.ap_popover_sprited .ap_header .ap_middle,
+.ap_popover_sprited .ap_footer .ap_left, 
+.ap_popover_sprited .ap_footer .ap_right,
+.ap_popover_sprited .ap_footer .ap_middle,
+.ap_popover_sprited .ap_closebutton {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-h._V219326280_.png);
+}
+
+.ap_popover_sprited .ap_body .ap_right-arrow, .ap_popover_sprited .ap_body .ap_left-arrow {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-arrow-v._V219326286_.png);
+}
+
+</style></head>
+
+<body class="page page-id-241 page-template-default"><div id="ap_container"><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe></div><div id="ap_container"></div>
+
+	<!--wrapper-->
+	<div id="wrapper">
+	
+	<!--headercontainer-->
+	<div id="header_container">
+
+		<!--header-->
+		<div id="header2">
+						<div id="logo"><a href="http://www.raspberrypi-tutorials.co.uk/" title="Learn how to use and program your Raspberry Pi.  We also have a wide range of Raspberry Pi products."><img src="./Set up your Raspberry Pi wireless network_files/logo4.png" alt="© Raspberry Pi Tutorials"></a>
+
+</div><!--logo end-->
+				
+			<!--menu-->
+			
+		<div id="menubar">
+
+	<div class="menu-header"><ul id="menu-default-menu" class="dropdown dropdown-horizontal reset"><li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-51"><a title="Raspberry Pi Home" href="http://www.raspberrypi-tutorials.co.uk/">Home</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-ancestor current-menu-parent menu-item-53"><a title="Getting started with your device" href="http://www.raspberrypi-tutorials.co.uk/category/getting-started-wtih-your-raspberry-pi/">Getting Started</a>
+<ul class="sub-menu">
+	<li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153"><a title="Setting up your device" href="http://www.raspberrypi-tutorials.co.uk/starting-up-your-raspberry-pi-device/set-raspberry-pi/">How to set up your Raspberry Pi</a></li>
+	<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a title="Starting up your device" href="http://www.raspberrypi-tutorials.co.uk/starting-up-your-raspberry-pi-device/">Starting up your device</a></li>
+	<li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a title="What is required" href="http://www.raspberrypi-tutorials.co.uk/starting-up-your-raspberry-pi-device/required/">What is required?</a></li>
+	<li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-241 current_page_item menu-item-245"><a title="How to set up your Raspberry Pi Wireless Network" href="./Set up your Raspberry Pi wireless network_files/Set up your Raspberry Pi wireless network.html">Set up your wireless network.</a></li>
+	<li id="menu-item-445" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445"><a title="Automatically Login to Raspberry Pi" href="http://www.raspberrypi-tutorials.co.uk/automatically-login-raspberry-pi-desktop/">Auto Login to your Raspberry Pi</a></li>
+</ul>
+</li>
+<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a title="Learn to Program you Raspberry Pi" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-tutorials/">Raspberry Pi Tutorials</a>
+<ul class="sub-menu">
+	<li id="menu-item-262" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-262"><a title="Programming your Raspberry Pi" href="http://www.raspberrypi-tutorials.co.uk/python-programming/">Programming Raspberry Pi</a>
+	<ul class="sub-menu">
+		<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a title="Begin Programming with Raspberry Pi" href="http://www.raspberrypi-tutorials.co.uk/introduction-to-programming-with-the-raspberry-pi/">Beginning Programming – Part 1</a></li>
+		<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a title="Set up your workspace – Part 2" href="http://www.raspberrypi-tutorials.co.uk/setting-up-your-work-space-part-2/">Set up your workspace – Part 2</a></li>
+		<li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a title="Part 3" href="http://www.raspberrypi-tutorials.co.uk/class-part-3/">Hello Class – Part 3</a></li>
+		<li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a title="Part 4" href="http://www.raspberrypi-tutorials.co.uk/user-input-part-4/">Getting user input – Part 4</a></li>
+		<li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a title="Part 5" href="http://www.raspberrypi-tutorials.co.uk/comments-part-5/">Comments – Part 5</a></li>
+	</ul>
+</li>
+	<li id="menu-item-220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-220"><a title="Learn Raspberry Pi Game Programming" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-game-programming/">Game Programming</a>
+	<ul class="sub-menu">
+		<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181"><a title="Raspberry Pi Game Programming Basics" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-game-programming-part-1/">Game Programming Basic</a></li>
+		<li id="menu-item-1118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1118"><a title="Game Programming GNOP Part 1" href="http://www.raspberrypi-tutorials.co.uk/game-programing-gnop-part-1/">Game Programming GNOP Part 1</a></li>
+		<li id="menu-item-1128" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1128"><a title="Game Programming GNOP – Part 2" href="http://www.raspberrypi-tutorials.co.uk/game-programming-gnop-part-2/">Game Programming GNOP – Part 2</a></li>
+	</ul>
+</li>
+	<li id="menu-item-278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-278"><a href="http://www.raspberrypi-tutorials.co.uk/graphics-programming/">Graphics Programming</a>
+	<ul class="sub-menu">
+		<li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-275"><a title="Raspberry Pi Graphics Programming" href="http://www.raspberrypi-tutorials.co.uk/graphics-programming-raspberry-pi-part-1/">Graphics programming-Part 1</a></li>
+		<li id="menu-item-655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-655"><a title="Raspberry Pi Graphics Programming" href="http://www.raspberrypi-tutorials.co.uk/graphics-programming-part-2/">Graphics Programming-Part 2</a></li>
+		<li id="menu-item-665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-665"><a title="Raspberry Pi Graphics Programming" href="http://www.raspberrypi-tutorials.co.uk/graphics-programming-part-3/">Graphics Programming-Part 3</a></li>
+		<li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a title="Raspberry Pi Graphics Programming" href="http://www.raspberrypi-tutorials.co.uk/graphics-programming-part-4/">Graphics Programming-Part 4</a></li>
+		<li id="menu-item-714" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-714"><a title="Python &amp; Pygame – Changing colours" href="http://www.raspberrypi-tutorials.co.uk/changing-colours-raspberry-pi/">Changing Colours on the Raspberry Pi</a></li>
+	</ul>
+</li>
+	<li id="menu-item-414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-414"><a title="Learn Scratch Programming" href="http://www.raspberrypi-tutorials.co.uk/?page_id=407">Scratch Programming</a>
+	<ul class="sub-menu">
+		<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-435"><a title="Scratch Programming" href="http://www.raspberrypi-tutorials.co.uk/scratch-programming-lesson-1/">Scratch Programming – Lesson 1</a></li>
+		<li id="menu-item-461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461"><a title="Beginning Scratch Programming" href="http://www.raspberrypi-tutorials.co.uk/scratch-programming-lesson-2/">Scratch Programming – Lesson 2</a></li>
+		<li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476"><a title="Beginning Programming with Scratch" href="http://www.raspberrypi-tutorials.co.uk/scratch-programming-lesson-3/">Scratch Programming – Lesson 3</a></li>
+		<li id="menu-item-563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-563"><a href="http://www.raspberrypi-tutorials.co.uk/scratch-programming-lesson-4/">Scratch Programming – Lesson 4</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1104"><a title="tinyBasic One" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#">tinyBasic One</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1103"><a title="Install tiny basic one" href="http://www.raspberrypi-tutorials.co.uk/installing-tiny-basic-one/">Installing Tiny Basic One</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1041"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#">Networking</a>
+	<ul class="sub-menu">
+		<li id="menu-item-794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794"><a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-static-ip-address/">Using a Static IP Address</a></li>
+		<li id="menu-item-1040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1040"><a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-easy-wireless-set-instructions/">Raspberry Pi – Easy Wireless Set up Instructions</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-125"><a title="Raspberry Pi News" href="http://www.raspberrypi-tutorials.co.uk/category/raspberry-pi-news/">News</a></li>
+<li id="menu-item-1436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1436"><a href="http://www.raspberrypi-tutorials.co.uk/store/">Store</a>
+<ul class="sub-menu">
+	<li id="menu-item-1297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1297"><a title="NEW 512MB Raspberry Pi SD Card" href="http://www.raspberrypi-tutorials.co.uk/512mb-raspberry-pi-sd-card/">NEW 512MB Raspberry Pi SD Card</a></li>
+	<li id="menu-item-1320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1320"><a title="NEW 512mb Raspberry Pi SD Card Download" href="http://www.raspberrypi-tutorials.co.uk/512mb-raspberry-pi-sd-card-download/">NEW 512mb Raspberry Pi SD Card Download</a></li>
+	<li id="menu-item-964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-964"><a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-pre-configured-os-sd-card/">Raspberry Pi Pre Configured OS SD Card</a></li>
+	<li id="menu-item-903" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-903"><a title="Pre Configured OS for Download" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-pre-configured-sd-card-image-os/">Raspberry Pi Pre Configured OS Download</a></li>
+	<li id="menu-item-1521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1521"><a href="http://www.raspberrypi-tutorials.co.uk/gadgets/">Gadgets</a></li>
+</ul>
+</li>
+<li id="menu-item-605" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-605"><a title="Raspberry Pi Books" href="http://www.raspberrypi-tutorials.co.uk/books/">Books</a>
+<ul class="sub-menu">
+	<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a title="Beginning Raspberry Pi Game Programming Book" href="http://www.raspberrypi-tutorials.co.uk/beginning-raspberry-pi-game-programming/">Beginning Raspberry Pi Game Programming</a></li>
+	<li id="menu-item-681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-681"><a title="Raspberry Pi for Schools" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-schools/">Raspberry Pi for Schools</a></li>
+</ul>
+</li>
+<li id="menu-item-644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-644"><a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-wi-fi-adapter/">Raspberry Pi Wi-Fi Adapter</a></li>
+</ul></div> 
+	</div>
+		
+	
+	<!--menu end-->
+			
+			<div class="clear"></div>
+			
+		</div><!-- header end-->
+		
+	</div><!--header container end-->	
+				
+		<div id="subhead_container">
+
+		<div id="subhead_wrapper">		
+			<div id="subhead">
+		
+		<h1>Set up your Raspberry Pi wireless network.</h1>
+			
+			</div>
+			
+		<div id="search-header"><!--search form-->
+				
+				    <form method="get" id="search" action="http://www.raspberrypi-tutorials.co.uk/">
+
+					<div>
+					               		<input type="text" value="search this site" name="s" id="s" onfocus="if(this.value==&#39;search this site&#39;){this.value=&#39;&#39;};" onblur="if(this.value==&#39;&#39;){this.value=&#39;search this site&#39;};" tabindex="2">
+               		<input type="submit" id="searchsubmit" value="">
+                	
+					</div>
+               		</form></div><!--search header end-->
+			
+				<div class="clear"></div>
+			
+		</div>
+	</div>		
+	
+		<!--content-->
+		<div id="content_container">
+			
+			<div id="content">
+		
+				<div id="left-col">
+		
+
+									
+					<div class="post-entry">
+
+						<h3><a href="http://www.maplin.co.uk/?C=AffilWin127662&T=_351786" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://www.maplin.co.uk&#39;]);"><img src="./Set up your Raspberry Pi wireless network_files/cshow.php" alt="" border="0"></a></h3>
+<h3><strong>Portable TV For Your Raspberry PI</strong></h3>
+<hr>
+<p><a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-pre-configured-sd-card-image-os/"><img class="alignnone size-full wp-image-1197" title="Having problems with your wireless" src="./Set up your Raspberry Pi wireless network_files/wireless-banner-n.png" alt="" width="625" height="297"></a></p>
+<p>Learn how to set up a <strong>wireless network</strong> using your <strong>Raspberry Pi</strong> and learn how to manage and use the various networking options that are available.</p>
+<p><strong>NOTE:&nbsp; ** These instructions can now be bypassed by using the following <a title="Raspberry Pi Wireless" href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-easy-wireless-set-instructions/">wireless instructions</a> on this page.</strong>**</p>
+<p>Plug in your wireless device into your Raspberry Pi or a USB hub.&nbsp; I prefer to plug my devices into a USB hub to save the Raspberry Pi from wear and tear.</p>
+<p>Before we can use the wireless device, we must first find out the name of our device so we can find the necessary drivers.&nbsp; Enter the following command:</p>
+<p><strong>$ lsusb</strong></p>
+<p>This will list all the usb devices attached to our Raspberry Pi.&nbsp; You will be looking for something that resembles your wireless device.&nbsp; Search through the list of USB devices for a wireless adapter.</p>
+<p>The result may differ depending on the devices you have attached.</p>
+<p>Bus 001 Device 005: ID 0bda:8189 Realtek Semiconductor Corp. <strong>RTL8187B</strong> Wireless 802.11g Network adapter.</p>
+<p>The key information listed above has been bolded.&nbsp; This ID is what we will be searching for when looking for the drivers needed to use the adapter.</p>
+<p>Before we continue, you will need to update your package information.&nbsp; Be sure that you’re&nbsp;network cable is plugged in as we need to get some udpates from Debian.&nbsp;&nbsp; Just enter:</p>
+<p><strong>$ apt-get update</strong></p>
+<p>When the updates have finished downloading, enter:</p>
+<p><strong>$ apt-cache search RTL818</strong></p>
+<p>Remember your device may be different, so you will be entering your device ID for your device.&nbsp; You may have noticed that I only entered RTL818 instead of the whole ID.&nbsp; This is because it didn’t find the adapter when using the apt-cache command.&nbsp; You may need to shorten your description.</p>
+<p>The result returned for my device was:<strong></strong></p>
+<p><strong>Firmware-realtek – Binary firmware for Realtek wired and wireless network adapters</strong></p>
+<p>Enter</p>
+<p>$ sudo apt-get install firmware-realtek</p>
+<p>After a few minutes of updating you will be back at your $ prompt.&nbsp; Enter the following command to see if your adapter is listed.</p>
+<p><strong>$ lsmod</strong></p>
+<p>You will see the same ID of your device listed.</p>
+<p>Module&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used by</p>
+<p>rtl8187&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44897 &nbsp;&nbsp;&nbsp;0</p>
+<p>You can ignore the above details.&nbsp; All we need to know is that the ID of your device is mentioned when you typed lsmod.</p>
+<p>Now we just need to create a configuration file for the wireless adapter.&nbsp; We are going to do this by create a file.&nbsp; Enter the following command:</p>
+<p><strong>$ sudo nano /etc/wpa.config</strong></p>
+<p>Now enter the following, save the file and exit back to the $ prompt</p>
+<p>network={</p>
+<p>ssid=”YOUR_SSID”</p>
+<p>proto=RSN</p>
+<p>key_mgmt=WPA-PSK</p>
+<p>pairwise=CCMP TKIP</p>
+<p>group=CCMP TKIP</p>
+<p>psk=”WPA-PASSWORD”</p>
+<p>}</p>
+<p>The last part of this configuration is to add a reference to the interfaces. &nbsp;&nbsp;Issue the command:</p>
+<p>$ sudo nano /etc/network/interfaces</p>
+<p>Add the following</p>
+<p>auto wlan0</p>
+<p>iface wlan0 inet dhcp</p>
+<p>wpa-conf /etc/wpa.config</p>
+<p>Save this file and exit.</p>
+<p>The final stage of this process is to unplug your network cable as we want to test that the wireless device is actually working, so restart the network by entering:</p>
+<p>$ sudo /etc/init.d/networking restart</p>
+<p>&nbsp;</p>
+<p>—- footnote</p>
+<p>Thanks to L.R for correcting the typo. &nbsp;You have been awarded 10 bonus points.</p>
+<p>Thanks also to Paul for spotting the wpa.config typo</p>
+<fb:like href="http%3A%2F%2Fwww.raspberrypi-tutorials.co.uk%2Fset-raspberry-pi-wireless-network%2F" send="true" layout="standard" width="450" show_faces="true" action="like" font="" colorscheme="light" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 28px; width: 450px; "><iframe id="f87219ab8" name="fcf4b7e44" scrolling="no" style="border: none; overflow: hidden; height: 28px; width: 450px; " title="Like this content on Facebook." class="fb_ltr" src="./Set up your Raspberry Pi wireless network_files/like.html"></iframe></span></fb:like>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe id="fb_xdm_frame_http" name="fb_xdm_frame_http" src="./Set up your Raspberry Pi wireless network_files/xd_arbiter.html" tabindex="-1"></iframe><iframe id="fb_xdm_frame_https" name="fb_xdm_frame_https" src="./Set up your Raspberry Pi wireless network_files/xd_arbiter(1).html" tabindex="-1"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div></div></div></div><script src="./Set up your Raspberry Pi wireless network_files/all.js"></script><!-- Do not remove --><div class="snap_nopreview sharing robots-nocontent"><ul><li class="sharing_label">Share this:</li><li class="share-custom"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#" class="sharing-anchor share-service-visible">Share</a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-facebook"><a rel="nofollow" class="share-facebook share-icon" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?share=facebook&nb=1" title="Share on Facebook">Facebook</a></li><li class="share-email share-service-visible"><a rel="nofollow" class="share-email share-icon" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?share=email&nb=1" title="Click to email this to a friend">Email</a></li><li class="share-end"></li><li class="share-print"><a rel="nofollow" class="share-print share-icon" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#print" title="Click to print">Print</a></li><li class="share-twitter"><div class="twitter_button"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="./Set up your Raspberry Pi wireless network_files/tweet_button.html" style="width:97px; height:20px;"></iframe></div></li><li class="share-end"></li><li class="share-google-plus-1"><div class="googleplus1_button"><div style="height: 15px; width: 70px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; " id="___plusone_0"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px; " tabindex="0" vspace="0" width="100%" id="I0_1356425575403" name="I0_1356425575403" src="./Set up your Raspberry Pi wireless network_files/fastbutton.html" allowtransparency="true" title="+1"></iframe></div></div></li><li class="share-end"></li></ul></div></div><div class="sharing-clear"></div></div>						<div class="clear"></div>
+												
+					</div><!--post-entry end-->
+					
+								<div id="comments">
+
+
+			<h3 id="comments-title">55 Responses to Set up your Raspberry Pi wireless network.</h3>
+
+
+			<ol class="commentlist">
+						<li class="comment even thread-even depth-1" id="comment-123">
+				<div id="div-comment-123" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/2d863344737ac1a2d0cd233c9b65bc52" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Tom Tsang</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-123">
+			June 5, 2012 at 09:41</a>		</div>
+
+		<p>Thank you.  This is what I have been waiting for.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=123#respond" onclick="return addComment.moveForm(&quot;div-comment-123&quot;, &quot;123&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-127">
+				<div id="div-comment-127" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/85423871d0ed3f497109e7f1a6b9a528" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Bern Lingas</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-127">
+			June 6, 2012 at 21:37</a>		</div>
+
+		<p>Yeah it worked great.</p>
+<p>Good post.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=127#respond" onclick="return addComment.moveForm(&quot;div-comment-127&quot;, &quot;127&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1 parent" id="comment-151">
+				<div id="div-comment-151" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/c527733e9ee9d343db5d0616d812205c" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">koti kotinwa</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-151">
+			June 26, 2012 at 10:58</a>		</div>
+
+		<p>I have a particular request on connecting my RP to the internet. I have a wireless network in the house; the Hub is not accessible for my raspberrypi since in a room mainly used for office work, and no room to manoeuvre a monitor and extra desk. I have another PC using a wireless dongle and was wondering if I can make use of that PC’s connection and share it with the RP or will I need a separate device (expensive: and defeating the “cheap” connectivity of RP). Any suggestion greatly appreciated.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=151#respond" onclick="return addComment.moveForm(&quot;div-comment-151&quot;, &quot;151&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-152">
+				<div id="div-comment-152" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/b021745565317a51f80e71c589f1af1d" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Scott Wren</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-152">
+			June 26, 2012 at 11:13</a>		</div>
+
+		<p>Hello,</p>
+<p>I am going to assume that your are using a windows PC.  If this is the case, you will be able to go to your wireless network adapter properties or change adapter settings from the Network Sharing Center on Windows 7 and click the sharing tab.  Select, “Allow other network users to connect through this computer’s Internet connection”.  You can use a wired conncetion from your PC/Laptop and plug a cat 5 cable between the PC and Raspberry Pi.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=152#respond" onclick="return addComment.moveForm(&quot;div-comment-152&quot;, &quot;152&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-156">
+				<div id="div-comment-156" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/d09bf0f4de338a0e72468358f23f87b2" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Andy</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-156">
+			June 26, 2012 at 21:36</a>		</div>
+
+		<p>Great stuff. Worked for me too. Thanks.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=156#respond" onclick="return addComment.moveForm(&quot;div-comment-156&quot;, &quot;156&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-157">
+				<div id="div-comment-157" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/9b83e0272554f012db019c2ed03e7c63" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Justin</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-157">
+			June 26, 2012 at 21:48</a>		</div>
+
+		<p>Brilliant!  Thanks man.  I have been trying to figure this out for over a week.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=157#respond" onclick="return addComment.moveForm(&quot;div-comment-157&quot;, &quot;157&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-160">
+				<div id="div-comment-160" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/c527733e9ee9d343db5d0616d812205c" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">koti kotinwa</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-160">
+			June 27, 2012 at 09:45</a>		</div>
+
+		<p>One question on creation of the SD image.<br>
+I have managed to famble my way in getting the Debian image written to a USB SD card (8GB), using Flashnul  as per instructions in (<a href="http://elinux.org/RPi_Easy_SD_Card_Setup" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-comment&#39;,&#39;http://elinux.org&#39;]);" rel="nofollow">http://elinux.org/RPi_Easy_SD_Card_Setup</a>). The write showed no errors reported and under windows I am puzzled to see only about 79MB being listed of files and size of the SD drive. Is this what I should expect, i.e. the unix/linux files will not be listed here and only the handful of files should be under windows explorer?</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=160#respond" onclick="return addComment.moveForm(&quot;div-comment-160&quot;, &quot;160&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-161">
+				<div id="div-comment-161" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/b021745565317a51f80e71c589f1af1d" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Scott</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-161">
+			June 27, 2012 at 09:49</a>		</div>
+
+		<p>Hello,</p>
+<p>This is correct because windows can only see the FAT 32 partition.</p>
+<p>Scott</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=161#respond" onclick="return addComment.moveForm(&quot;div-comment-161&quot;, &quot;161&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even thread-even depth-1" id="comment-166">
+				<div id="div-comment-166" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/4796fb16533b6a9d2980ec09e0df2096" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Lawrence</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-166">
+			June 30, 2012 at 11:34</a>		</div>
+
+		<p>In your example:<br>
+  sudo nano /etc/network/interface<br>
+    — should be –<br>
+  sudo nano /etc/network/interfaces</p>
+<p>That one little s character will drive newbie readers (like me) mad.</p>
+<p>All the best,<br>
+Lawrence</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=166#respond" onclick="return addComment.moveForm(&quot;div-comment-166&quot;, &quot;166&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-167">
+				<div id="div-comment-167" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/b021745565317a51f80e71c589f1af1d" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.raspberrypi-tutorials.com/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.raspberrypi-tutorials.com&#39;]);" rel="external nofollow" class="url">Scott Wren</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-167">
+			June 30, 2012 at 11:45</a>		</div>
+
+		<p>Hi Lawrence,</p>
+<p>I have corrected the typo and credited you.</p>
+<p>Thanks for spotting that.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=167#respond" onclick="return addComment.moveForm(&quot;div-comment-167&quot;, &quot;167&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1 parent" id="comment-169">
+				<div id="div-comment-169" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/ea6398c8ad1d378f523ba26e9c5169ac" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-169">
+			June 30, 2012 at 16:14</a>		</div>
+
+		<p>Hi – thanks for the help..<br>
+I guess<br>
+wpa-conf /etc/wpa.conf<br>
+should be<br>
+wpa-conf /etc/wpa.config<br>
+?<br>
+(worked for me!)</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=169#respond" onclick="return addComment.moveForm(&quot;div-comment-169&quot;, &quot;169&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2 parent" id="comment-170">
+				<div id="div-comment-170" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/ea6398c8ad1d378f523ba26e9c5169ac" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-170">
+			June 30, 2012 at 17:40</a>		</div>
+
+		<p>Or, instead of<br>
+sudo nano /etc/wpa.config<br>
+did you mean<br>
+sudo nano /etc/wpa.conf<br>
+?<br>
+Thanks again.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=170#respond" onclick="return addComment.moveForm(&quot;div-comment-170&quot;, &quot;170&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-admin bypostauthor even depth-3" id="comment-171">
+				<div id="div-comment-171" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/b021745565317a51f80e71c589f1af1d" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.raspberrypi-tutorials.com/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.raspberrypi-tutorials.com&#39;]);" rel="external nofollow" class="url">Scott Wren</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-171">
+			June 30, 2012 at 19:29</a>		</div>
+
+		<p>Yes well spotted.  It should read, sudo nano /etc/wpa.config.  </p>
+<p>I have updated the page and credited you.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=171#respond" onclick="return addComment.moveForm(&quot;div-comment-171&quot;, &quot;171&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment byuser comment-author-joe-barrett odd alt thread-odd thread-alt depth-1" id="comment-178">
+				<div id="div-comment-178" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/7eee47d0b4283959c96b44afc69566d8" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="https://www.google.com/profiles/103018582021868752275" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;https:&#39;]);" rel="external nofollow" class="url">Joe Barrett</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-178">
+			July 3, 2012 at 12:41</a>		</div>
+
+		<p>I know I should know better. But it’s a long time since I used unix. So when I typed the first command I used an upper case eye “I” instead of el “l”. </p>
+<p>I needed “sudo apt-get update” rather than “apt-get update”.</p>
+<p>I also failed to get the driver for a Vodafone K4511 working. I did not get the “apt-cache search” to return anything but then I did a bit of research and discovered that I needed “usb-modeswitch-data” and installed that. But I suspect it is not quite all there yet. I will try using the Network Sharing on Windows 7 on my laptop as an alternate route.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=178#respond" onclick="return addComment.moveForm(&quot;div-comment-178&quot;, &quot;178&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1 parent" id="comment-195">
+				<div id="div-comment-195" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/5611940f704d585da9737dc3765672ae" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul McGurk</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-195">
+			July 7, 2012 at 11:33</a>		</div>
+
+		<p>Its not clear what you should enter for the ssid.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=195#respond" onclick="return addComment.moveForm(&quot;div-comment-195&quot;, &quot;195&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2 parent" id="comment-196">
+				<div id="div-comment-196" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/859feada77403dd9e96894fc9f45b10d" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.raspberrypi-tutorials.co.uk/" rel="external nofollow" class="url">Scott</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-196">
+			July 7, 2012 at 11:37</a>		</div>
+
+		<p>The SSID that you need to enter will be the name of the SSID that your wireless router is broadcasting.  Sometimes a sticker is placed on the router displaying this information.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=196#respond" onclick="return addComment.moveForm(&quot;div-comment-196&quot;, &quot;196&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-197">
+				<div id="div-comment-197" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/5611940f704d585da9737dc3765672ae" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul McGurk</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-197">
+			July 7, 2012 at 11:43</a>		</div>
+
+		<p>Thanks for that Scott. Just checking now…</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=197#respond" onclick="return addComment.moveForm(&quot;div-comment-197&quot;, &quot;197&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-4 parent" id="comment-198">
+				<div id="div-comment-198" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/5611940f704d585da9737dc3765672ae" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul McGurk</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-198">
+			July 7, 2012 at 12:08</a>		</div>
+
+		<p>It is working now but its quite slow taking more than 30 seconds for google to return a list of uk weather sites.</p>
+<p>Thanks  for your help and fast response Scott</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=198#respond" onclick="return addComment.moveForm(&quot;div-comment-198&quot;, &quot;198&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-5" id="comment-199">
+				<div id="div-comment-199" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/6d36e725f0bc00b404a7a70a32d2adc4" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.raspberrypi-tutorials.co.uk/" rel="external nofollow" class="url">Scott</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-199">
+			July 7, 2012 at 12:11</a>		</div>
+
+		<p>Are you using the Midori web browser?  I use Midori and I haven’t found any speed issues with web sites.  Have you tried wireless browsing on any other devices?  If so, what is the speed like on those?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-200">
+				<div id="div-comment-200" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/5611940f704d585da9737dc3765672ae" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul McGurk</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-200">
+			July 7, 2012 at 12:25</a>		</div>
+
+		<p>I’ve got wireless keyboard and mouse, they respond ok.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=200#respond" onclick="return addComment.moveForm(&quot;div-comment-200&quot;, &quot;200&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-201">
+				<div id="div-comment-201" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/5611940f704d585da9737dc3765672ae" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Paul McGurk</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-201">
+			July 7, 2012 at 12:25</a>		</div>
+
+		<p>Yes I’m using Midora</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=201#respond" onclick="return addComment.moveForm(&quot;div-comment-201&quot;, &quot;201&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-203">
+				<div id="div-comment-203" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/c00798ad06c8a96dc0998864e4d35de8" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Carl</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-203">
+			July 7, 2012 at 15:24</a>		</div>
+
+		<p>I have tried repeatedly to get my TP-Link TL-WN722N wireless unit to work and keep getting the same problem, repeatedly!! I have followed all of the tutorials. The unit is seeing all of the networks around me yet it just will not connect. I keep getting the messages “No DHCP offers received” and “No working leases found in persistent database – sleeping”<br>
+Everything “seems” to be working as per the tutorials yet I can not get past this point. The LED is flashing on the unit, lsusb sees the device and no error messages when the Raspberry Pi boots and “sudo iwlist wlan0 scan” sees at least a half a dozen networks including mine, which is the one that I have set it to connect to. But no connection!! I have tried with powered USB Hub and without. I have tried every suggestion that I have found on the web all to no avail. I am powering the Raspberry pi with a 2 amp supply and the USB Hub also has a 2 amp supply. Any ideas??</p>
+<p>Carl</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=203#respond" onclick="return addComment.moveForm(&quot;div-comment-203&quot;, &quot;203&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-245">
+				<div id="div-comment-245" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/6af6c47d749f3ac2f9ec93083aa1a7ec" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">borobiffa</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-245">
+			July 15, 2012 at 20:55</a>		</div>
+
+		<p>Hi, I feel your pain. I spent hours trying to get around exactly the same problems as you by following lots of different tutorials.  What finally worked was installing gnome network manager. I just followed steps 6 onwards from this tutorial – <a href="https://www.modmypi.com/news.php" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-comment&#39;,&#39;http://www.modmypi.com&#39;]);" rel="nofollow">https://www.modmypi.com/news.php</a><br>
+ At first this didn’t work, but I think this was down to all the other attempts at getting it to work by amending etc/network/interfaces taking precedence over network manager.  Anyway, I commented out all the previous efforts in the interfaces file and after restarting it all worked.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=245#respond" onclick="return addComment.moveForm(&quot;div-comment-245&quot;, &quot;245&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-215">
+				<div id="div-comment-215" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/de744b89f5cb9ef5752e99626b31eb76" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Jerry Rice</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-215">
+			July 9, 2012 at 05:46</a>		</div>
+
+		<p>What if I am connecting to a public wifi hotspot and cant get the wireless routers SSID?</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=215#respond" onclick="return addComment.moveForm(&quot;div-comment-215&quot;, &quot;215&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-1221">
+				<div id="div-comment-1221" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/fe3ad7cf13a73c8929eae584ab10d4a8" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">davedude0</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1221">
+			November 17, 2012 at 17:03</a>		</div>
+
+		<p>If you have a laptop with you, you can go into network and sharing centre, then change adapter settings, enter the wifi network you want and click details. It should show you the SSID there. Or ask the owner of the router for help <img src="./Set up your Raspberry Pi wireless network_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1221#respond" onclick="return addComment.moveForm(&quot;div-comment-1221&quot;, &quot;1221&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment byuser comment-author-m0bob odd alt thread-odd thread-alt depth-1 parent" id="comment-220">
+				<div id="div-comment-220" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/7jehc5rmmjjnerpps8m2_normal.gif" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://twitter.com/M0BOB" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://twitter.com&#39;]);" rel="external nofollow" class="url">M0BOB</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-220">
+			July 11, 2012 at 21:40</a>		</div>
+
+		<p>Hi,</p>
+<p>I have been trying for two evenings to set up my wifi dongle, but so no luck.</p>
+<p>I would appreciate any help/advice please. I am using Debian Squeeze and the Dongle is made by Tenda. I have checked and the driver is Ralink (it shows up after apt-cache search Ralink), I followed all the steps in the tutorial, but the wifi connection wouldn’t work. I set up the network and used the usual name  of my SSID, plus the usual password on the psk line (I tried it with and without inverted commas). </p>
+<p>I have tried the dongle on a Windows PC with the supplied software and it works fine (I use Sky for my internet). </p>
+<p>After restarting the network the following was displayed:<br>
+(I saved the files by using CTRL X, choosing Y and then Enter).</p>
+<p>SIOCSIFFLAGS: No such file or directory<br>
+SIOCSIFFLAGS: No such file or directory<br>
+Listening on LPF/wlan0/c8:3a:35:cc:7c:8d<br>
+Sending on   LPF/wlan0/c8:3a:35:cc:7c:8d<br>
+Sending on   Socket/fallback<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 5<br>
+send_packet: Network is down<br>
+receive_packet failed on wlan0: Network is down<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 7<br>
+send_packet: Network is down<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 11<br>
+send_packet: Network is down<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 14<br>
+send_packet: Network is down<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 13<br>
+send_packet: Network is down<br>
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 11<br>
+send_packet: Network is down<br>
+No DHCPOFFERS received.<br>
+No working leases in persistent database – sleeping.<br>
+done.</p>
+<p>Many thanks,</p>
+<p>Rob.<br>
+I’m going back to pulling my hair out (what little hair I have!).</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=220#respond" onclick="return addComment.moveForm(&quot;div-comment-220&quot;, &quot;220&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-m0bob even depth-2 parent" id="comment-275">
+				<div id="div-comment-275" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/7jehc5rmmjjnerpps8m2_normal.gif" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://twitter.com/M0BOB" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://twitter.com&#39;]);" rel="external nofollow" class="url">M0BOB</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-275">
+			July 18, 2012 at 21:50</a>		</div>
+
+		<p>Does anyone have aany suggestions please? I have followed the instructions to the letter, but nothing is happening.</p>
+<p>I am now using the latest version of Wheezy Raspbian.</p>
+<p>Thanks.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=275#respond" onclick="return addComment.moveForm(&quot;div-comment-275&quot;, &quot;275&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 parent" id="comment-285">
+				<div id="div-comment-285" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/e909e7b1dd35a6881a77863a1f520ae7" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Scott</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-285">
+			July 20, 2012 at 10:56</a>		</div>
+
+		<p>Hello,</p>
+<p>I am trying to replicate this problem.  Which wireless device do you have?</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=285#respond" onclick="return addComment.moveForm(&quot;div-comment-285&quot;, &quot;285&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-mark-williams-666 even depth-4 parent" id="comment-793">
+				<div id="div-comment-793" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/picture" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.facebook.com/Mark.Williams.666" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.facebook.com&#39;]);" rel="external nofollow" class="url">Mark Williams</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-793">
+			October 2, 2012 at 14:49</a>		</div>
+
+		<p>If that’s a RTL28000 you may need to blacklist the rt28000usb driver, and some others – wpa-supplicant doesn’t like that driver so you can’t connect to secured network, but it reverts to an older driver with that done &amp; starts to work!<br>
+Got this from <a href="http://www.janoweb.net/tutorials/install-drivers-rtl8187-r8187-rt2800usb-on-ubuntu-lucid-maverick.html#axzz27zSIkJDa" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-comment&#39;,&#39;http://www.janoweb.net&#39;]);" rel="nofollow">http://www.janoweb.net/tutorials/install-drivers-rtl8187-r8187-rt2800usb-on-ubuntu-lucid-maverick.html#axzz27zSIkJDa</a></p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=793#respond" onclick="return addComment.moveForm(&quot;div-comment-793&quot;, &quot;793&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-5" id="comment-794">
+				<div id="div-comment-794" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/cbcb416cf8490d3988012f160a6d50de" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Tango Alpha</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-794">
+			October 2, 2012 at 15:17</a>		</div>
+
+		<p>I used the SD card download and it worked right away without any modification.  I just added my password and it connected.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment even depth-2" id="comment-1285">
+				<div id="div-comment-1285" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/9c89b3ff91019fa84b19f2acab8c93b9" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Norbert</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1285">
+			November 27, 2012 at 02:31</a>		</div>
+
+		<p>For those of you struggling with this issue (I was for a few days), note that by default the wifi connection is trying to connect via subnet mask 255.255.255.255. My Linksys/Cisco router uses 255.255.255.0…. hence this was the issue.</p>
+<p>What I ended up doing is assigning a static IP to my raspberry pi:<br>
+ iface wlan0 inet static<br>
+ #your static IP<br>
+ address 192.168.1.XX<br>
+ #your gateway IP<br>
+ gateway 192.168.1.1<br>
+ netmask 255.255.255.0<br>
+ #your network address “family”<br>
+ network 192.168.1.0<br>
+ broadcast 192.168.1.255</p>
+<p>Voila! (At least it worked for me!)</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1285#respond" onclick="return addComment.moveForm(&quot;div-comment-1285&quot;, &quot;1285&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-230">
+				<div id="div-comment-230" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/a7568c2b8809de1586735f254b02f39b" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Marshall</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-230">
+			July 14, 2012 at 11:00</a>		</div>
+
+		<p>Hi,<br>
+I have a netgear WG111v3 adaptor which I would like to connect to rasperry pi. I followed your instructions above but failed at the first hurdle. Plugged in adapter and lsusb did not find device, noticed that blue light was not flashing on adapter, chipset is RTL8187B which is listed by debian as ok.<br>
+Can you help? is it power? why does the blue light not come on.</p>
+<p>Be very grateful for advice – newbee to Linux.<br>
+thx</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=230#respond" onclick="return addComment.moveForm(&quot;div-comment-230&quot;, &quot;230&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-289">
+				<div id="div-comment-289" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/842f1e7d478fcb0f29776ad8fa6d5cd1" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Brian</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-289">
+			July 20, 2012 at 16:54</a>		</div>
+
+		<p>For those struggling with RPi wireless. I installed wicd and did it painlessly and fast. I think wicd is much more user-friendly than NetworkManager, and I always have problems doing it the proper CLI way.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=289#respond" onclick="return addComment.moveForm(&quot;div-comment-289&quot;, &quot;289&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-321">
+				<div id="div-comment-321" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/6f800b7e5021ddd3d3511f515eecb43c" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Marcin</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-321">
+			July 26, 2012 at 21:40</a>		</div>
+
+		<p>That solution works with wpa2 encryption? Thanks</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=321#respond" onclick="return addComment.moveForm(&quot;div-comment-321&quot;, &quot;321&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-334">
+				<div id="div-comment-334" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/bb538bd3cdcbcec96628b22a67c53760" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Emmett</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-334">
+			July 28, 2012 at 10:45</a>		</div>
+
+		<p>Thanks for the excellent information!<br>
+Raspian with a<br>
+Bus 001 Device 005: ID 13b1:0020 Linksys WUSB54GC v1 802.11g Adapter [Ralink RT73] and it works flawlessly!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=334#respond" onclick="return addComment.moveForm(&quot;div-comment-334&quot;, &quot;334&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-1045">
+				<div id="div-comment-1045" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/8db580a5f8b45683c43b63f7e8e72969" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">ender</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1045">
+			October 30, 2012 at 09:01</a>		</div>
+
+		<p>How RT73 installed.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1045#respond" onclick="return addComment.moveForm(&quot;div-comment-1045&quot;, &quot;1045&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment byuser comment-author-ch3sh even thread-even depth-1 parent" id="comment-388">
+				<div id="div-comment-388" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/picture(1)" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.facebook.com/CH3SH" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.facebook.com&#39;]);" rel="external nofollow" class="url">Daniel Challenor</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-388">
+			August 4, 2012 at 16:07</a>		</div>
+
+		<p>Hi got as far as entering</p>
+<p>$ apt-get update</p>
+<p>But once i pressed enter, it tells me access is denied and asks if im in the root drive?!<br>
+Basically i cant update anything</p>
+<p>And when i type in-<br>
+$ apt-cache search RTL818<br>
+(which is the same as the device im using)<br>
+Nothing comes up, it just works for 5 seconds and returns to the command line again</p>
+<p>Also with regards to-</p>
+<p>auto wlan0<br>
+iface wlan0 inet dhcp<br>
+wpa-conf /etc/wpa.config</p>
+<p>is this added before or after the initial coding in the file?!</p>
+<p>Sorry for being a total newb, but i dont want to have to keep jamming in a 30m ethernet cable everytime i want to hit the net</p>
+<p>Thanx in advance</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=388#respond" onclick="return addComment.moveForm(&quot;div-comment-388&quot;, &quot;388&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-ch3sh odd alt depth-2 parent" id="comment-389">
+				<div id="div-comment-389" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/picture(1)" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.facebook.com/CH3SH" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.facebook.com&#39;]);" rel="external nofollow" class="url">Daniel Challenor</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-389">
+			August 4, 2012 at 17:27</a>		</div>
+
+		<p>Okies so iv managed to find out that before i type in-<br>
+$ apt-get update<br>
+I need to type in ‘sudo bash’ and it lets me follow the update</p>
+<p>But still with regards to the device cache search i get nothing even though im typing in the ID code long and short</p>
+<p>Also when i restart the networks it tells me that ‘wlan0′ is non existant<br>
+But since typing this in here have realised that its not a ’0′ but an ‘O’ lol<br>
+So will try a go at that =D</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=389#respond" onclick="return addComment.moveForm(&quot;div-comment-389&quot;, &quot;389&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-ch3sh even depth-3 parent" id="comment-391">
+				<div id="div-comment-391" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/picture(1)" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.facebook.com/CH3SH" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.facebook.com&#39;]);" rel="external nofollow" class="url">Daniel Challenor</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-391">
+			August 4, 2012 at 18:53</a>		</div>
+
+		<p>So I got it wrong again,<br>
+It wasn’t an O but an 0<br>
+But it still doesn’t work<br>
+I type in what needs to be added to the interface file<br>
+But when I restart the network it tells me<br>
+‘cannot find device “wlan0″<br>
+Bind socket to interface: no such device<br>
+Failed to bring up wlan0′<br>
+It’s gotta be something obvious but my brain is frazzled<br>
+Can anyone she’d some light?!?!<br>
+Ironically enough I’m using the wireless adapter suggested by this site (Edimax)</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=391#respond" onclick="return addComment.moveForm(&quot;div-comment-391&quot;, &quot;391&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-ch3sh odd alt depth-4" id="comment-392">
+				<div id="div-comment-392" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/picture(1)" class="avatar avatar-social-login avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.facebook.com/CH3SH" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://www.facebook.com&#39;]);" rel="external nofollow" class="url">Daniel Challenor</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-392">
+			August 4, 2012 at 21:39</a>		</div>
+
+		<p>Could it be a lack of power,<br>
+I’m using an 850ma power supply?!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=392#respond" onclick="return addComment.moveForm(&quot;div-comment-392&quot;, &quot;392&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even depth-4" id="comment-531">
+				<div id="div-comment-531" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/dc2d8c4eead538c3408258d6701d2bf2" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Dan Lenz`</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-531">
+			August 25, 2012 at 23:14</a>		</div>
+
+		<p>Hi, did you manage to solve this issue by any chance? I’m trying to set up my Pi using the Edimax adapter and getting the same sort of error. I tried to do the “$ apt-cache search RTL818″ command and nothing was returned. But i still created the wpa.config file with the slight change putting WPA2-PSK instead of WPA-PSK still to no avail. Then when i do the restart it says ‘cannot find device “wlan0″<br>
+Bind socket to interface: no such device<br>
+Failed to bring up wlan0′. Any help would add years to my life <img src="./Set up your Raspberry Pi wireless network_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=531#respond" onclick="return addComment.moveForm(&quot;div-comment-531&quot;, &quot;531&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+		<li class="comment byuser comment-author-william-hillhouse odd alt thread-odd thread-alt depth-1" id="comment-435">
+				<div id="div-comment-435" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/6f78f2475b29e18378336f235eb04690" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="https://www.google.com/profiles/103712491852140274268" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;https:&#39;]);" rel="external nofollow" class="url">William Hillhouse</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-435">
+			August 10, 2012 at 07:06</a>		</div>
+
+		<p>This is low priority but search this page for the phrase: “you you’re your”. Some of those words seem to be jumbled, but the intent was clear. Thanks for posting this handy article on WiFi!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=435#respond" onclick="return addComment.moveForm(&quot;div-comment-435&quot;, &quot;435&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-447">
+				<div id="div-comment-447" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/2aa9fc31e3454466023e5ee7f3ec0160" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Matteo</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-447">
+			August 12, 2012 at 13:46</a>		</div>
+
+		<p>If i try this to setup my RTL8187 with this, my Pi go in KP..</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=447#respond" onclick="return addComment.moveForm(&quot;div-comment-447&quot;, &quot;447&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-541">
+				<div id="div-comment-541" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/fadea23428d29bf53c913cc1ce8d009b" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Shane</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-541">
+			August 26, 2012 at 11:34</a>		</div>
+
+		<p>I followed the instructions and entered my own details when required yet i still have no internet connection</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=541#respond" onclick="return addComment.moveForm(&quot;div-comment-541&quot;, &quot;541&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-542">
+				<div id="div-comment-542" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/fadea23428d29bf53c913cc1ce8d009b" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Shane</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-542">
+			August 26, 2012 at 11:35</a>		</div>
+
+		<p>i still have no internet when still following the instructions and entering my own details.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=542#respond" onclick="return addComment.moveForm(&quot;div-comment-542&quot;, &quot;542&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-584">
+				<div id="div-comment-584" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/abb6295c1c13336bdab30f9c52926536" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Sean Parsons</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-584">
+			September 4, 2012 at 14:00</a>		</div>
+
+		<p>I chose my wifi dongle because it was listed as working with RPi, and it uses the RTL8187B chipset. When I run apt-cache search RTL818 it returns nothing. I installed firmware-realtek (v0.36) anyway but it doesn’t list anything in the rtl818* family. Despite using a powered hub and carefully following every instruction, I still have no wireless love. Is there some reason why this chipset is no longer in the firmware, and what can I do to workaround this?</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=584#respond" onclick="return addComment.moveForm(&quot;div-comment-584&quot;, &quot;584&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-585">
+				<div id="div-comment-585" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/29240b636a23735d5568689fb55cbaf9" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Luke Skywalker</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-585">
+			September 4, 2012 at 14:05</a>		</div>
+
+		<p>What is your exact make/model of wi-fi device and have you plugged directly into your Raspberry pi?</p>
+<p>Failing that you could try the <a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-pre-configured-sd-card-image-os/" rel="nofollow">Preloaded SD Card image</a> which worked for me using EdiMax wi-fi device.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=585#respond" onclick="return addComment.moveForm(&quot;div-comment-585&quot;, &quot;585&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt depth-2" id="comment-586">
+				<div id="div-comment-586" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/abb6295c1c13336bdab30f9c52926536" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Sean Parsons</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-586">
+			September 4, 2012 at 14:36</a>		</div>
+
+		<p>In the end, I was never able to get it working with any of the posted instructions, but wicd did the trick, which is a better solution for me anyway since I will be connecting to numerous networks. I would like to suggest preinstalling wicd on raspbian and maybe using instructions for wicd when people ask about wifi.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=586#respond" onclick="return addComment.moveForm(&quot;div-comment-586&quot;, &quot;586&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment even thread-even depth-1" id="comment-587">
+				<div id="div-comment-587" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/1531ee57a1e6b544b1c4318e0987fe74" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Lee Roberts</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-587">
+			September 4, 2012 at 14:39</a>		</div>
+
+		<p>WICD is installed on the preloaded image that is available for download on Raspberry Pi Tutorials site.  Which device did you get it working with so that users are able to know which devices to buy?</p>
+<p>Lee</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=587#respond" onclick="return addComment.moveForm(&quot;div-comment-587&quot;, &quot;587&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-614">
+				<div id="div-comment-614" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/cde270eaa2fcb99d9dcb747174d31081" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Ron</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-614">
+			September 9, 2012 at 15:36</a>		</div>
+
+		<p>Hello.  I have got a Raspberry Pi running the Raspberry Pi OS, with HDMI connection to a screen and wireless connection to a Logitech K400 wireless keyboard. I also have an Edimax Wireless USB adapter but I am having difficulty getting it to work with the Pi.  Your nice tutorial seems to assume that the Pi is already connected to the Internet.  My Pi is situated close to my laptop which is running Ubuntu 12.04 which has a WiFi connection to the Internet.  If I connect my Pi to the laptop via an Ethernet cable, what to I need to do to configure Ubuntu to enable the Pi to access the Internet?  Hope that makes sense!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=614#respond" onclick="return addComment.moveForm(&quot;div-comment-614&quot;, &quot;614&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-904">
+				<div id="div-comment-904" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/7f0d2f828a76f064c435887356b299dd" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Dan</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-904">
+			October 16, 2012 at 10:57</a>		</div>
+
+		<p>I’ve seen a new shield to add Wifi to our Raspi through GPIO. <a href="http://www.cooking-hacks.com/index.php/documentation/tutorials/wifi-module-for-raspberry-pi-roving-rn-xvee" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-comment&#39;,&#39;http://www.cooking-hacks.com&#39;]);" rel="nofollow">http://www.cooking-hacks.com/index.php/documentation/tutorials/wifi-module-for-raspberry-pi-roving-rn-xvee</a></p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=904#respond" onclick="return addComment.moveForm(&quot;div-comment-904&quot;, &quot;904&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1312">
+				<div id="div-comment-1312" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/45bfb1310f261cbf6637eb85c42ff95c" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Anthony</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1312">
+			November 29, 2012 at 05:45</a>		</div>
+
+		<p>How come I never get the wlan0 network after I complete the steps above?</p>
+<p>After I restart everything and type “ifconfig” it just shows “lo” and “eth0″.  What could be the reason the wlan0 network isn’t  there?</p>
+<p>Thank you.</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1312#respond" onclick="return addComment.moveForm(&quot;div-comment-1312&quot;, &quot;1312&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-1327">
+				<div id="div-comment-1327" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/9aa674ed76ce429ba9e4ddef3e477684" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Sergio</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1327">
+			November 30, 2012 at 04:42</a>		</div>
+
+		<p>everything doesn’t work did everything step by step<br>
+does not work!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1327#respond" onclick="return addComment.moveForm(&quot;div-comment-1327&quot;, &quot;1327&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1365">
+				<div id="div-comment-1365" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/90c4aeaa5ff20f92186db5d14af0844b" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://jazz.net/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://jazz.net&#39;]);" rel="external nofollow" class="url">Anthony</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1365">
+			December 3, 2012 at 21:52</a>		</div>
+
+		<p>Thanks for putting this info together.  </p>
+<p>I have a RT5370 wifi usb dongle up and running.  I did need to use wicd to find and correct a setting error on my part.  The option to manage all network connections is very useful (thanks to Brian – comment on 20th July)</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1365#respond" onclick="return addComment.moveForm(&quot;div-comment-1365&quot;, &quot;1365&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-1519">
+				<div id="div-comment-1519" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="./Set up your Raspberry Pi wireless network_files/fcb91602e986676b246008d37a8fcb06" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">Duncan</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#comment-1519">
+			December 15, 2012 at 17:23</a>		</div>
+
+		<p>Thanks for this – was struggling but eventually got it to work.  Important points for anyone suffering same problems as I did – just received a RaspPi 512MB with the Wheezy Distribution, WiPi and hub kit (the whole kit from CPC).  Problems using sudo – would hang.  Couldn’t get on a wired network far less the wireless one.  Had noticed that it worked better with WiPi removed but problems returned immediately on insertion.  Moved WiPi to the “other” on-board USB port and all is working now.  The other point to note is the different configurations needed for the specific wireless type you’re using.  I initially just blindly followed the basic instructions not thinking about it but quickly realised that I needed the wpa config instructions.  Thanks – all working well now!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?replytocom=1519#respond" onclick="return addComment.moveForm(&quot;div-comment-1519&quot;, &quot;1519&quot;, &quot;respond&quot;, &quot;241&quot;)">Reply</a>		</div>
+				</div>
+		</li>
+			</ol>
+		
+	        <h3 id="pings">Trackbacks/Pingbacks</h3>
+    <ol class="commentlist">
+    	<li id="comment-124"><a href="http://www.raspberrypi-tutorials.co.uk/set-wireless-network-raspberry-pi/" rel="external nofollow" class="url">How to set up your wireless network with Raspberry Pi. | Raspberry Pi Tutorials - Learn Programming with your device</a></li>
+	<li id="comment-944"><a href="http://upstairsgaller.shikshik.org/2012/10/19/wireless-pi/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-commentauthor&#39;,&#39;http://upstairsgaller.shikshik.org&#39;]);" rel="external nofollow" class="url">Wireless pi | Upstairsgaller</a></li>
+    </ol>
+
+    
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.raspberrypi-tutorials.co.uk/wp-comments-post.php" method="post" id="commentform">
+						<div class="oneall_social_login">
+ <div style="margin-bottom: 3px;"><label>Connect with: Raspberry Pi Tutorials</label></div>
+ <div class="oneall_social_login_providers" id="oneall_social_login_providers_8076238"><iframe id="oa_social_login_frame_12900" frameborder="0" scrolling="no" allowtransparency="true" data-processed="true" name="OneAll Social Login" style="visibility: visible; background-color: transparent; border: 0px none; height: 61px !important; width: 620px; " src="./Set up your Raspberry Pi wireless network_files/saved_resource.html"></iframe></div>
+ <script type="text/javascript">
+  oneall.api.plugins.social_login.build("oneall_social_login_providers_8076238", {
+   "providers": ["facebook","twitter","google","wordpress"], 
+   "callback_uri": (window.location.href + ((window.location.href.split('?')[1] ? '&amp;':'?') + "oa_social_login_source=comments")), 
+   "css_theme_uri": "http://public.oneallcdn.com/css/api/socialize/themes/wordpress/default.css" 
+  });
+ </script>
+ <!-- oneall.com / Social Login for Wordpress / v2.5 -->
+</div>																				<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>												<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Submit Comment">
+							<input type="hidden" name="comment_post_ID" value="241" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e083051e00"></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>					</form>
+							</div><!-- #respond -->
+			<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#commentform').submit(function() {
+            _gaq.push(
+                ['_setAccount','UA-29697456-1'],
+                ['_trackEvent','comment','submit']
+            );
+        });
+    });    
+</script>
+			
+</div><!-- #comments -->
+
+</div> <!--left-col end-->
+
+		<!--right-col-->
+		<div id="right-col">
+		
+		<img src="./Set up your Raspberry Pi wireless network_files/sidebar-top.png" alt="">
+			
+				<!--sidebar-->
+				<div id="sidebar">
+			
+			<ul class="xoxo">
+
+<li id="text-8" class="widget-container widget_text"><h3 class="widget-title">Raspberry Pi – An Easy Guide to Computing Only £3.99</h3>			<div class="textwidget"><center><a href="http://www.amazon.co.uk/gp/product/B00A8N0J4Q/ref=as_li_ss_il?ie=UTF8&camp=2506&creative=9298&creativeASIN=B00A8N0J4Q&link_code=as3&tag=wizewun0a-21" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://www.amazon.co.uk&#39;]);"><img border="0" src="./Set up your Raspberry Pi wireless network_files/RaspberryPIEGC.png"></a><img src="./Set up your Raspberry Pi wireless network_files/ir" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"><br>
+</center>
+This book is intended for anyone that wants to understand the basics of the Raspberry Pi version 1 (256MB) and version 2 (512MB). The 17 Chapters cover the set up and installation of the operating system and progresses onto advanced topics such as Wi-Fi setup, networking and programming.</div>
+		</li><li id="text-6" class="widget-container widget_text">			<div class="textwidget"><center>
+<a href="http://www.raspberrypi-tutorials.co.uk/512mb-raspberry-pi-sd-card/">
+<img src="./Set up your Raspberry Pi wireless network_files/raspberry-pi-sd-card-512mb.png" alt="Raspberry Pi SD Card 512"><br>
+Easy Wireless Setup | Programming Tools | Free Updates | Easy Management Tools
+</a>
+</center>
+<hr></div>
+		</li><li id="text-5" class="widget-container widget_text"><h3 class="widget-title">Beginners Guide Book Only £4.11</h3>			<div class="textwidget"><p></p><center><a href="http://www.amazon.co.uk/gp/product/B00979OA6K/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=2506&creative=9298&creativeASIN=B00979OA6K&link_code=as3&tag=raspberry-pi-21" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://www.amazon.co.uk&#39;]);"><img src="./Set up your Raspberry Pi wireless network_files/raspberry-pi-for-beginners.png"></a><img src="./Set up your Raspberry Pi wireless network_files/ir(1)" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"><br>
+</center><br>
+A brand new <strong>Raspberry Pi book</strong> has been released for learning about the Raspberry Pi.  This book is intended for anyone that wants to understand the basics of the Raspberry Pi and computer programming.   You can purchase this from Amazon.co.uk priced £4.11 or from  Amazon.com at $6.52.<br>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/link-enhancer-common.js">
+</script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/bootstrap.html" charset="utf-8"></script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/site-wide-9568651373._V1_.js"></script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/assoc_pp-2568155854._V1_.js"></script><img src="./Set up your Raspberry Pi wireless network_files/ir(2)"><img src="./Set up your Raspberry Pi wireless network_files/ir(3)"><img src="./Set up your Raspberry Pi wireless network_files/ir(4)"><img src="./Set up your Raspberry Pi wireless network_files/ir(5)"><img src="./Set up your Raspberry Pi wireless network_files/ir(6)"><img src="./Set up your Raspberry Pi wireless network_files/ir(7)"><br>
+<noscript>&lt;br /&gt;
+    &lt;img src="http://wms.assoc-amazon.co.uk/20070822/GB/img/noscript.gif?tag=raspberry-pi-21" alt="" /&gt;&lt;br /&gt;
+</noscript><p></p>
+<hr>
+</div>
+		</li><li id="text-4" class="widget-container widget_text"><h3 class="widget-title">Raspberry Pi for Schools £6.17 UK / $9.89 US</h3>			<div class="textwidget"><a href="http://www.amazon.co.uk/gp/product/B008SB763W/ref=as_li_ss_tl?ie=UTF8&camp=211189&creative=374929&creativeASIN=B008SB763W&linkCode=as2&tag=raspberry-pi-21" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://www.amazon.co.uk&#39;]);"><img src="./Set up your Raspberry Pi wireless network_files/raspberry-pi-for-schools.png"></a>
+<br>
+A new Raspberry Pi book is available.  <strong>Raspberry Pi for Schools</strong> is a beginner’s guide for students, teachers and parents. This book is an educational guide through the process of setting up your Raspberry Pi and exploring some of the common features available.  The book is available to buy from <a href="http://www.amazon.co.uk/gp/product/B008SB763W/ref=as_li_ss_tl?ie=UTF8&camp=211189&creative=374929&creativeASIN=B008SB763W&linkCode=as2&tag=raspberry-pi-21" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-widget&#39;,&#39;http://www.amazon.co.uk&#39;]);">Amazon</a>.
+<br><br>
+<a href="http://www.raspberrypi-tutorials.co.uk/raspberry-pi-schools/">More information</a>
+<hr></div>
+		</li><li id="text-2" class="widget-container widget_text"><h3 class="widget-title">Like us</h3>			<div class="textwidget"><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-href="http://www.facebook.com/pages/Raspberry-Pi-Tutorials/363431533687668" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true" fb-xfbml-state="rendered"><span style="height: 20px; width: 128px; "><iframe id="f1e867311" name="f371781e0c" scrolling="no" style="border: none; overflow: hidden; height: 20px; width: 128px; " title="Like this content on Facebook." class="fb_ltr" src="./Set up your Raspberry Pi wireless network_files/like(1).html"></iframe></span></div>
+<br>
+<br></div>
+		</li><li id="oa_social_login-2" class="widget-container widget_oa_social_login"><h3 class="widget-title">Connect</h3><div class="oneall_social_login">
+ <div class="oneall_social_login_providers" id="oneall_social_login_providers_3801738"><iframe id="oa_social_login_frame_66014" frameborder="0" scrolling="no" allowtransparency="true" data-processed="true" name="OneAll Social Login" style="visibility: visible; background-color: transparent; border: 0px none; height: 78px !important; width: 290px; " src="./Set up your Raspberry Pi wireless network_files/saved_resource(1).html"></iframe></div>
+ <script type="text/javascript">
+  oneall.api.plugins.social_login.build("oneall_social_login_providers_3801738", {
+   "providers": ["facebook","twitter","google","wordpress"], 
+   "callback_uri": (window.location.href + ((window.location.href.split('?')[1] ? '&amp;':'?') + "oa_social_login_source=widget")), 
+   "css_theme_uri": "http://public.oneallcdn.com./css/api/socialize/themes/wordpress/small.css" 
+  });
+ </script>
+ <!-- oneall.com / Social Login for Wordpress / v2.5 -->
+</div></li>			</ul>
+
+
+				</div><!--sb end-->
+				
+				<div class="clear"></div>
+				
+<img src="./Set up your Raspberry Pi wireless network_files/sidebar-bottom.png" alt="">
+				
+			</div> <!--right-col-->
+	</div> 
+</div>
+<!--content end-->
+	
+</div>
+<!--wrapper end-->
+	<!--footer-->
+	<div class="clear"></div>
+		
+		<div id="footer">
+		
+	<!--footer container--><div id="footer-container">
+		
+		<div id="footer-widget">
+			
+						
+			</div><!--footer widget end-->
+			
+			<div id="footer-info">		
+			
+			<div id="copyright">Copyright 2012 © Raspberry Pi Tutorials | Powered by a Raspberry Pi</div>
+			
+			<div id="follow-box"><p>Follow us:</p>
+	
+		<a href="http://www.youtube.com/"><img src="./Set up your Raspberry Pi wireless network_files/youtube.png" alt="Youtube"></a> 		<a href="https://twitter.com/#!/getraspberrypi"><img src="./Set up your Raspberry Pi wireless network_files/Twitter.png" alt="Twitter"></a>		<a href="http://www.facebook.com/pages/Raspberry-Pi-Tutorials/363431533687668"><img src="./Set up your Raspberry Pi wireless network_files/facebook.png" alt="facebook"></a>	
+	</div>
+					
+			</div><!--footer info end-->
+			
+		</div><!-- footer container-->
+		
+	<div class="clear"></div>		
+			
+	</div>
+	<span style="position: absolute; right: 40px; top: 10px"><a href="http://www.raspberrypi-tutorials.co.uk/store/"><img src="./Set up your Raspberry Pi wireless network_files/shop-icon.png"></a></span>
+	<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/wpgroho.js"></script>
+	<div style="display:none">
+	<div class="grofile-hash-map-2d863344737ac1a2d0cd233c9b65bc52">
+	</div>
+	<div class="grofile-hash-map-85423871d0ed3f497109e7f1a6b9a528">
+	</div>
+	<div class="grofile-hash-map-c527733e9ee9d343db5d0616d812205c">
+	</div>
+	<div class="grofile-hash-map-b021745565317a51f80e71c589f1af1d">
+	</div>
+	<div class="grofile-hash-map-d09bf0f4de338a0e72468358f23f87b2">
+	</div>
+	<div class="grofile-hash-map-9b83e0272554f012db019c2ed03e7c63">
+	</div>
+	<div class="grofile-hash-map-4796fb16533b6a9d2980ec09e0df2096">
+	</div>
+	<div class="grofile-hash-map-b021745565317a51f80e71c589f1af1d">
+	</div>
+	<div class="grofile-hash-map-ea6398c8ad1d378f523ba26e9c5169ac">
+	</div>
+	<div class="grofile-hash-map-7eee47d0b4283959c96b44afc69566d8">
+	</div>
+	<div class="grofile-hash-map-5611940f704d585da9737dc3765672ae">
+	</div>
+	<div class="grofile-hash-map-859feada77403dd9e96894fc9f45b10d">
+	</div>
+	<div class="grofile-hash-map-6d36e725f0bc00b404a7a70a32d2adc4">
+	</div>
+	<div class="grofile-hash-map-c00798ad06c8a96dc0998864e4d35de8">
+	</div>
+	<div class="grofile-hash-map-6af6c47d749f3ac2f9ec93083aa1a7ec">
+	</div>
+	<div class="grofile-hash-map-de744b89f5cb9ef5752e99626b31eb76">
+	</div>
+	<div class="grofile-hash-map-fe3ad7cf13a73c8929eae584ab10d4a8">
+	</div>
+	<div class="grofile-hash-map-415c18cbeef17af00f37c85247122816">
+	</div>
+	<div class="grofile-hash-map-e909e7b1dd35a6881a77863a1f520ae7">
+	</div>
+	<div class="grofile-hash-map-9e3211da4f80c013cf60a49395cf2491">
+	</div>
+	<div class="grofile-hash-map-cbcb416cf8490d3988012f160a6d50de">
+	</div>
+	<div class="grofile-hash-map-9c89b3ff91019fa84b19f2acab8c93b9">
+	</div>
+	<div class="grofile-hash-map-a7568c2b8809de1586735f254b02f39b">
+	</div>
+	<div class="grofile-hash-map-842f1e7d478fcb0f29776ad8fa6d5cd1">
+	</div>
+	<div class="grofile-hash-map-6f800b7e5021ddd3d3511f515eecb43c">
+	</div>
+	<div class="grofile-hash-map-bb538bd3cdcbcec96628b22a67c53760">
+	</div>
+	<div class="grofile-hash-map-8db580a5f8b45683c43b63f7e8e72969">
+	</div>
+	<div class="grofile-hash-map-236a61c4c59c862b9302439d251b2c30">
+	</div>
+	<div class="grofile-hash-map-dc2d8c4eead538c3408258d6701d2bf2">
+	</div>
+	<div class="grofile-hash-map-6f78f2475b29e18378336f235eb04690">
+	</div>
+	<div class="grofile-hash-map-2aa9fc31e3454466023e5ee7f3ec0160">
+	</div>
+	<div class="grofile-hash-map-fadea23428d29bf53c913cc1ce8d009b">
+	</div>
+	<div class="grofile-hash-map-abb6295c1c13336bdab30f9c52926536">
+	</div>
+	<div class="grofile-hash-map-29240b636a23735d5568689fb55cbaf9">
+	</div>
+	<div class="grofile-hash-map-1531ee57a1e6b544b1c4318e0987fe74">
+	</div>
+	<div class="grofile-hash-map-cde270eaa2fcb99d9dcb747174d31081">
+	</div>
+	<div class="grofile-hash-map-7f0d2f828a76f064c435887356b299dd">
+	</div>
+	<div class="grofile-hash-map-45bfb1310f261cbf6637eb85c42ff95c">
+	</div>
+	<div class="grofile-hash-map-9aa674ed76ce429ba9e4ddef3e477684">
+	</div>
+	<div class="grofile-hash-map-90c4aeaa5ff20f92186db5d14af0844b">
+	</div>
+	<div class="grofile-hash-map-fcb91602e986676b246008d37a8fcb06">
+	</div>
+	</div>
+ <a href="http://devcorner.georgievi.net/pages/wordpress/wp-plugins/facebook-like-button-for-dummies" title="Facebook Like Button with Open Graph Support">Facebook Like Button for Dummies</a> <div id="su-footer-links" style="text-align: center;"></div><script type="text/javascript">var dom = {};dom.query = jQuery.noConflict(true);</script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/link-enhancer"></script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/bootstrap(1).html" charset="utf-8"></script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/site-wide-9568651373._V1_.js"></script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/assoc_pp-2568155854._V1_.js"></script><img src="./Set up your Raspberry Pi wireless network_files/ir(5)"><img src="./Set up your Raspberry Pi wireless network_files/ir(8)"><img src="./Set up your Raspberry Pi wireless network_files/ir(9)"><noscript>&lt;img src="http://www.assoc-amazon.com/s/noscript?tag=raspberry-pi-21-us-20" alt="" /&gt;</noscript><script type="text/javascript">$=dom.query;</script><script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/sharing.js"></script>
+	<div id="sharing_email" style="display: none;">
+		<form action="" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="text" name="target_email" id="target_email" value="">
+			
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+				
+				<label for="source_email">Your Email Address</label>
+				<input type="text" name="source_email" id="source_email" value="">
+
+						
+			
+			<img style="float: right; display: none" class="loading" src="./Set up your Raspberry Pi wireless network_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a href="http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/#cancel" class="sharing_cancel">Cancel</a>
+			
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+			
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+	function sharing_plusone( obj ) { 
+		jQuery.ajax( {
+			url: 'http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/?share=google-plus-1',
+			type: 'POST',
+			data: obj
+		} );
+	}
+	</script>
+	<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/jquery.tools.min.js"></script>
+<script type="text/javascript" src="./Set up your Raspberry Pi wireless network_files/simple-contact-form-revisited-plugin.js"></script>
+
+	<script src="./Set up your Raspberry Pi wireless network_files/e-201252.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:1.2.2',blog:'33442582',post:'241'});
+	var load_cmc = function(){linktracker_init(33442582,241,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Set up your Raspberry Pi wireless network_files/g.gif" alt="">
+
+
+</body></html>

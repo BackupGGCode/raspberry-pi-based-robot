@@ -1,0 +1,5 @@
+http://qt-project.org/wiki/Qt-RaspberryPi
+
+
+Qt4 telepítése viszonylag egyszerű:
+http://qt-project.org/wiki/apt-get_Qt4_on_the_Raspberry_Pi

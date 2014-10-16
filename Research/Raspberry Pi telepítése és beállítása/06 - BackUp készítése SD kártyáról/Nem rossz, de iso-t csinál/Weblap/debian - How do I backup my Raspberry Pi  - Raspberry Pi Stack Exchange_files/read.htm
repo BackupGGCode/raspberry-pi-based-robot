@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0210)https://stackauth.com/auth/global/read?request=y%2Fl7NqPNqyDThaWtOaTE2yDCurjQikxiFixrdasxRPy1vdb76%2B%2BEWWbsys%2FxUoR%2FHl3YGl6gsQmO5sQPhanvbRLnr%2BrNVN%2BX%2BLCYJ8g1tEo%3D&nonce=fII%2FVAAAAABynBi8DlklVQ%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"y/l7NqPNqyDThaWtOaTE2yDCurjQikxiFixrdasxRPy1vdb76++EWWbsys/xUoR/Hl3YGl6gsQmO5sQPhanvbRLnr+rNVN+X+LCYJ8g1tEo=","Nonce":"fII/VAAAAABynBi8DlklVQ==","Referrer":"http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  <style type="text/css"></style></head><body></body></html>

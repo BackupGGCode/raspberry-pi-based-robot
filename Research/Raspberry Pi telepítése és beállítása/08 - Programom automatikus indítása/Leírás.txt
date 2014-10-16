@@ -1,0 +1,2 @@
+﻿A 03 - VNC Setup leírásomnak megfelelő lépések, csak az itt szereplő két fájlal. 
+Van weblap mentés is a VNC-s mappában, arra az esetre ha az eredeti leírás már nem lenne elérhető. 

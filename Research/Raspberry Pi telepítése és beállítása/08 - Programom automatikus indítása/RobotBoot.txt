@@ -1,0 +1,40 @@
+### BEGIN INIT INFO
+# Provides: RobotBoot
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start Robot Server at boot time
+# Description: Start Robot Server at boot time.
+### END INIT INFO
+
+#! /bin/sh
+# /etc/init.d/RobotBoot
+
+USER=root
+HOME=/root
+
+export USER HOME
+
+case "$1" in
+ start)
+   #Ha mégsem telefonról, hanem wifi modulról akarok kommunikálni, az az alábbi két sor törlésével megoldható.  
+   echo "Starting USB tether from phone"
+   dhclient usb0
+   echo "Starting Robot Server"
+   #Ha lesznek parancssori argumentumok akkor itt át lehet majd adni őket. 
+   /usr/bin/RobotServer
+   ;;
+
+ stop)
+   echo "Stopping Robot Server"
+   /usr/bin/RobotServer
+   ;;
+
+ *)
+   echo "Usage: /etc/init.d/RobotBoot {start|stop}"
+   exit 1
+   ;;
+esac
+
+exit 0

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://elinux.org/RPi_Easy_SD_Card_Setup -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RPi Easy SD Card Setup - eLinux.org</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.2">
+<link rel="shortcut icon" href="http://elinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://elinux.org/opensearch_desc.php" title="eLinux.org (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://elinux.org/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="eLinux.org Atom feed" href="http://elinux.org/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="http://elinux.org/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&only=styles&skin=monobook&*">
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><style>.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: elinux:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: elinux:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: elinux:resourceloader:filter:minify-css:7:2e4e16141a9e7454837948088d3654b0 */</style>
+
+<script src="./RPi Easy SD Card Setup - eLinux.org_files/load.php"></script><script src="./RPi Easy SD Card Setup - eLinux.org_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"RPi_Easy_SD_Card_Setup","wgTitle":"RPi Easy SD Card Setup","wgCurRevisionId":204440,"wgArticleId":17516,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["RaspberryPi"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"RPi_Easy_SD_Card_Setup","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: elinux:resourceloader:filter:minify-js:7:23d5b7cfe9940a4065e599c52bef53cb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./RPi Easy SD Card Setup - eLinux.org_files/load(2).php"></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-RPi_Easy_SD_Card_Setup skin-monobook action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" class="mw-body-primary">
+	<a id="top"></a>
+	<div id="siteNotice"><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\x3e\x3cdiv style=\"margin:0; margin-top:10px; margin-right:10px; border:1px solid #dfdfdf; padding:0 1em 1em 1em; background-color:#ffffcc; align:right;\"\x3e\n\x3cp\x3e\x3cb\x3ePlease note that User Registration has been temporarily disabled due to a recent increase in automated registrations.  If anyone needs an account, please contact request one here: \x3ca href=\"/Special:RequestAccount\" title=\"Special:RequestAccount\"\x3e RequestAccount\x3c/a\x3e. Thanks for your patience!--\x3ca href=\"/User:Wmat\" title=\"User:Wmat\"\x3eWmat\x3c/a\x3e (\x3ca href=\"/User_talk:Wmat\" title=\"User talk:Wmat\"\x3etalk\x3c/a\x3e) 04:16, 27 November 2012 (UTC)\x3cbr /\x3e\x3c/b\x3e\n\x3cspan style=\"color:#FF0000;\"\x3e\x3cb\x3ePlease email \x3ca href=\"/User:Wmat\" title=\"User:Wmat\"\x3eUser:Wmat\x3c/a\x3e if you experience any issues with the Request Account form.\x3c/b\x3e\x3c/span\x3e\n\x3c/p\x3e\n\x3c/div\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script><div id="localNotice" lang="en" dir="ltr"><div style="margin:0; margin-top:10px; margin-right:10px; border:1px solid #dfdfdf; padding:0 1em 1em 1em; background-color:#ffffcc; align:right;">
+<p><b>Please note that User Registration has been temporarily disabled due to a recent increase in automated registrations.  If anyone needs an account, please contact request one here: <a href="http://elinux.org/Special:RequestAccount" title="Special:RequestAccount"> RequestAccount</a>. Thanks for your patience!--<a href="http://elinux.org/User:Wmat" title="User:Wmat">Wmat</a> (<a href="http://elinux.org/User_talk:Wmat" title="User talk:Wmat">talk</a>) 04:16, 27 November 2012 (UTC)<br></b>
+<span style="color:#FF0000;"><b>Please email <a href="http://elinux.org/User:Wmat" title="User:Wmat">User:Wmat</a> if you experience any issues with the Request Account form.</b></span>
+</p>
+</div>
+</div>
+</div>
+	<h1 id="firstHeading" class="firstHeading"><span dir="auto">RPi Easy SD Card Setup</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">From eLinux.org</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Jump to: <a href="http://elinux.org/RPi_Easy_SD_Card_Setup#column-one">navigation</a>, <a href="http://elinux.org/RPi_Easy_SD_Card_Setup#searchInput">search</a></div>
+		<!-- start content -->
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br>
+</p>
+<table cellspacing="0" cellpadding="0" style="clear: right; margin-bottom: .5em; float: right; padding: .5em 0 .8em 1.4em; background: none; width: auto;">
+<tbody><tr>
+<td> <table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://elinux.org/RPi_Easy_SD_Card_Setup#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#SD_card_setup"><span class="tocnumber">1</span> <span class="toctext">SD card setup</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Safest.2FLaziest_way"><span class="tocnumber">2</span> <span class="toctext">Safest/Laziest way</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Easiest_way"><span class="tocnumber">3</span> <span class="toctext">Easiest way</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Easy_way"><span class="tocnumber">4</span> <span class="toctext">Easy way</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_the_image_to_an_SD_card_on_Windows"><span class="tocnumber">4.1</span> <span class="toctext">Copying the image to an SD card on Windows</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_the_image_to_an_SD_card_on_Windows_if_first_option_isn.27t_successful"><span class="tocnumber">4.2</span> <span class="toctext">Copying the image to an SD card on Windows if first option isn't successful</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28Only_with_graphical_interface.29"><span class="tocnumber">4.3</span> <span class="toctext">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (Only with graphical interface)</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28mostly_graphical_interface.29"><span class="tocnumber">4.4</span> <span class="toctext">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (mostly graphical interface)</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28command_line.29"><span class="tocnumber">4.5</span> <span class="toctext">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (command line)</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Linux_.28command_line.29"><span class="tocnumber">4.6</span> <span class="toctext">Copying an image to the SD card in Linux (command line)</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Linux_.28graphical_interface.29"><span class="tocnumber">4.7</span> <span class="toctext">Copying an image to the SD card in Linux (graphical interface)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Manually_resizing_the_SD_card_partitions_.28Optional.29"><span class="tocnumber">5</span> <span class="toctext">Manually resizing the SD card partitions (Optional)</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Adding_a_data_partition_.28Optional.29"><span class="tocnumber">6</span> <span class="toctext">Adding a data partition (Optional)</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p>Back to the <a href="http://elinux.org/R-Pi_Hub" title="R-Pi Hub" class="mw-redirect">Hub</a>.
+</p><p><b>Getting Started:</b>
+</p><p><i><a href="http://elinux.org/RPi_Buying_Guide" title="RPi Buying Guide">Buying Guide</a> - for advice on buying the Raspberry Pi.</i>
+</p><p><i><strong class="selflink">Preload your Card</strong> - for information on how to make the SD card used to boot your Raspberry Pi.</i>
+</p><p><i><a href="http://elinux.org/RPi_Hardware_Basic_Setup" title="RPi Hardware Basic Setup">Basic Setup</a> - for help with buying other hardware and setting it up. </i>
+</p><p><i><a href="http://elinux.org/RPi_Advanced_Setup" title="RPi Advanced Setup">Advanced Setup</a> - for more extensive information on setting up.</i>
+</p><p><i><a href="http://elinux.org/RPi_Beginners" title="RPi Beginners">Beginners Guide</a> - you are up and running, now what can you do?</i>
+</p>
+<div style="clear:both;"></div>
+<h1> <span class="mw-headline" id="SD_card_setup">SD card setup</span></h1>
+<p>To boot the Raspberry Pi, you need an SD card installed with a bootloader and a suitable Operating System. Some Raspberry Pi kits will come with a ready-to-go card, but if you didn't receive one you will need to prepare your own:
+</p><p>Official images are available from <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a> and there is an overview of available distributions <a href="http://elinux.org/RPi_Distributions" title="RPi Distributions"> here</a>.
+</p><p>Warning! When you write the Raspberry Pi image to your SD card you will lose all data that was on the card.
+</p>
+<h1> <span class="mw-headline" id="Safest.2FLaziest_way">Safest/Laziest way</span></h1>
+<p>Buy a preloaded card from RS Components, Element14 or <a rel="nofollow" class="external text" href="http://thepihut.com/">The Pi Hut's Raspberry Pi Store</a>.
+</p>
+<h1> <span class="mw-headline" id="Easiest_way">Easiest way</span></h1>
+<ul><li> Use an installer program. The <a rel="nofollow" class="external text" href="http://zenit.senecac.on.ca/wiki/index.php/Raspberry_Pi_Fedora_Remix_Installation#SD_Card_Installation_Using_the_Installer">Fedora ARM Installer</a> will download and install Raspberry Pi Fedora Remix images, but it will also install other images if they are already downloaded and in uncompressed or .gz format.
+</li></ul>
+<ul><li> (<b>Mac</b>) The <a rel="nofollow" class="external text" href="http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/">RPi-sd card builder</a> utility is a app which will walk you through the process of installing to SD card. <b>With graphical interface</b>. Don't need to use commands in terminal.
+</li></ul>
+<ul><li> (<b>Mac</b>) The <a rel="nofollow" class="external text" href="https://github.com/exaviorn/RasPiWrite">RasPiWrite</a> utility is a python script which will walk you through the process of installing to SD card, it works with any Raspberry Pi compatible disk image, and can download one of the currently available distros if you don't have one.
+</li></ul>
+<ul><li> If your Pi is connected to the Internet, you can use the <a rel="nofollow" class="external text" href="http://www.berryterminal.com/doku.php/berryboot">BerryBoot installer</a> to let it download and install the operating system. This requires that you first use a normal Windows/Mac/Linux computer to download a small .zip file with the Berryboot system files and extract it to an empty SD card. Then you put the SD card in your Pi, and follow the on-screen prompts to complete the installation. An additional advantage is that Berryboot allows you to install more than one operating system on a single SD card. Also, it is not necessary to install any additional software on your normal Windows/Mac/Linux computer.
+</li></ul>
+<h1> <span class="mw-headline" id="Easy_way">Easy way</span></h1>
+<p>To write your SD card you start by downloading the SD image (the data you will write to the card). The best way to do this is using <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)">BitTorrent</a>. This generally results in a faster download as it is a highly distributed system (you will be downloading the data from users who have previously downloaded it).
+</p><p>This guide assumes you have downloaded the Debian "wheezy" image, with name 2012-10-28-wheezy-raspbian. Obviously, if you are downloading a different or newer version, use the name of the version you have downloaded.
+</p>
+<h2> <span class="mw-headline" id="Copying_the_image_to_an_SD_card_on_Windows">Copying the image to an SD card on Windows</span></h2>
+<ol><li> Download the  image from a mirror or torrent. The remainder of this assumes you are using the Raspbian “wheezy” download 2012-12-16-wheezy-raspbian.zip
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Extract the image file 2012-12-16-wheezy-raspbian.img from the downloaded .zip file.
+</li><li> Insert the SD card into your SD card reader and check what drive letter it was assigned. You can easily see the drive letter (for example G:) by looking in the left column of Windows Explorer. <b>If the card is not new, you should format it and make sure there is only one partition (FAT32 is a good choice); otherwise Win32DiskImager can make corrupt your SD card!</b>
+</li><li> Download the <a rel="nofollow" class="external text" href="https://launchpad.net/win32-image-writer">Win32DiskImager</a> utility.  The download links are on the right hand side of the page, you want the binary zip.
+</li><li> Extract the executable from the zip file and run the Win32DiskImager utility. <b>You should run the utility as Administrator!</b>
+</li><li> Select the 2012-12-16-wheezy-raspbian.img image file you extracted earlier
+</li><li> Select the drive letter of the SD card in the device box. <b>Be careful to select the correct drive; if you get the wrong one you can destroy your data on the computer's hard disk!</b>
+</li><li> Click Write and wait for the write to complete.
+</li><li> Exit the imager and eject the SD card.
+</li><li> Insert the card in the Raspberry Pi, power it on, and it should boot up. There is an option in the raspi-config script that comes up to automatically expand the partitions to use all of the SD card if you have used one larger than 4&nbsp;GB
+</li></ol>
+<p><i>In Windows the SD card will appear only to have a fairly small size - about 75&nbsp;Mbytes. This is because most of the card has a partition that is formatted for the Linux operating system that the Raspberry Pi uses and is not visible in Windows. If you are about to manually resize this Linux partition you should read <a href="http://elinux.org/RPi_Resize_Flash_Partitions" title="RPi Resize Flash Partitions">this</a> page as well.</i>
+</p>
+<h2> <span class="mw-headline" id="Copying_the_image_to_an_SD_card_on_Windows_if_first_option_isn.27t_successful">Copying the image to an SD card on Windows if first option isn't successful</span></h2>
+<p>I wasn't able to choose device in Win32DiskImager on my notebook so I found a different way to achieve the same thing on a Windows machine..
+</p>
+<ol><li> Download the image from a mirror or torrent
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Extract the image file 2012-10-28-wheezy-raspbian.img from 2012-10-28-wheezy-raspbian.zip
+</li><li> Insert the SD card into your SD card reader and check what drive letter it was assigned. You can easily see the drive letter (for example H:) by looking in the left column of Windows Explorer.
+</li><li> Download flashnul software from <a rel="nofollow" class="external free" href="http://shounen.ru/soft/flashnul/">http://shounen.ru/soft/flashnul/</a> here is <a rel="nofollow" class="external text" href="http://translate.google.com/translate?u=http%3A%2F%2Fshounen.ru%2Fsoft%2Fflashnul%2F&hl=en&ie=UTF8&sl=ru&tl=en">Translated version</a>
+<ul><li> Download the latest version. At the time of writing it was flashnul-1rc1. 
+</li><li> Extract the application from the archive. 
+</li><li> Click Start button &gt; All Programs &gt; Accessories &gt; Command Prompt, right click on it and Run as Administrator.
+</li><li> Run flashnul with argument "-p":
+</li></ul>
+</li></ol>
+<pre>C:/flashnul/flashnul.exe -p
+</pre>
+<ol><li><ul><li> Flashnul will tell you something like:
+</li></ul>
+</li></ol>
+<pre>Available physical drives:
+0       size = 250059350016 (232 Gb)
+1       size = 1990197248 (1898 Mb)
+
+Available logical disks:
+C:\
+D:\
+F:\
+G:\
+H:\
+
+Press ENTER to exit.
+
+</pre>
+<p><b>SDCARD number is on left! In my case it is number 1</b>
+</p>
+<ol><li><ul><li> Now we will use the Load argument:
+</li></ul>
+</li></ol>
+<pre>C:/flashnul/flashnul.exe 1 -L C:/2012-10-28-wheezy-raspbian.img
+</pre>
+<p>where <b>&lt;Path to flashnul directory&gt;</b>flashnul.exe <b>&lt;device number&gt;</b> -L <b>&lt;img file path&gt;</b> 
+</p>
+<ol><li><ul><li> Flashnul will give you a device summary and proceed caution, have a quick scan through the information to make sure you have selected the correct device, then type yes and press enter.
+</li><li> If you get a access denied error, try re-plugging the SD card. Also make sure to close all explorer windows or folders open for the device.
+</li><li> If you still get a access denied error, try substitute the device number with the drive letter followed by a colon. Eg: 
+</li></ul>
+</li></ol>
+<pre>C:/flashnul/flashnul.exe H: -L C:/debian6/debian6-19-04-2012.img
+</pre>
+<ul><li> If the device summary does not match Your card (the size is smaller, for example, 75&nbsp;MB), but you are sure, that the letter is correct - please continue and then try again with the device number.
+</li></ul>
+<h2> <span class="mw-headline" id="Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28Only_with_graphical_interface.29">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (Only with graphical interface)</span></h2>
+<p>The <a rel="nofollow" class="external text" href="http://alltheware.wordpress.com/2012/12/11/easiest-way-sd-card-setup/">RPi-sd card builder</a> utility is a app which will walk you through the process of installing to SD card.
+</p>
+<h2> <span class="mw-headline" id="Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28mostly_graphical_interface.29">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (mostly graphical interface)</span></h2>
+<ol><li> Download the image from a mirror or torrent
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Extract the image by double clicking on the download file
+</li><li> Connect the SD card reader with the SD card inside; note: must be formatted in FAT32!
+</li><li> From the <i>Apple () menu</i>, choose <i>About This Mac</i>, then click on <i>More info...</i>; if you are using Mac&nbsp;OS&nbsp;X 10.8.x Mountain Lion then click on <i>System report</i>.
+</li><li> Click on <i>USB</i> (or <i>Card Reader</i> if using an in-built SD card reader) then search for your SD card in the upper right section of the window; click it, then search for <i>BSD name</i> in the lower right section: must be something like <b>disk</b><i>n</i> where <i>n</i> is a number (for example, disk4). Note this number
+</li><li> Unmount the partition so that you will be allowed to overwrite the disk by opening Disk Utility and unmounting it (do not eject it, or you have to reconnect it)
+</li><li> From the Terminal run:
+<ul><li> <b>sudo dd if=<i>path_of_your_image.img</i> of=/dev/disk<i>n</i> bs=1m</b>
+</li><li> Remember to replace <i>n</i> with the number that you noted before!
+</li></ul>
+</li><li> Wait a LONG time!
+</li><li> You're done! Insert it in the Raspberry Pi, and have fun
+</li></ol>
+<h2> <span class="mw-headline" id="Copying_an_image_to_the_SD_card_in_Mac.C2.A0OS.C2.A0X_.28command_line.29">Copying an image to the SD card in Mac&nbsp;OS&nbsp;X (command line)</span></h2>
+<p><b>Note</b>: Some users have <a rel="nofollow" class="external text" href="http://www.raspberrypi.org/phpBB3/search.php?keywords=extra+files&t=8226&sf=msgonly">reported issues</a> with using Mac&nbsp;OS&nbsp;X to create SD cards.  
+</p>
+<ol><li>These commands and actions need to be performed from an account that has administrator privileges.
+</li><li> Download the image from a mirror or torrent
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Verify if the the hash key is the same (optional), in the terminal run: 
+<ul><li> <b>shasum ~/Downloads/2012-10-28-wheezy-raspbian.zip</b>
+</li></ul>
+</li><li> Extract the image:
+<ul><li> <b>unzip ~/Downloads/2012-10-28-wheezy-raspbian.zip</b>
+</li><li> <i>(or: just double click the zip, it will extract automatically)</i>
+</li></ul>
+</li><li> From the terminal run <b>df -h</b>
+</li><li> Connect the SD card reader with the SD card inside
+</li><li> Run <b>df -h</b> again and look for the new device that wasn't listed last time. Record the device name of the filesystem's partition, for example, <b>/dev/disk3s1</b>
+</li><li> Unmount the partition so that you will be allowed to overwrite the disk:
+<ul><li> <b>sudo diskutil unmount /dev/disk3s1</b>
+</li><li> <i>(or: open Disk Utility and unmount the partition of the SD card (do not eject it, or you have to reconnect it)</i>
+</li></ul>
+</li><li> Using the device name of the partition work out the raw device name for the entire disk, by omitting the final "s1" and replacing "disk" with "rdisk" (<b>this is very important:</b> you <b>will</b> lose all data on the hard drive on your computer if you get the wrong device name). Make sure the device name is the name of the whole SD card as described above, not just a partition of it (for example, rdisk3, not rdisk3s1. Similarly you might have another SD drive name/number like rdisk2 or rdisk4, etc. -- recheck by using the <b>df -h</b> command both before &amp; after you insert your SD card reader into your Mac if you have any doubts!):
+<ul><li> For example, <b>/dev/disk3s1</b> =&gt; <b>/dev/rdisk3</b>
+</li></ul>
+</li><li> In the terminal write the image to the card with this command, using the raw disk device name from above (read <b>carefully</b> the above step, to be sure you use the correct rdisk# here!):
+<ul><li> <b>sudo dd bs=1m if=~/Downloads/2012-10-28-wheezy-raspbian/2012-10-28-wheezy-raspbian.img of=/dev/rdisk3</b>
+</li><li> if the above command report an error(dd: bs: illegal numeric value), please change bs=1M to bs=1m
+</li><li> (note that dd will not feedback any information until there is an error or it is finished, information will show and disk will re-mount when complete. However if you are curious as to the progresss - ctrl-T (SIGINFO, the status argument of your tty) will display some en-route statistics).
+</li></ul>
+</li><li> After the dd command finishes, eject the card:
+<ul><li> <b>sudo diskutil eject /dev/rdisk3</b>
+</li><li> <i>(or: open Disk Utility and eject the SD card)</i>
+</li></ul>
+</li><li> Insert it in the Raspberry Pi, and have fun
+</li></ol>
+<h2> <span class="mw-headline" id="Copying_an_image_to_the_SD_card_in_Linux_.28command_line.29">Copying an image to the SD card in Linux (command line)</span></h2>
+<p>Please note that the use of the "dd" tool can overwrite any partition of your machine. If you specify the wrong device in the instructions below you could delete your primary Linux partition.  Please be careful.
+</p>
+<ol><li> Download the zip file containing the image from a mirror or torrent
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Verify if the the hash key of the zip file is the same as shown on the downloads page (optional). Assuming that you put the zip file in your home directory (~/), in the terminal run: 
+<ul><li> <b>sha1sum ~/2012-10-28-wheezy-raspbian.zip</b>
+</li><li> This will print out a long hex number which should match the "SHA-1" line for the SD image you have downloaded
+</li></ul>
+</li><li> Extract the image, with
+<ul><li> <b>unzip ~/2012-10-28-wheezy-raspbian.zip</b>
+</li></ul>
+</li><li> Run <b>df -h</b> to see what devices are currently mounted
+</li><li> If your computer has a slot for SD cards, insert the card. If not, insert the card into an SD card reader, then connect the reader to your computer.
+</li><li> Run <b>df -h</b> again. The device that wasn't there last time is your SD card. The left column gives the device name of your SD card. It will be listed as something like "/dev/mmcblk0p1" or "/dev/sdd1". The last part ("p1" or "1" respectively) is the partition number, but you want to write to the whole SD card, not just one partition, so you need to remove that part from the name (getting for example "/dev/mmcblk0" or "/dev/sdd") as the device for the whole SD card. Note that the SD card can show up more than once in the output of df: in fact it will if you have previously written a Raspberry Pi image to this SD card, because the Raspberry Pi SD images have more than one partition. 
+</li><li> Now that you've noted what the device name is, you need to unmount it so that files can't be read or written to the SD card while you are copying over the SD image. So run the command below, replacing "/dev/sdd1" with whatever your SD card's device name is (including the partition number)
+<ul><li> <b>umount /dev/sdd1</b>
+</li><li> If your SD card shows up more than once in the output of df due to having multiple partitions on the SD card, you should unmount all of these partitions.
+</li></ul>
+</li><li> In the terminal write the image to the card with this command, making sure you replace the input file <b>if=</b> argument with the path to your .img file, and the "/dev/sdd" in the output file <b>of=</b> argument with the right device name (<b>this is very important:</b> you <b>will</b> lose all data on the hard drive on your computer if you get the wrong device name). Make sure the device name is the name of the whole SD card as described above, not just a partition of it (for example, sdd, not sdds1 or sddp1, or mmcblk0 not mmcblk0p1)
+<ul><li> <b>dd bs=4M if=~/2012-10-28-wheezy-raspbian.img of=/dev/sdd</b>
+<ul><li> Please note that block size set to 4M will work most of the time, if not, please try 1M, although 1M will take considerably longer.
+</li></ul>
+</li><li> Note that if you are not logged in as root you will need to prefix this with <b>sudo </b>
+</li><li> The dd command does not give any information of its progress and so may appear to have frozen. It could take more than five minutes to finish writing to the card. If your card reader has an LED it may blink during the write process. To forcibly stop the copy operation you can run <b>pkill -USR1 -n -x dd</b> in another terminal (prefixed with <b>sudo</b> if you are not logged in as root).
+</li></ul>
+</li><li> Instead of dd you can use dcfldd; it will give a progress report about how much has been written.
+</li><li> You can check what's written to the SD card by dd-ing from the card back to your harddisk to another image, and then running diff (or md5sum) on those two images. There should be no difference.
+</li><li> As root run the command <b>sync</b> or if a normal user run <b>sudo sync</b> (this will ensure the write cache is flushed and that it is safe to unmount your SD card)
+</li><li> Remove SD card from card reader, insert it in the Raspberry Pi, and have fun
+</li></ol>
+<h2> <span class="mw-headline" id="Copying_an_image_to_the_SD_card_in_Linux_.28graphical_interface.29">Copying an image to the SD card in Linux (graphical interface)</span></h2>
+<p>If you are using Ubuntu and hesitate to use the terminal, you can use the ImageWriter tool (nice graphical user interface) to write the .img file to the SD card.
+</p>
+<ol><li> Download the zip file containing the image from a mirror or torrent
+<ul><li> <a rel="nofollow" class="external free" href="http://www.raspberrypi.org/downloads">http://www.raspberrypi.org/downloads</a>
+</li></ul>
+</li><li> Right click the zip file and select "Extract here"
+<ul><li> <b>ATTENTION</b>: As of this writing (15 June 2012), there is a bug in the ImageWriter program that causes it to fail if the filename of the image file or its path (i.e. all the names of any parent folders that you extract the image file into) contain any space characters. Before going any further, ensure that neither the file name of the image you're using or the path contain any spaces (or other odd characters, for that matter). A bug has been opened for this issue: <a rel="nofollow" class="external free" href="https://bugs.launchpad.net/usb-imagewriter/+bug/1013834">https://bugs.launchpad.net/usb-imagewriter/+bug/1013834</a> Once the issue is fixed, edit this page to advise people to use an updated/patched version of ImageWriter.
+</li></ul>
+</li><li> Insert the SD card into your computer or connect the SD card reader with the SD card inside
+</li><li> Install the ImageWriter tool from the Ubuntu Software Center
+</li><li> Launch the ImageWriter tool (it needs your administrative password)
+</li><li> Select the image file (example 2012-10-28-wheezy-raspbian.img) to be written to the SD card (note: because you started ImageWriter as administrator the starting point when selecting the image file is the administrator's home folder so you need to change to your own home folder to select the image file)
+</li><li> Select the target device to write the image to (your device will be something like "/dev/mmcblk0" or "/dev/sdc")
+</li><li> Click the "Write to device" button
+</li><li> Wait for the process to finish and then insert the SD card in the Raspberry Pi
+</li></ol>
+<h1> <span class="mw-headline" id="Manually_resizing_the_SD_card_partitions_.28Optional.29">Manually resizing the SD card partitions (Optional)</span></h1>
+<p>The SD card image is sized for a 2&nbsp;GB card. So, if you are using an SD card with a greater capacity, you may find that only 2&nbsp;GB is available. If this is the case, then to gain more free space, the partitions must be resized.  The Fedora Remix and the BerryBoot will automatically resize the partitions on the mounted card during the first boot. The Debian and Rasbian images won't, so you'll have to do it manually. The easiest way is to use the tool <a href="http://elinux.org/RPi_raspi-config" title="RPi raspi-config">RPi raspi-config</a> selecting menu item EXPAND-ROOTFS - Expand Root Partition to Fill SD Card. If you want to resize the SD card whilst the SD card is not mounted in the Pi, look <a href="http://elinux.org/RPi_Resize_Flash_Partitions" title="RPi Resize Flash Partitions">here</a> for instructions.
+</p>
+<h1> <span class="mw-headline" id="Adding_a_data_partition_.28Optional.29">Adding a data partition (Optional)</span></h1>
+<p>If you would rather not resize the partition on another machine as described above, either because you do not have another working Linux machine or you wish to keep your data on another partition to your operating system, you can instead create a new data partition and have that mount automatically at boot.
+</p>
+<ul><li>First you need to become root and install parted (I did all of this from the boot command prompt, although if you feel safer in a GUI, you can do all of this in a terminal window):
+</li></ul>
+<pre>sudo su -
+apt-get install parted
+</pre>
+<ul><li>Then you need to run parted on your SD card, mine is /dev/mmcblk0, ymmv:
+</li></ul>
+<pre>parted /dev/mmcblk0
+</pre>
+<ul><li>Once running, set the display units to something usable and then print your partition table
+</li></ul>
+<pre>unit chs
+print
+</pre>
+<ul><li>You should see something like this:
+</li></ul>
+<pre>Model: SD SD08G (sd/mmc)
+Disk /dev/mmcblk0: 121279,3,31
+Sector size (logical/physical): 512B/512B
+BIOS cylinder,head,sector geometry: 121280,4,32.  Each cylinder is 65.5kB.
+Partition Table: msdos
+Number  Start      End         Type     File system     Flags
+ 1      16,0,0     1215,3,31   primary  fat32           lba
+ 2      1232,0,0   26671,3,31  primary  ext4
+ 3      26688,0,0  29743,3,31  primary  linux-swap(v1)
+</pre>
+<ul><li>Now you need to create your data partition - you need to choose one more than the end of partition 3 with ,0,0 as your start and use the number from the line that starts with Disk as your end:
+</li></ul>
+<pre>mkpart primary 29744,0,0 121279,3,31
+print
+</pre>
+<ul><li>That should show your new partition:
+</li></ul>
+<pre>Number  Start      End          Type      File system     Flags
+ 1      16,0,0     1215,3,31    primary   fat32           lba
+ 2      1232,0,0   26671,3,31   primary   ext4
+ 3      26688,0,0  29743,3,31   primary   linux-swap(v1)
+ 4      29744,0,0  121279,3,31  primary
+</pre>
+<ul><li>Now quit and format the partition (again, ymmv with the specific device name, try ls /dev for some clues), and then label it:
+</li></ul>
+<pre>quit
+mkfs.ext4 /dev/mmcblk0p4
+e2label /dev/mmcblk0p4 data
+</pre>
+<ul><li>Now we need to make sure that the partition is mounted automatically when the system boots (maybe don't use vi if you never have before, try nano):
+</li></ul>
+<pre>vi /etc/fstab
+</pre>
+<ul><li>Enter a line exactly like this at the end of the file and save and quit your text editor:
+</li></ul>
+<pre>/dev/mmcblk0p4  /data           ext4    defaults        1       2
+</pre>
+<ul><li>Create the mount point:
+</li></ul>
+<pre>mkdir /data
+</pre>
+<ul><li>Now mount the partition:
+</li></ul>
+<pre>mount /data
+cd /data
+ls
+</pre>
+<p>Your new partition has been created!
+</p>
+<h1> <span class="mw-headline" id="References">References</span></h1>
+<p><br>
+
+</p>
+<table class="navbox" cellspacing="0" style=";width:100%">
+
+<tbody><tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks" style="width:100%;background:transparent;color:inherit;;">
+
+<tbody><tr>
+<th style="background:#00CC00;;" colspan="3" class="navbox-title"> <div style="float:left; width:6em;text-align:left;"> <span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="http://elinux.org/Template:Raspberry_Pi" title="Template:Raspberry Pi"><span style="background:#00CC00;;;border:none;" title="View this template">v</span></a><span style="background:#00CC00;;;border:none;"> <b>·</b> </span><a href="http://elinux.org/Template_talk:Raspberry_Pi" title="Template talk:Raspberry Pi"><span style="background:#00CC00;;;border:none;" title="Discuss this template">d</span></a><span style="background:#00CC00;;;border:none;"> <b>·</b> </span><a rel="nofollow" class="external text" href="http://elinux.org/index.php?title=Template:Raspberry_Pi&action=edit"><span style="background:#00CC00;;;border:none;" title="Edit this template">e</span></a></span></span>
+ </div><div style="float:right;width:6em;">&nbsp;</div> <span style="font-size:110%;"> <a href="http://elinux.org/R-Pi_Hub" title="R-Pi Hub" class="mw-redirect"><span style="color:#FFFFFF">Raspberry Pi</span></a></span>
+</th></tr>
+<tr style="height:2px;">
+<td>
+</td></tr>
+<tr>
+<td class="navbox-group" style="background:#00CC00;;background:#AA0033;"> <b><span style="color:#FFFFFF">Startup</span></b>
+</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd; width:100%;padding:0px;background:#FFE0FF;;;" class="navbox-list navbox-odd"> <div style="padding:0em 0.25em"><a href="http://elinux.org/RPi_Model_Wizard" title="RPi Model Wizard">Model Wizard</a> - <a href="http://elinux.org/RPi_Buying_Guide" title="RPi Buying Guide">Buying Guide</a> - <strong class="selflink">SD Card Setup</strong> - <a href="http://elinux.org/RPi_Hardware_Basic_Setup" title="RPi Hardware Basic Setup">Basic Setup</a> - <a href="http://elinux.org/RPi_Advanced_Setup" title="RPi Advanced Setup">Advanced Setup</a> - <a href="http://elinux.org/RPi_Beginners" title="RPi Beginners">Beginners Guide</a> - <a href="http://elinux.org/R-Pi_Troubleshooting" title="R-Pi Troubleshooting">Troubleshooting</a></div>
+</td>
+<td style="width:0%;padding:0px 0px 0px 2px;" rowspan="9"> <a href="http://elinux.org/File:RpiFront.jpg" class="image"><img alt="RpiFront.jpg" src="./RPi Easy SD Card Setup - eLinux.org_files/167px-RpiFront.jpg" width="167" height="119"></a>
+</td></tr>
+<tr style="height:2px">
+<td>
+</td></tr>
+<tr>
+<td class="navbox-group" style="background:#00CC00;;background:#AA0033;"> <b><span style="color:#FFFFFF">Hardware</span></b>
+</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd; width:100%;padding:0px;background:#FFE0FF;;;" class="navbox-list navbox-even"> <div style="padding:0em 0.25em"><a href="http://elinux.org/RPi_Hardware" title="RPi Hardware">Hardware</a> - <a href="http://elinux.org/RPi_HardwareHistory" title="RPi HardwareHistory">Hardware History</a> - <a href="http://elinux.org/RPi_Low-level_peripherals" title="RPi Low-level peripherals">Low-level peripherals</a> - <a href="http://elinux.org/RPi_Expansion_Boards" title="RPi Expansion Boards">Expansion Boards</a></div>
+</td></tr>
+<tr style="height:2px">
+<td>
+</td></tr>
+<tr>
+<td class="navbox-group" style="background:#00CC00;;background:#AA0033;"> <b><span style="color:#FFFFFF">Peripherals</span></b>
+</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd; width:100%;padding:0px;background:#FFE0FF;;;" class="navbox-list navbox-odd"> <div style="padding:0em 0.25em"><a href="http://elinux.org/RPi_Screens" title="RPi Screens">Screens</a> - <a href="http://elinux.org/RPi_Cases" title="RPi Cases">Cases</a> - <a href="http://elinux.org/RPi_VerifiedPeripherals" title="RPi VerifiedPeripherals">Other Peripherals</a></div>
+</td></tr>
+<tr style="height:2px">
+<td>
+</td></tr>
+<tr>
+<td class="navbox-group" style="background:#00CC00;;background:#AA0033;"> <b><span style="color:#FFFFFF">Software</span></b>
+</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd; width:100%;padding:0px;background:#FFE0FF;;;" class="navbox-list navbox-even"> <div style="padding:0em 0.25em"><a href="http://elinux.org/RPi_Software" title="RPi Software">Software</a> - <a href="http://elinux.org/RPi_Distributions" title="RPi Distributions">Distributions</a> - <a href="http://elinux.org/RPi_Kernel_Compilation" title="RPi Kernel Compilation">Kernel</a> - <a href="http://elinux.org/RPi_Performance" title="RPi Performance">Performance</a> -  <a href="http://elinux.org/RPi_Programming" title="RPi Programming">Programming</a> - <a href="http://elinux.org/RPi_VideoCore_APIs" title="RPi VideoCore APIs">VideoCore APIs</a></div>
+</td></tr>
+<tr style="height:2px">
+<td>
+</td></tr>
+<tr>
+<td class="navbox-group" style="background:#00CC00;;background:#AA0033;"> <b><span style="color:#FFFFFF">Projects</span></b>
+</td>
+<td style="text-align:left;border-left:2px solid #fdfdfd; width:100%;padding:0px;background:#FFE0FF;;;" class="navbox-list navbox-odd"> <div style="padding:0em 0.25em"><a href="http://elinux.org/RPi_Tutorials" title="RPi Tutorials">Tutorials</a> - <a href="http://elinux.org/RPi_Guides" title="RPi Guides">Guides</a> - <a href="http://elinux.org/RPi_Projects" title="RPi Projects">Projects</a> - <a href="http://elinux.org/RPi_Tasks" title="RPi Tasks">Tasks</a> - <a href="http://elinux.org/RPi_DatasheetCategories" title="RPi DatasheetCategories">DataSheets</a> - <a href="http://elinux.org/RPi_Education" title="RPi Education">Education</a> - <a href="http://elinux.org/RPi_Community" title="RPi Community">Communities</a></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 537/1000000
+Preprocessor generated node count: 7465/1000000
+Post-expand include size: 17694/2097152 bytes
+Template argument size: 4924/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key elinux:pcache:idhash:17516-0!*!0!!en!2!* and timestamp 20121224230955 -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&oldid=204440">http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&amp;oldid=204440</a>"</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://elinux.org/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://elinux.org/Category:RaspberryPi" title="Category:RaspberryPi">RaspberryPi</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="./RPi Easy SD Card Setup - eLinux.org_files/RPi Easy SD Card Setup - eLinux.org.html" primary="1" context="subject" title="View the content page [alt-c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="http://elinux.org/Talk:RPi_Easy_SD_Card_Setup" primary="1" context="talk" title="Discussion about the content page [alt-t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&action=edit" primary="1" title="This page is protected.
+You can view its source [alt-e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&action=history" rel="archives" title="Past revisions of this page [alt-h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://elinux.org/index.php?title=Special:UserLogin&returnto=RPi+Easy+SD+Card+Setup" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="http://elinux.org/Main_Page" style="background-image: url(/images/3/34/Final_penguin_only_color.jpg);" title="Visit the main page"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://elinux.org/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main Page</a></li>
+				<li id="n-portal"><a href="http://elinux.org/eLinux.org:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="http://elinux.org/eLinux.org:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://elinux.org/Special:RecentChanges" title="A list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-help"><a href="http://elinux.org/Help:Contents" title="The place to find out">Help</a></li>
+				<li id="n-Volunteering"><a href="http://elinux.org/Sitesupport-url">Volunteering</a></li>
+				<li id="n-Popular-Pages"><a href="http://elinux.org/Special:PopularPages">Popular Pages</a></li>
+				<li id="n-Who.27s-Online"><a href="http://elinux.org/Special:WhosOnline">Who's Online</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://elinux.org/index.php" id="searchform">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="search" name="search" title="Search eLinux.org [alt-f]" accesskey="f" id="searchInput" autocomplete="off" placeholder="Search">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://elinux.org/Special:WhatLinksHere/RPi_Easy_SD_Card_Setup" title="A list of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://elinux.org/Special:RecentChangesLinked/RPi_Easy_SD_Card_Setup" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+				<li id="t-specialpages"><a href="http://elinux.org/Special:SpecialPages" title="A list of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&printable=yes" rel="alternate" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li>
+				<li id="t-permalink"><a href="http://elinux.org/index.php?title=RPi_Easy_SD_Card_Setup&oldid=204440" title="Permanent link to this revision of the page">Permanent link</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="./RPi Easy SD Card Setup - eLinux.org_files/88x31.png" alt="a Creative Commons Attribution-ShareAlike 3.0 Unported License" width="88" height="31"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="./RPi Easy SD Card Setup - eLinux.org_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 24 December 2012, at 23:09.</li>
+		<li id="viewcount">This page has been accessed 891,766 times.</li>
+		<li id="copyright">Content is available under <a class="external" href="http://creativecommons.org/licenses/by-sa/3.0/">a Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+		<li id="privacy"><a href="http://elinux.org/eLinux.org:Privacy_policy" title="eLinux.org:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="http://elinux.org/eLinux.org:About" title="eLinux.org:About">About eLinux.org</a></li>
+		<li id="disclaimer"><a href="http://elinux.org/eLinux.org:General_disclaimer" title="eLinux.org:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script><script src="./RPi Easy SD Card Setup - eLinux.org_files/load(3).php" type="text/javascript"></script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./RPi Easy SD Card Setup - eLinux.org_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-119847");
+pageTracker._trackPageview();
+</script><!-- Served in 0.332 secs. --><div style="display: none; font-size: 11px; " class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

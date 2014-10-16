@@ -1,0 +1,3 @@
+http://elinux.org/RPi_Easy_SD_Card_Setup
+
+http://www.raspberrypi.org/downloads
