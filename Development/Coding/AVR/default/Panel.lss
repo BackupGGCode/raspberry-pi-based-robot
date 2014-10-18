@@ -1,0 +1,1027 @@
+
+Panel.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000004ac  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000060  00800060  000004ac  00000540  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000003  008000c0  008000c0  000005a0  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  000005a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000150  00000000  00000000  000005c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000004f2  00000000  00000000  00000710  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001eb  00000000  00000000  00000c02  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000057d  00000000  00000000  00000ded  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000170  00000000  00000000  0000136c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001b9  00000000  00000000  000014dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000023c  00000000  00000000  00001695  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	04 c2       	rjmp	.+1032   	; 0x420 <__vector_11>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ec ea       	ldi	r30, 0xAC	; 172
+  3a:	f4 e0       	ldi	r31, 0x04	; 4
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a0 3c       	cpi	r26, 0xC0	; 192
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+
+00000048 <__do_clear_bss>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 ec       	ldi	r26, 0xC0	; 192
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a3 3c       	cpi	r26, 0xC3	; 195
+  54:	b1 07       	cpc	r27, r17
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	e0 d1       	rcall	.+960    	; 0x41a <main>
+  5a:	26 c2       	rjmp	.+1100   	; 0x4a8 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <be_b>:
+ 
+unsigned char _duty1=0,_duty2=0;         /* motor 1 es 2 sebesseget (PWM kitolsesi tenyezot) allito valtozo */
+char pwm_ini=0;
+ 
+char be_b(char _bit)     // be_b(x) fuggveny definialasa PORTB-re
+{
+  5e:	48 2f       	mov	r20, r24
+          DDRB &= ~(1<<_bit);     // PORTB x. lab bemenet
+  60:	37 b3       	in	r19, 0x17	; 23
+  62:	81 e0       	ldi	r24, 0x01	; 1
+  64:	90 e0       	ldi	r25, 0x00	; 0
+  66:	04 2e       	mov	r0, r20
+  68:	02 c0       	rjmp	.+4      	; 0x6e <be_b+0x10>
+  6a:	88 0f       	add	r24, r24
+  6c:	99 1f       	adc	r25, r25
+  6e:	0a 94       	dec	r0
+  70:	e2 f7       	brpl	.-8      	; 0x6a <be_b+0xc>
+  72:	28 2f       	mov	r18, r24
+  74:	20 95       	com	r18
+  76:	23 23       	and	r18, r19
+  78:	27 bb       	out	0x17, r18	; 23
+          return ((PINB & _BV(_bit))>>_bit);     /* PORTB x. lab ertekenek beolvasasa (0 vagy 1)*/
+  7a:	26 b3       	in	r18, 0x16	; 22
+  7c:	30 e0       	ldi	r19, 0x00	; 0
+  7e:	82 23       	and	r24, r18
+  80:	93 23       	and	r25, r19
+  82:	02 c0       	rjmp	.+4      	; 0x88 <be_b+0x2a>
+  84:	95 95       	asr	r25
+  86:	87 95       	ror	r24
+  88:	4a 95       	dec	r20
+  8a:	e2 f7       	brpl	.-8      	; 0x84 <be_b+0x26>
+}
+  8c:	08 95       	ret
+
+0000008e <be_c>:
+ 
+char be_c(char _bit)     // ugyan az mint az elozo fuggveny, de PORTC-re
+{
+  8e:	48 2f       	mov	r20, r24
+          DDRC &= ~(1<<_bit);
+  90:	34 b3       	in	r19, 0x14	; 20
+  92:	81 e0       	ldi	r24, 0x01	; 1
+  94:	90 e0       	ldi	r25, 0x00	; 0
+  96:	04 2e       	mov	r0, r20
+  98:	02 c0       	rjmp	.+4      	; 0x9e <be_c+0x10>
+  9a:	88 0f       	add	r24, r24
+  9c:	99 1f       	adc	r25, r25
+  9e:	0a 94       	dec	r0
+  a0:	e2 f7       	brpl	.-8      	; 0x9a <be_c+0xc>
+  a2:	28 2f       	mov	r18, r24
+  a4:	20 95       	com	r18
+  a6:	23 23       	and	r18, r19
+  a8:	24 bb       	out	0x14, r18	; 20
+          return ((PINC & _BV(_bit))>>_bit);
+  aa:	23 b3       	in	r18, 0x13	; 19
+  ac:	30 e0       	ldi	r19, 0x00	; 0
+  ae:	82 23       	and	r24, r18
+  b0:	93 23       	and	r25, r19
+  b2:	02 c0       	rjmp	.+4      	; 0xb8 <be_c+0x2a>
+  b4:	95 95       	asr	r25
+  b6:	87 95       	ror	r24
+  b8:	4a 95       	dec	r20
+  ba:	e2 f7       	brpl	.-8      	; 0xb4 <be_c+0x26>
+}
+  bc:	08 95       	ret
+
+000000be <be_d>:
+ 
+char be_d(char _bit)     // be_d(x) fuggveny definialasa PORTD-re
+{
+  be:	48 2f       	mov	r20, r24
+            DDRD &= ~(1<<_bit);     // PORTB x. lab bemenet
+  c0:	31 b3       	in	r19, 0x11	; 17
+  c2:	81 e0       	ldi	r24, 0x01	; 1
+  c4:	90 e0       	ldi	r25, 0x00	; 0
+  c6:	04 2e       	mov	r0, r20
+  c8:	02 c0       	rjmp	.+4      	; 0xce <be_d+0x10>
+  ca:	88 0f       	add	r24, r24
+  cc:	99 1f       	adc	r25, r25
+  ce:	0a 94       	dec	r0
+  d0:	e2 f7       	brpl	.-8      	; 0xca <be_d+0xc>
+  d2:	28 2f       	mov	r18, r24
+  d4:	20 95       	com	r18
+  d6:	23 23       	and	r18, r19
+  d8:	21 bb       	out	0x11, r18	; 17
+            return ((PIND & _BV(_bit))>>_bit);
+  da:	20 b3       	in	r18, 0x10	; 16
+  dc:	30 e0       	ldi	r19, 0x00	; 0
+  de:	82 23       	and	r24, r18
+  e0:	93 23       	and	r25, r19
+  e2:	02 c0       	rjmp	.+4      	; 0xe8 <be_d+0x2a>
+  e4:	95 95       	asr	r25
+  e6:	87 95       	ror	r24
+  e8:	4a 95       	dec	r20
+  ea:	e2 f7       	brpl	.-8      	; 0xe4 <be_d+0x26>
+}
+  ec:	08 95       	ret
+
+000000ee <ki_b>:
+ 
+void ki_b(char _bit,char _dat)     /* ki_b(x,y) fuggveny definialasa PORTB-re. PORTB x. labara 0V-ot vagy 5V-ot adunk, attol fuggoen hogy y erteke 0 vagy 1 */
+{
+          DDRB |= _BV(_bit);     // PORTB x. lab kimenet
+  ee:	97 b3       	in	r25, 0x17	; 23
+  f0:	21 e0       	ldi	r18, 0x01	; 1
+  f2:	30 e0       	ldi	r19, 0x00	; 0
+  f4:	02 c0       	rjmp	.+4      	; 0xfa <ki_b+0xc>
+  f6:	22 0f       	add	r18, r18
+  f8:	33 1f       	adc	r19, r19
+  fa:	8a 95       	dec	r24
+  fc:	e2 f7       	brpl	.-8      	; 0xf6 <ki_b+0x8>
+  fe:	92 2b       	or	r25, r18
+ 100:	97 bb       	out	0x17, r25	; 23
+            if(_dat)
+ 102:	66 23       	and	r22, r22
+ 104:	19 f0       	breq	.+6      	; 0x10c <ki_b+0x1e>
+                 PORTB |= _BV(_bit);     // ha y=1, az x. labra 5V-ot ad
+ 106:	88 b3       	in	r24, 0x18	; 24
+ 108:	28 2b       	or	r18, r24
+ 10a:	03 c0       	rjmp	.+6      	; 0x112 <ki_b+0x24>
+            else
+                PORTB &= ~_BV(_bit);     // ha y=0, az x. labra 5V-ot ad
+ 10c:	88 b3       	in	r24, 0x18	; 24
+ 10e:	20 95       	com	r18
+ 110:	28 23       	and	r18, r24
+ 112:	28 bb       	out	0x18, r18	; 24
+ 114:	08 95       	ret
+
+00000116 <ki_c>:
+}
+ 
+void ki_c(char _bit,char _dat)     /* ki_c(x,y) fuggveny definialasa PORTC-re */
+{
+          DDRC |= _BV(_bit);
+ 116:	94 b3       	in	r25, 0x14	; 20
+ 118:	21 e0       	ldi	r18, 0x01	; 1
+ 11a:	30 e0       	ldi	r19, 0x00	; 0
+ 11c:	02 c0       	rjmp	.+4      	; 0x122 <ki_c+0xc>
+ 11e:	22 0f       	add	r18, r18
+ 120:	33 1f       	adc	r19, r19
+ 122:	8a 95       	dec	r24
+ 124:	e2 f7       	brpl	.-8      	; 0x11e <ki_c+0x8>
+ 126:	92 2b       	or	r25, r18
+ 128:	94 bb       	out	0x14, r25	; 20
+          if(_dat)
+ 12a:	66 23       	and	r22, r22
+ 12c:	19 f0       	breq	.+6      	; 0x134 <ki_c+0x1e>
+               PORTC |= _BV(_bit);
+ 12e:	85 b3       	in	r24, 0x15	; 21
+ 130:	28 2b       	or	r18, r24
+ 132:	03 c0       	rjmp	.+6      	; 0x13a <ki_c+0x24>
+          else
+              PORTC &= ~_BV(_bit);
+ 134:	85 b3       	in	r24, 0x15	; 21
+ 136:	20 95       	com	r18
+ 138:	28 23       	and	r18, r24
+ 13a:	25 bb       	out	0x15, r18	; 21
+ 13c:	08 95       	ret
+
+0000013e <ki_d>:
+}
+ 
+void ki_d(char _bit,char _dat)     /* ki_d(x,y) fuggveny definialasa PORTD-re */
+{
+          DDRD |= _BV(_bit);
+ 13e:	91 b3       	in	r25, 0x11	; 17
+ 140:	21 e0       	ldi	r18, 0x01	; 1
+ 142:	30 e0       	ldi	r19, 0x00	; 0
+ 144:	02 c0       	rjmp	.+4      	; 0x14a <ki_d+0xc>
+ 146:	22 0f       	add	r18, r18
+ 148:	33 1f       	adc	r19, r19
+ 14a:	8a 95       	dec	r24
+ 14c:	e2 f7       	brpl	.-8      	; 0x146 <ki_d+0x8>
+ 14e:	92 2b       	or	r25, r18
+ 150:	91 bb       	out	0x11, r25	; 17
+            if(_dat)
+ 152:	66 23       	and	r22, r22
+ 154:	19 f0       	breq	.+6      	; 0x15c <ki_d+0x1e>
+                PORTD |= _BV(_bit);
+ 156:	82 b3       	in	r24, 0x12	; 18
+ 158:	28 2b       	or	r18, r24
+ 15a:	03 c0       	rjmp	.+6      	; 0x162 <ki_d+0x24>
+            else
+                PORTD &= ~_BV(_bit);
+ 15c:	82 b3       	in	r24, 0x12	; 18
+ 15e:	20 95       	com	r18
+ 160:	28 23       	and	r18, r24
+ 162:	22 bb       	out	0x12, r18	; 18
+ 164:	08 95       	ret
+
+00000166 <pwm_init>:
+}
+ 
+void pwm_init()         //Timer1 PWM beallitasa
+{
+             TCCR1A |= (1<<WGM10);     //8 bites fazishelyes PWM
+ 166:	8f b5       	in	r24, 0x2f	; 47
+ 168:	81 60       	ori	r24, 0x01	; 1
+ 16a:	8f bd       	out	0x2f, r24	; 47
+             TCCR1B |= (1<<CS10);         //elooszto = FCPU/1
+ 16c:	8e b5       	in	r24, 0x2e	; 46
+ 16e:	81 60       	ori	r24, 0x01	; 1
+ 170:	8e bd       	out	0x2e, r24	; 46
+}
+ 172:	08 95       	ret
+
+00000174 <pwm>:
+ 
+void pwm(char _channel,unsigned int _duty)     /* pwm(a,b) fuggveny definialasa. a = 1 vagy 2 attol fuggoen hogy melyik motor, b = 0 &ndash; 100% (PWM kitoltesi tenyezo) */
+{
+ 174:	48 2f       	mov	r20, r24
+          _duty = (_duty*255)/100;         /*motor sebesseg konvertalasa 0-100%-rol 0-255-re */
+ 176:	8f ef       	ldi	r24, 0xFF	; 255
+ 178:	90 e0       	ldi	r25, 0x00	; 0
+ 17a:	9c 01       	movw	r18, r24
+ 17c:	62 9f       	mul	r22, r18
+ 17e:	c0 01       	movw	r24, r0
+ 180:	63 9f       	mul	r22, r19
+ 182:	90 0d       	add	r25, r0
+ 184:	72 9f       	mul	r23, r18
+ 186:	90 0d       	add	r25, r0
+ 188:	11 24       	eor	r1, r1
+ 18a:	64 e6       	ldi	r22, 0x64	; 100
+ 18c:	70 e0       	ldi	r23, 0x00	; 0
+ 18e:	78 d1       	rcall	.+752    	; 0x480 <__udivmodhi4>
+ 190:	9b 01       	movw	r18, r22
+          if(pwm_ini==0)
+ 192:	80 91 c2 00 	lds	r24, 0x00C2
+ 196:	88 23       	and	r24, r24
+ 198:	49 f4       	brne	.+18     	; 0x1ac <pwm+0x38>
+                PORTD &= ~_BV(_bit);
+}
+ 
+void pwm_init()         //Timer1 PWM beallitasa
+{
+             TCCR1A |= (1<<WGM10);     //8 bites fazishelyes PWM
+ 19a:	8f b5       	in	r24, 0x2f	; 47
+ 19c:	81 60       	ori	r24, 0x01	; 1
+ 19e:	8f bd       	out	0x2f, r24	; 47
+             TCCR1B |= (1<<CS10);         //elooszto = FCPU/1
+ 1a0:	8e b5       	in	r24, 0x2e	; 46
+ 1a2:	81 60       	ori	r24, 0x01	; 1
+ 1a4:	8e bd       	out	0x2e, r24	; 46
+{
+          _duty = (_duty*255)/100;         /*motor sebesseg konvertalasa 0-100%-rol 0-255-re */
+          if(pwm_ini==0)
+             {
+                pwm_init();
+                pwm_ini=1;
+ 1a6:	81 e0       	ldi	r24, 0x01	; 1
+ 1a8:	80 93 c2 00 	sts	0x00C2, r24
+             }
+          if(_channel==1)
+ 1ac:	41 30       	cpi	r20, 0x01	; 1
+ 1ae:	49 f4       	brne	.+18     	; 0x1c2 <pwm+0x4e>
+            {
+                TCCR1A |= _BV(COM1A1);     //nem-invertalt PWM, A csatorna
+ 1b0:	8f b5       	in	r24, 0x2f	; 47
+ 1b2:	80 68       	ori	r24, 0x80	; 128
+ 1b4:	8f bd       	out	0x2f, r24	; 47
+                DDRB |= _BV(PB1);     // PORTB PB1 lab kimenet
+ 1b6:	b9 9a       	sbi	0x17, 1	; 23
+                OCR1A = _duty;         // motor1 pwm kitoltesi tenyezo
+ 1b8:	3b bd       	out	0x2b, r19	; 43
+ 1ba:	2a bd       	out	0x2a, r18	; 42
+                _duty1 = _duty;
+ 1bc:	20 93 c0 00 	sts	0x00C0, r18
+ 1c0:	08 95       	ret
+            }
+          else if(_channel==2)
+ 1c2:	42 30       	cpi	r20, 0x02	; 2
+ 1c4:	49 f4       	brne	.+18     	; 0x1d8 <pwm+0x64>
+             {
+                TCCR1A |= _BV(COM1B1);     //nem-invertalt PWM, B csatorna
+ 1c6:	8f b5       	in	r24, 0x2f	; 47
+ 1c8:	80 62       	ori	r24, 0x20	; 32
+ 1ca:	8f bd       	out	0x2f, r24	; 47
+                DDRB |= _BV(PB2);         // PORTB PB2 lab kimenet
+ 1cc:	ba 9a       	sbi	0x17, 2	; 23
+                OCR1B = _duty;         // motor2 pwm kitoltesi tenyezo
+ 1ce:	39 bd       	out	0x29, r19	; 41
+ 1d0:	28 bd       	out	0x28, r18	; 40
+               _duty2 = _duty;
+ 1d2:	20 93 c1 00 	sts	0x00C1, r18
+ 1d6:	08 95       	ret
+             }
+          else if(_channel==3)
+ 1d8:	43 30       	cpi	r20, 0x03	; 3
+ 1da:	81 f4       	brne	.+32     	; 0x1fc <pwm+0x88>
+            {
+               TCCR1A |= _BV(COM1A1);     //nem-invertalt PWM, A csatorna
+ 1dc:	8f b5       	in	r24, 0x2f	; 47
+ 1de:	80 68       	ori	r24, 0x80	; 128
+ 1e0:	8f bd       	out	0x2f, r24	; 47
+               DDRB |= _BV(PB1);
+ 1e2:	b9 9a       	sbi	0x17, 1	; 23
+               OCR1A = _duty;
+ 1e4:	3b bd       	out	0x2b, r19	; 43
+ 1e6:	2a bd       	out	0x2a, r18	; 42
+               _duty1 = _duty;
+ 1e8:	20 93 c0 00 	sts	0x00C0, r18
+               TCCR1A |= _BV(COM1B1);     //nem-invertalt PWM, B csatorna
+ 1ec:	8f b5       	in	r24, 0x2f	; 47
+ 1ee:	80 62       	ori	r24, 0x20	; 32
+ 1f0:	8f bd       	out	0x2f, r24	; 47
+               DDRB |= _BV(PB2);
+ 1f2:	ba 9a       	sbi	0x17, 2	; 23
+               OCR1B = _duty;
+ 1f4:	39 bd       	out	0x29, r19	; 41
+ 1f6:	28 bd       	out	0x28, r18	; 40
+               _duty2 = _duty;
+ 1f8:	20 93 c1 00 	sts	0x00C1, r18
+ 1fc:	08 95       	ret
+
+000001fe <motor>:
+           }
+}
+ 
+void motor(char _channel,int _power)     /* motor(a,b) fuggveny definialasa. a = 1 vagy 2 attol fuggoen hogy melyik motor, b = -100% &ndash; 100% (motor sebesseg) */
+{
+ 1fe:	1f 93       	push	r17
+ 200:	18 2f       	mov	r17, r24
+ 202:	9b 01       	movw	r18, r22
+            if(_power>0)     // ha b (motor sebesseg) > 0, motor elore
+ 204:	16 16       	cp	r1, r22
+ 206:	17 06       	cpc	r1, r23
+ 208:	8c f4       	brge	.+34     	; 0x22c <motor+0x2e>
+            {
+               pwm(_channel,_power);     // motor PWM bekapcsol
+ 20a:	b4 df       	rcall	.-152    	; 0x174 <pwm>
+               if(_channel==1)         // ha a=1 (motor1 elore)
+ 20c:	11 30       	cpi	r17, 0x01	; 1
+ 20e:	31 f4       	brne	.+12     	; 0x21c <motor+0x1e>
+                     {
+                         ki_d(Motor1A,1);
+ 210:	87 e0       	ldi	r24, 0x07	; 7
+ 212:	61 e0       	ldi	r22, 0x01	; 1
+ 214:	94 df       	rcall	.-216    	; 0x13e <ki_d>
+                         ki_b(Motor1B,0);
+ 216:	80 e0       	ldi	r24, 0x00	; 0
+ 218:	60 e0       	ldi	r22, 0x00	; 0
+ 21a:	14 c0       	rjmp	.+40     	; 0x244 <motor+0x46>
+                     }
+              else if(_channel==2)     // ha a=2 (motor2 elore)
+ 21c:	12 30       	cpi	r17, 0x02	; 2
+ 21e:	e1 f4       	brne	.+56     	; 0x258 <motor+0x5a>
+                   {
+                        ki_d(Motor2A,0);
+ 220:	85 e0       	ldi	r24, 0x05	; 5
+ 222:	60 e0       	ldi	r22, 0x00	; 0
+ 224:	8c df       	rcall	.-232    	; 0x13e <ki_d>
+                        ki_d(Motor2B,1);
+ 226:	86 e0       	ldi	r24, 0x06	; 6
+ 228:	61 e0       	ldi	r22, 0x01	; 1
+ 22a:	15 c0       	rjmp	.+42     	; 0x256 <motor+0x58>
+                   }
+           }
+          else     // ha b (motor sebesseg) < 0, motor hatra
+          {
+              pwm(_channel,abs(_power));     // motor PWM bekapcsol
+ 22c:	66 27       	eor	r22, r22
+ 22e:	77 27       	eor	r23, r23
+ 230:	62 1b       	sub	r22, r18
+ 232:	73 0b       	sbc	r23, r19
+ 234:	9f df       	rcall	.-194    	; 0x174 <pwm>
+              if(_channel==1)         // ha a=1 (motor1 hatra)
+ 236:	11 30       	cpi	r17, 0x01	; 1
+ 238:	39 f4       	brne	.+14     	; 0x248 <motor+0x4a>
+              {
+                 ki_d(Motor1A,0);
+ 23a:	87 e0       	ldi	r24, 0x07	; 7
+ 23c:	60 e0       	ldi	r22, 0x00	; 0
+ 23e:	7f df       	rcall	.-258    	; 0x13e <ki_d>
+                 ki_b(Motor1B,1);
+ 240:	80 e0       	ldi	r24, 0x00	; 0
+ 242:	61 e0       	ldi	r22, 0x01	; 1
+ 244:	54 df       	rcall	.-344    	; 0xee <ki_b>
+ 246:	08 c0       	rjmp	.+16     	; 0x258 <motor+0x5a>
+              }
+            else if(_channel==2)     // ha a=2 (motor2 hatra)
+ 248:	12 30       	cpi	r17, 0x02	; 2
+ 24a:	31 f4       	brne	.+12     	; 0x258 <motor+0x5a>
+            {
+                ki_d(Motor2A,1);
+ 24c:	85 e0       	ldi	r24, 0x05	; 5
+ 24e:	61 e0       	ldi	r22, 0x01	; 1
+ 250:	76 df       	rcall	.-276    	; 0x13e <ki_d>
+                ki_d(Motor2B,0);
+ 252:	86 e0       	ldi	r24, 0x06	; 6
+ 254:	60 e0       	ldi	r22, 0x00	; 0
+ 256:	73 df       	rcall	.-282    	; 0x13e <ki_d>
+            }
+         }
+}
+ 258:	1f 91       	pop	r17
+ 25a:	08 95       	ret
+
+0000025c <motor_stop>:
+ 
+void motor_stop(char _channel)         /* motor_stop(a) fuggveny definialasa. a = 1, 2 vagy mind (3) attol fuggoen hogy melyik motort akarjuk megallitani */
+{
+ 25c:	1f 93       	push	r17
+ 25e:	18 2f       	mov	r17, r24
+           pwm(_channel,0);     // motor PWM kikapcsol
+ 260:	60 e0       	ldi	r22, 0x00	; 0
+ 262:	70 e0       	ldi	r23, 0x00	; 0
+ 264:	87 df       	rcall	.-242    	; 0x174 <pwm>
+           if(_channel==1 ||_channel==3)     //motor1 stop
+ 266:	11 30       	cpi	r17, 0x01	; 1
+ 268:	11 f0       	breq	.+4      	; 0x26e <motor_stop+0x12>
+ 26a:	13 30       	cpi	r17, 0x03	; 3
+ 26c:	31 f4       	brne	.+12     	; 0x27a <motor_stop+0x1e>
+           {
+                  ki_d(Motor1A,0);
+ 26e:	87 e0       	ldi	r24, 0x07	; 7
+ 270:	60 e0       	ldi	r22, 0x00	; 0
+ 272:	65 df       	rcall	.-310    	; 0x13e <ki_d>
+                  ki_b(Motor1B,0);
+ 274:	80 e0       	ldi	r24, 0x00	; 0
+ 276:	60 e0       	ldi	r22, 0x00	; 0
+ 278:	3a df       	rcall	.-396    	; 0xee <ki_b>
+           }
+          if(_channel==2 ||_channel==3)     //motor2 stop
+ 27a:	12 50       	subi	r17, 0x02	; 2
+ 27c:	12 30       	cpi	r17, 0x02	; 2
+ 27e:	30 f4       	brcc	.+12     	; 0x28c <motor_stop+0x30>
+          {
+                 ki_d(Motor2A,0);
+ 280:	85 e0       	ldi	r24, 0x05	; 5
+ 282:	60 e0       	ldi	r22, 0x00	; 0
+ 284:	5c df       	rcall	.-328    	; 0x13e <ki_d>
+                ki_d(Motor2B,0);
+ 286:	86 e0       	ldi	r24, 0x06	; 6
+ 288:	60 e0       	ldi	r22, 0x00	; 0
+ 28a:	59 df       	rcall	.-334    	; 0x13e <ki_d>
+          }
+}
+ 28c:	1f 91       	pop	r17
+ 28e:	08 95       	ret
+
+00000290 <motor_ki>:
+ 
+void motor_ki()
+{
+           pwm(3,0);     // motor PWM kikapcsol, motor1 es 2 stop
+ 290:	83 e0       	ldi	r24, 0x03	; 3
+ 292:	60 e0       	ldi	r22, 0x00	; 0
+ 294:	70 e0       	ldi	r23, 0x00	; 0
+ 296:	6e df       	rcall	.-292    	; 0x174 <pwm>
+           ki_d(Motor1A,0);
+ 298:	87 e0       	ldi	r24, 0x07	; 7
+ 29a:	60 e0       	ldi	r22, 0x00	; 0
+ 29c:	50 df       	rcall	.-352    	; 0x13e <ki_d>
+           ki_b(Motor1B,0);
+ 29e:	80 e0       	ldi	r24, 0x00	; 0
+ 2a0:	60 e0       	ldi	r22, 0x00	; 0
+ 2a2:	25 df       	rcall	.-438    	; 0xee <ki_b>
+           ki_d(Motor2A,0);
+ 2a4:	85 e0       	ldi	r24, 0x05	; 5
+ 2a6:	60 e0       	ldi	r22, 0x00	; 0
+ 2a8:	4a df       	rcall	.-364    	; 0x13e <ki_d>
+           ki_d(Motor2B,0);
+ 2aa:	86 e0       	ldi	r24, 0x06	; 6
+ 2ac:	60 e0       	ldi	r22, 0x00	; 0
+ 2ae:	47 df       	rcall	.-370    	; 0x13e <ki_d>
+}
+ 2b0:	08 95       	ret
+
+000002b2 <fordul_bal>:
+ 
+void fordul_bal(int speed)     /* elore(z) fuggveny definialasa, mindket motor elore, z = 0-100% */
+{
+ 2b2:	0f 93       	push	r16
+ 2b4:	1f 93       	push	r17
+ 2b6:	8c 01       	movw	r16, r24
+           motor(1,speed);
+ 2b8:	81 e0       	ldi	r24, 0x01	; 1
+ 2ba:	b8 01       	movw	r22, r16
+ 2bc:	a0 df       	rcall	.-192    	; 0x1fe <motor>
+           motor(2,speed);
+ 2be:	82 e0       	ldi	r24, 0x02	; 2
+ 2c0:	b8 01       	movw	r22, r16
+ 2c2:	9d df       	rcall	.-198    	; 0x1fe <motor>
+}
+ 2c4:	1f 91       	pop	r17
+ 2c6:	0f 91       	pop	r16
+ 2c8:	08 95       	ret
+
+000002ca <fordul_jobb>:
+ 
+void fordul_jobb(int speed)     /* hatra(y) fuggveny definialasa, mindket motor hatra, y = 0-100% */
+{
+ 2ca:	0f 93       	push	r16
+ 2cc:	1f 93       	push	r17
+           motor(1,speed*-1);
+ 2ce:	00 27       	eor	r16, r16
+ 2d0:	11 27       	eor	r17, r17
+ 2d2:	08 1b       	sub	r16, r24
+ 2d4:	19 0b       	sbc	r17, r25
+ 2d6:	81 e0       	ldi	r24, 0x01	; 1
+ 2d8:	b8 01       	movw	r22, r16
+ 2da:	91 df       	rcall	.-222    	; 0x1fe <motor>
+           motor(2,speed*-1);
+ 2dc:	82 e0       	ldi	r24, 0x02	; 2
+ 2de:	b8 01       	movw	r22, r16
+ 2e0:	8e df       	rcall	.-228    	; 0x1fe <motor>
+}
+ 2e2:	1f 91       	pop	r17
+ 2e4:	0f 91       	pop	r16
+ 2e6:	08 95       	ret
+
+000002e8 <elore>:
+ 
+void elore(int speed)         /* fordul_bal(n) fuggveny definialasa, balra fordulas: motor1 elore, motor2 hatra, n = 0-100% */
+{
+ 2e8:	0f 93       	push	r16
+ 2ea:	1f 93       	push	r17
+ 2ec:	8c 01       	movw	r16, r24
+           motor(1,speed);
+ 2ee:	81 e0       	ldi	r24, 0x01	; 1
+ 2f0:	b8 01       	movw	r22, r16
+ 2f2:	85 df       	rcall	.-246    	; 0x1fe <motor>
+           motor(2,speed*-1);
+ 2f4:	10 95       	com	r17
+ 2f6:	01 95       	neg	r16
+ 2f8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 2fa:	82 e0       	ldi	r24, 0x02	; 2
+ 2fc:	b8 01       	movw	r22, r16
+ 2fe:	7f df       	rcall	.-258    	; 0x1fe <motor>
+}
+ 300:	1f 91       	pop	r17
+ 302:	0f 91       	pop	r16
+ 304:	08 95       	ret
+
+00000306 <hatra>:
+ 
+void hatra(int speed)     /* fordul_jobb(m) fuggveny definialasa, jobbra fordulas: motor1 hatra, motor2 elore, m = 0-100% */
+{
+ 306:	0f 93       	push	r16
+ 308:	1f 93       	push	r17
+ 30a:	8c 01       	movw	r16, r24
+           motor(1,speed*-1);
+ 30c:	66 27       	eor	r22, r22
+ 30e:	77 27       	eor	r23, r23
+ 310:	68 1b       	sub	r22, r24
+ 312:	79 0b       	sbc	r23, r25
+ 314:	81 e0       	ldi	r24, 0x01	; 1
+ 316:	73 df       	rcall	.-282    	; 0x1fe <motor>
+           motor(2,speed);
+ 318:	82 e0       	ldi	r24, 0x02	; 2
+ 31a:	b8 01       	movw	r22, r16
+ 31c:	70 df       	rcall	.-288    	; 0x1fe <motor>
+}
+ 31e:	1f 91       	pop	r17
+ 320:	0f 91       	pop	r16
+ 322:	08 95       	ret
+
+00000324 <KonfigUART>:
+#include <stdlib.h>
+
+void KonfigUART()  // UART beallitasa
+{
+    // 4800 bps soros kommunikacio sebesseg beallitasa
+    UBRRL = UBRR_ERTEK;        // UBRR_ERTEK also 8 bitjenek betoltese az UBRRL regiszterbe
+ 324:	8c e0       	ldi	r24, 0x0C	; 12
+ 326:	89 b9       	out	0x09, r24	; 9
+    UBRRH = (UBRR_ERTEK>>8);   // UBRR_ERTEK felso 8 bitjenek betoltese az UBRRH regiszterbe
+ 328:	10 bc       	out	0x20, r1	; 32
+   // Aszinkron mod, 8 Adat Bit, Nincs Paritas Bit, 1 Stop Bit
+    UCSRC |= (1 << URSEL) | (1 << UCSZ0) | (1 << UCSZ1);
+ 32a:	80 b5       	in	r24, 0x20	; 32
+ 32c:	86 68       	ori	r24, 0x86	; 134
+ 32e:	80 bd       	out	0x20, r24	; 32
+   //Ado es Vevo aramkorok bekapcsolasa + az RX interrupt engedelyezese
+    UCSRB |= (1 << RXEN) | (1 << RXCIE) | (1 << TXEN);   //
+ 330:	8a b1       	in	r24, 0x0a	; 10
+ 332:	88 69       	ori	r24, 0x98	; 152
+ 334:	8a b9       	out	0x0a, r24	; 10
+}
+ 336:	08 95       	ret
+
+00000338 <UARTAdatFogad>:
+
+ 
+char UARTAdatFogad() // Ez a fuggveny a beerkezo adatokat kiolvassa az UDR regiszter bejovo pufferebol
+{
+   while(!(UCSRA & (1<<RXC))) // Varakozas amig nincs uj bejovo adat
+ 338:	5f 9b       	sbis	0x0b, 7	; 11
+ 33a:	fe cf       	rjmp	.-4      	; 0x338 <UARTAdatFogad>
+   {
+      //  Varakozas
+   }
+   //Most mar van beerkezett adat, amit kiolvasunk a pufferbol
+   return UDR;
+ 33c:	8c b1       	in	r24, 0x0c	; 12
+}
+ 33e:	08 95       	ret
+
+00000340 <UARTAdatKuld>:
+
+ 
+void UARTAdatKuld(char data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{
+   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 340:	5d 9b       	sbis	0x0b, 5	; 11
+ 342:	fe cf       	rjmp	.-4      	; 0x340 <UARTAdatKuld>
+   {
+      //  Varakozas
+   }
+   // Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   UDR=data;
+ 344:	8c b9       	out	0x0c, r24	; 12
+}
+ 346:	08 95       	ret
+
+00000348 <UARTStringKuld>:
+
+void UARTStringKuld(char* data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{  
+ 348:	20 e0       	ldi	r18, 0x00	; 0
+ 34a:	30 e0       	ldi	r19, 0x00	; 0
+ 34c:	08 c0       	rjmp	.+16     	; 0x35e <UARTStringKuld+0x16>
+
+   for(int i=0;data[i] != '*'; i++)
+   {
+   		   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 34e:	5d 9b       	sbis	0x0b, 5	; 11
+ 350:	fe cf       	rjmp	.-4      	; 0x34e <UARTStringKuld+0x6>
+   			{
+     		 //  Varakozas
+   			}
+   			// Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   			UDR=data[i];
+ 352:	ec b9       	out	0x0c, r30	; 12
+			
+			if(i>100){break;}// Túl olvasás elleni védelem 
+ 354:	25 36       	cpi	r18, 0x65	; 101
+ 356:	31 05       	cpc	r19, r1
+ 358:	41 f0       	breq	.+16     	; 0x36a <UARTStringKuld+0x22>
+}
+
+void UARTStringKuld(char* data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{  
+
+   for(int i=0;data[i] != '*'; i++)
+ 35a:	2f 5f       	subi	r18, 0xFF	; 255
+ 35c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 35e:	fc 01       	movw	r30, r24
+ 360:	e2 0f       	add	r30, r18
+ 362:	f3 1f       	adc	r31, r19
+ 364:	e0 81       	ld	r30, Z
+ 366:	ea 32       	cpi	r30, 0x2A	; 42
+ 368:	91 f7       	brne	.-28     	; 0x34e <UARTStringKuld+0x6>
+ 36a:	08 95       	ret
+
+0000036c <execution>:
+ 
+//________________________________________________________________________
+void  execution()
+{
+
+	if((Command.PWM<0)||(Command.PWM>101))
+ 36c:	80 91 bc 00 	lds	r24, 0x00BC
+ 370:	90 91 bd 00 	lds	r25, 0x00BD
+ 374:	97 fd       	sbrc	r25, 7
+ 376:	07 c0       	rjmp	.+14     	; 0x386 <execution+0x1a>
+ 378:	80 91 bc 00 	lds	r24, 0x00BC
+ 37c:	90 91 bd 00 	lds	r25, 0x00BD
+ 380:	86 36       	cpi	r24, 0x66	; 102
+ 382:	91 05       	cpc	r25, r1
+ 384:	1c f0       	brlt	.+6      	; 0x38c <execution+0x20>
+	{
+		UARTStringKuld("Hiba! : Nem megfelelõ PWM érték!\n *");
+ 386:	80 e6       	ldi	r24, 0x60	; 96
+ 388:	90 e0       	ldi	r25, 0x00	; 0
+ 38a:	30 c0       	rjmp	.+96     	; 0x3ec <execution+0x80>
+		return;
+	}
+
+
+	if(Command.Direction == 'e')
+ 38c:	80 91 be 00 	lds	r24, 0x00BE
+ 390:	85 36       	cpi	r24, 0x65	; 101
+ 392:	31 f4       	brne	.+12     	; 0x3a0 <execution+0x34>
+	{
+		hatra(Command.PWM);	
+ 394:	80 91 bc 00 	lds	r24, 0x00BC
+ 398:	90 91 bd 00 	lds	r25, 0x00BD
+ 39c:	b4 df       	rcall	.-152    	; 0x306 <hatra>
+ 39e:	28 c0       	rjmp	.+80     	; 0x3f0 <execution+0x84>
+	}
+	else if(Command.Direction == 'g')
+ 3a0:	80 91 be 00 	lds	r24, 0x00BE
+ 3a4:	87 36       	cpi	r24, 0x67	; 103
+ 3a6:	31 f4       	brne	.+12     	; 0x3b4 <execution+0x48>
+	{
+		fordul_bal(Command.PWM);
+ 3a8:	80 91 bc 00 	lds	r24, 0x00BC
+ 3ac:	90 91 bd 00 	lds	r25, 0x00BD
+ 3b0:	80 df       	rcall	.-256    	; 0x2b2 <fordul_bal>
+ 3b2:	1e c0       	rjmp	.+60     	; 0x3f0 <execution+0x84>
+	}
+	else if(Command.Direction == 'f')
+ 3b4:	80 91 be 00 	lds	r24, 0x00BE
+ 3b8:	86 36       	cpi	r24, 0x66	; 102
+ 3ba:	31 f4       	brne	.+12     	; 0x3c8 <execution+0x5c>
+	{
+		fordul_jobb(Command.PWM);
+ 3bc:	80 91 bc 00 	lds	r24, 0x00BC
+ 3c0:	90 91 bd 00 	lds	r25, 0x00BD
+ 3c4:	82 df       	rcall	.-252    	; 0x2ca <fordul_jobb>
+ 3c6:	14 c0       	rjmp	.+40     	; 0x3f0 <execution+0x84>
+	}
+	else if(Command.Direction == 'h')
+ 3c8:	80 91 be 00 	lds	r24, 0x00BE
+ 3cc:	88 36       	cpi	r24, 0x68	; 104
+ 3ce:	31 f4       	brne	.+12     	; 0x3dc <execution+0x70>
+	{
+		elore(Command.PWM);
+ 3d0:	80 91 bc 00 	lds	r24, 0x00BC
+ 3d4:	90 91 bd 00 	lds	r25, 0x00BD
+ 3d8:	87 df       	rcall	.-242    	; 0x2e8 <elore>
+ 3da:	0a c0       	rjmp	.+20     	; 0x3f0 <execution+0x84>
+	}
+	else if(Command.Direction == 'i')
+ 3dc:	80 91 be 00 	lds	r24, 0x00BE
+ 3e0:	89 36       	cpi	r24, 0x69	; 105
+ 3e2:	11 f4       	brne	.+4      	; 0x3e8 <execution+0x7c>
+	{
+		motor_ki();
+ 3e4:	55 df       	rcall	.-342    	; 0x290 <motor_ki>
+ 3e6:	04 c0       	rjmp	.+8      	; 0x3f0 <execution+0x84>
+	}
+	else{
+		UARTStringKuld("Hiba! : Nem megfelelõ irány érték!\n *");
+ 3e8:	84 e8       	ldi	r24, 0x84	; 132
+ 3ea:	90 e0       	ldi	r25, 0x00	; 0
+ 3ec:	ad df       	rcall	.-166    	; 0x348 <UARTStringKuld>
+ 3ee:	08 95       	ret
+		return;
+	}
+
+
+	UARTStringKuld("Üzenet fogadva! *");
+ 3f0:	8a ea       	ldi	r24, 0xAA	; 170
+ 3f2:	90 e0       	ldi	r25, 0x00	; 0
+ 3f4:	a9 df       	rcall	.-174    	; 0x348 <UARTStringKuld>
+}
+
+ 
+void UARTAdatKuld(char data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{
+   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 3f6:	5d 9b       	sbis	0x0b, 5	; 11
+ 3f8:	fe cf       	rjmp	.-4      	; 0x3f6 <execution+0x8a>
+   {
+      //  Varakozas
+   }
+   // Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   UDR=data;
+ 3fa:	8b e5       	ldi	r24, 0x5B	; 91
+ 3fc:	8c b9       	out	0x0c, r24	; 12
+	UARTAdatKuld('[');
+	UARTAdatKuld(Command.Direction);
+ 3fe:	80 91 be 00 	lds	r24, 0x00BE
+}
+
+ 
+void UARTAdatKuld(char data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{
+   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 402:	5d 9b       	sbis	0x0b, 5	; 11
+ 404:	fe cf       	rjmp	.-4      	; 0x402 <execution+0x96>
+   {
+      //  Varakozas
+   }
+   // Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   UDR=data;
+ 406:	8c b9       	out	0x0c, r24	; 12
+}
+
+ 
+void UARTAdatKuld(char data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{
+   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 408:	5d 9b       	sbis	0x0b, 5	; 11
+ 40a:	fe cf       	rjmp	.-4      	; 0x408 <execution+0x9c>
+   {
+      //  Varakozas
+   }
+   // Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   UDR=data;
+ 40c:	8d e5       	ldi	r24, 0x5D	; 93
+ 40e:	8c b9       	out	0x0c, r24	; 12
+}
+
+ 
+void UARTAdatKuld(char data) // Ez a fuggveny a kuldendo adatot beirja az UDR regiszter kimeno pufferjebe
+{
+   while(!(UCSRA & (1<<UDRE)))  // Varakozas amig az Ado kesz nem lesz az adatkuldesre
+ 410:	5d 9b       	sbis	0x0b, 5	; 11
+ 412:	fe cf       	rjmp	.-4      	; 0x410 <execution+0xa4>
+   {
+      //  Varakozas
+   }
+   // Az Ado mar kesz az adatkuldesre, a kuldendo adatot a kimeno pufferjebe irjuk
+   UDR=data;
+ 414:	8a e0       	ldi	r24, 0x0A	; 10
+ 416:	8c b9       	out	0x0c, r24	; 12
+ 418:	08 95       	ret
+
+0000041a <main>:
+
+//_______________________________________________________________________
+int main(void) 			// Foprogram
+{
+
+   KonfigUART();  		// UART Konfiguralasa
+ 41a:	84 df       	rcall	.-248    	; 0x324 <KonfigUART>
+   sei();    			// Altalanos megszakitasok engedelyezese
+ 41c:	78 94       	sei
+ 41e:	ff cf       	rjmp	.-2      	; 0x41e <main+0x4>
+
+00000420 <__vector_11>:
+
+
+//________________________________________________________________________
+
+ISR(USART_RXC_vect)  // RX interrupt, ezek az utasitasok futak le ha adat erkezik a TX vonalon
+{
+ 420:	1f 92       	push	r1
+ 422:	0f 92       	push	r0
+ 424:	0f b6       	in	r0, 0x3f	; 63
+ 426:	0f 92       	push	r0
+ 428:	11 24       	eor	r1, r1
+ 42a:	2f 93       	push	r18
+ 42c:	3f 93       	push	r19
+ 42e:	4f 93       	push	r20
+ 430:	5f 93       	push	r21
+ 432:	6f 93       	push	r22
+ 434:	7f 93       	push	r23
+ 436:	8f 93       	push	r24
+ 438:	9f 93       	push	r25
+ 43a:	af 93       	push	r26
+ 43c:	bf 93       	push	r27
+ 43e:	ef 93       	push	r30
+ 440:	ff 93       	push	r31
+}
+
+ 
+char UARTAdatFogad() // Ez a fuggveny a beerkezo adatokat kiolvassa az UDR regiszter bejovo pufferebol
+{
+   while(!(UCSRA & (1<<RXC))) // Varakozas amig nincs uj bejovo adat
+ 442:	5f 9b       	sbis	0x0b, 7	; 11
+ 444:	fe cf       	rjmp	.-4      	; 0x442 <__vector_11+0x22>
+   {
+      //  Varakozas
+   }
+   //Most mar van beerkezett adat, amit kiolvasunk a pufferbol
+   return UDR;
+ 446:	8c b1       	in	r24, 0x0c	; 12
+	char Data = UARTAdatFogad();     // A berekezo bajt fogadasa
+
+	if(Data < 101) // Ez egy kitöltési tényezõ módosító üzenet
+ 448:	85 36       	cpi	r24, 0x65	; 101
+ 44a:	30 f4       	brcc	.+12     	; 0x458 <__vector_11+0x38>
+	{
+		Command.PWM = Data;
+ 44c:	90 e0       	ldi	r25, 0x00	; 0
+ 44e:	90 93 bd 00 	sts	0x00BD, r25
+ 452:	80 93 bc 00 	sts	0x00BC, r24
+ 456:	02 c0       	rjmp	.+4      	; 0x45c <__vector_11+0x3c>
+	}
+	else // Ez egy irány módosító üzenet
+	{
+		Command.Direction = Data;
+ 458:	80 93 be 00 	sts	0x00BE, r24
+	}
+
+	execution();
+ 45c:	87 df       	rcall	.-242    	; 0x36c <execution>
+}
+ 45e:	ff 91       	pop	r31
+ 460:	ef 91       	pop	r30
+ 462:	bf 91       	pop	r27
+ 464:	af 91       	pop	r26
+ 466:	9f 91       	pop	r25
+ 468:	8f 91       	pop	r24
+ 46a:	7f 91       	pop	r23
+ 46c:	6f 91       	pop	r22
+ 46e:	5f 91       	pop	r21
+ 470:	4f 91       	pop	r20
+ 472:	3f 91       	pop	r19
+ 474:	2f 91       	pop	r18
+ 476:	0f 90       	pop	r0
+ 478:	0f be       	out	0x3f, r0	; 63
+ 47a:	0f 90       	pop	r0
+ 47c:	1f 90       	pop	r1
+ 47e:	18 95       	reti
+
+00000480 <__udivmodhi4>:
+ 480:	aa 1b       	sub	r26, r26
+ 482:	bb 1b       	sub	r27, r27
+ 484:	51 e1       	ldi	r21, 0x11	; 17
+ 486:	07 c0       	rjmp	.+14     	; 0x496 <__udivmodhi4_ep>
+
+00000488 <__udivmodhi4_loop>:
+ 488:	aa 1f       	adc	r26, r26
+ 48a:	bb 1f       	adc	r27, r27
+ 48c:	a6 17       	cp	r26, r22
+ 48e:	b7 07       	cpc	r27, r23
+ 490:	10 f0       	brcs	.+4      	; 0x496 <__udivmodhi4_ep>
+ 492:	a6 1b       	sub	r26, r22
+ 494:	b7 0b       	sbc	r27, r23
+
+00000496 <__udivmodhi4_ep>:
+ 496:	88 1f       	adc	r24, r24
+ 498:	99 1f       	adc	r25, r25
+ 49a:	5a 95       	dec	r21
+ 49c:	a9 f7       	brne	.-22     	; 0x488 <__udivmodhi4_loop>
+ 49e:	80 95       	com	r24
+ 4a0:	90 95       	com	r25
+ 4a2:	bc 01       	movw	r22, r24
+ 4a4:	cd 01       	movw	r24, r26
+ 4a6:	08 95       	ret
+
+000004a8 <_exit>:
+ 4a8:	f8 94       	cli
+
+000004aa <__stop_program>:
+ 4aa:	ff cf       	rjmp	.-2      	; 0x4aa <__stop_program>
