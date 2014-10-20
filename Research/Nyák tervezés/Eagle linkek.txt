@@ -1,0 +1,9 @@
+Az itt használt eagle verzió a felhõben van.
+
+Ez a tutorial jó de nincs benne szó az autowire-rõl.
+http://www.hobbielektronika.hu/video/video_fe25559e.html?def=hq
+Alternatívák:
+Sprint Layout:
+http://www.hobbielektronika.hu/forum/topic_hsz_450368.html?highlight=1#450368
+Leírás hozzá:
+http://www.hobbielektronika.hu/forum/getfile.php?id=58900
