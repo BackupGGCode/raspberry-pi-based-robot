@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0097)http://users.atw.hu/balubati/website_files/mars2020/mjpg-streamer/progexamples/QImageGrabber.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>QImageGrabber</title><style type="text/css"></style></head><body>A forrás letöltése után nyissuk meg a qimagegrabber.pro fájlt a Qtcreatorral majd nyomjunk egy buildet, vagy menünk a <br>
+forrás mappájába és adjuk ki a parancsokat:<br>
+<span style="font-family: monospace;">qmake</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">make</span><br>
+<br>
+Ezután a forrás bin mappájában /* a QtCreator el&#337;szeretettel használ
+shadow build mapppát, ekkor a forrás mappa mellett lesz egy
+qimagegrabber-build-desktop mappa */ létrejön a qimagegrabber.dll
+(Windowson) vagy a libqimagegrabber.so file (Unix like rendszereken).<br>
+<br>
+Ezzel elkészült a könyvtárunk vegyük használatba.<br>
+<br>
+A programunk .pro fájljához adjuk hozzá a könyvtárat hogy tudjon róla a linker:<br>
+<br style="font-family: monospace;">
+<span style="font-family: monospace;">LIBS += -L../../libs/bin -lqimagegrabber</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">INCLUDEPATH += ../../libs/qimagegrabber</span><br>
+<br>
+<br>
+A../../libs elérési út helyett adjuk meg azt az utat ahol a lefordított könyvtár található. <br>
+A <span style="font-family: monospace;">../../libs/qimagegrabber </span>helyett pedig a forrás mappáját helyettesítsük be.<br>
+<br>
+A használni kívánt osztályunk headerébe includoljuk be a következ&#337; fejléceket:<br>
+<span style="font-family: monospace;">#include &lt;qimagegrabberhttp.h&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">#include &lt;qimagegrabbermjpeg.h&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">#include &lt;dialogqimagegrabbersettings.h&gt;</span><br style="font-family: monospace;">
+<br>
+Deklaráljunk három mutatót:<br>
+<span style="font-family: monospace;">QImageGrabberHttp *httpGrabber;&nbsp;&nbsp;&nbsp; </span><br style="font-family: monospace;">
+<span style="font-family: monospace;">DialogQImageGrabberSettings settingsDialog;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">QImageGrabberMjpeg *mjpgGrabber;</span><br>
+<br>
+Majd a konstruktorban példányosítsunk az imagegrabber objektumokat:<br>
+<br>
+<span style="font-family: monospace;">mjpgGrabber = new QImageGrabberMjpeg(this);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">httpGrabber = new QImageGrabberHttp(this);</span><br>
+<br>
+A képleltölt&#337; osztálykhoz csináltam egy általános beállítóablakot, ezt a következ&#337;képpen lehet el&#337;hívni:<br>
+settingsDialog.setImageGrabber(httpGrabber);<br>
+settingsDialog.show();<br>
+<br>
+Itt lehet&#337;ség van az elérési út grafikus módosítására, illetve a stream megállítására vagy indítására.<br>
+<br>
+Az ini<div id="woo_head" class="woo_content" style="display:none;"><script type="text/html" id="L-template"><iframe id="L-margin" name="L-margin"  class="woo_content_container woo_main_content" src="chrome-extension://hlngmmdolgbdnnimbmblfhhndibdipaf/images/loader.gif" style="display: block !important;"><p>Iframes not supported.</p></iframe></script><iframe id="L-margin" name="L-margin" class="woo_content_container woo_main_content" src="./QImageGrabber_files/loader.html" style="display: block !important;">&lt;p&gt;Iframes not supported.&lt;/p&gt;</iframe><div id="woo_projected" class="woo_content_trigger hide_txt"><span style="display:none;"><em style="font-size:11px; font-style:normal; font-weight:bold;line-height:26px;text-indent:0;text-decoration:none;overflow:hidden;color:#fff;float:left;position:absolute;text-align:center;left:1px;top:0px;height:25px;width:22px;"></em></span><span class="loader L-loader" style="display:none;"><img class="" src="./QImageGrabber_files/loader.html"></span><div id="woo_initiate" class="trigger_ctrl"><a id="clickable" href="javascript:void(0);" class="hide_txt" style="display:none;">Trigger</a></div></div><div class="woo_controllers upper_header"><a id="woo_hide" href="Javascript:void(0)" class="hide_margin hide_txt" title="Hide"><span style="background-image:url(chrome-extension://hlngmmdolgbdnnimbmblfhhndibdipaf/images/woo-cancel.png)">x</span></a></div></div>cializáció után kössük be a képleltölt&#337; legfontosabb szignálját:<br>
+<br>
+<span style="font-family: monospace;">connect(httpGrabber, SIGNAL(newImageGrabbed(QImage*)),this, SLOT(newImageReceieved(QImage*)));</span><br>
+<br>
+Majd a slotunkban kezdjünk vele amit szeretnénk. <br>
+Felszabadítani nem szabad az átadott pointert!<br>
+<br style="font-family: monospace;">
+<span style="font-family: monospace;">void MainWindow::newImageReceieved(QImage *img)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; ui-&gt;labelImage-&gt;setPixmap(QPixmap::fromImage(*img));</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">}</span><br>
+<br>
+<br>
+<br>
+<br>
+<a href="http://users.atw.hu/balubati/website_files/mars2020/mjpg-streamer/progs/imagegrabber_test.rar">Kész m&#369;köd&#337; példakód itt.</a><br>
+<br>
+<br>
+
+
+</body></html>

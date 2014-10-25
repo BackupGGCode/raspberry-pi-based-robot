@@ -1,0 +1,7 @@
+http://balubati.atw.hu/website_files/mars2020/mjpg-streamer/MJPG-streamer.html
+
+Esetleg valami ilyesmi is lehet:
+http://sourceforge.net/projects/streamminder/?source=typ_redirect
+
+vagy ez: https://code.google.com/p/qimagegrabber/
+Habár ez ugyan az mint a Márton Miklós féle megoldás.
