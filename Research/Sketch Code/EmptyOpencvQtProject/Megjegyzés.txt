@@ -1,0 +1,3 @@
+Most megy a dolog. 
+Qt Creator (MSVC2012)-t hazsnálok, ami Visual Studio 2012-t használ. 
+Ennek megfelelõen nem Qt-ra forgatott Opencv libek kellenek, hanem Visual Studio 2012 alá fordított opencv-t használok. 
