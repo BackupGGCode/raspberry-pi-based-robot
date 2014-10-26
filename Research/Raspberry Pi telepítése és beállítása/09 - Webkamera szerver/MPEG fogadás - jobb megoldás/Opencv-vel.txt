@@ -1,0 +1,1 @@
+Opencv-t amúgy is használok PC oldalon a fejmozgatás alapú vezérléshez. Az opencv videocaputre képes megnyitni mpeg stream-et is. 
