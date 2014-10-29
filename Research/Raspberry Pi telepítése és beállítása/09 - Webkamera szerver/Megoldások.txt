@@ -15,3 +15,7 @@ https://www.youtube.com/watch?v=tSJ-sWEJ5EU
 http://makezine.com/projects/raspberry-eye-remote-servo-cam/
 http://sourceforge.net/projects/mjpg-streamer/
 Ez sokkal jobb FPS-t produkál mint az alternatívák.
+
+
+Végül ezt használtam és így mûködött:
+http://jacobsalmela.com/raspberry-pi-webcam-using-mjpg-streamer-over-internet/

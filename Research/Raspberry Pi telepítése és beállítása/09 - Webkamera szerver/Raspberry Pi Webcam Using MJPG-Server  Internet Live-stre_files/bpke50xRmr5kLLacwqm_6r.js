@@ -1,0 +1,1 @@
+Tynt.sc({"d":true,"a":false,"ss":"fglpt"})
