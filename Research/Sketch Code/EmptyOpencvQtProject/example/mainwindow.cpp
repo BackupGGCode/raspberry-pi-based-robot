@@ -38,7 +38,8 @@ void MainWindow::startClient()
     cv::Mat raw_image;
 
     const std::string videoStreamAddress =
-            "http://192.168.2.100:8080/video.mjpg";
+            "http://192.168.2.105:8080/?action=stream.mjpg";
+            //"http://192.168.2.100:8080/video.mjpg";
 
     if(!vcap.open(videoStreamAddress))
     {
