@@ -1,0 +1,32 @@
+			cv::Point2f mean_point(staticImage->GetFullFrameWidth() / 2, staticImage->GetFullFrameHeight() / 2);
+			f::Uri outputURI(("file://data/" + GetPluginName() + "/haarcascade_fullbody.xml").c_str());
+			std::string detector = f::Files::GenerateGlobalFileName(outputURI);
+			cv::CascadeClassifier cascade;
+			cascade.load(detector.c_str());
+			mDetectingCBSW.Start();
+			while (true)
+			{
+				if (mMessageQueue.TryPop(cameraFramePool) == f::Result::NotFound)
+				{
+					Sleep(10);
+					continue;
+				}
+				// Képek lekérése
+				ptzImage = std::get<0>(cameraFramePool);
+				staticImage = std::get<1>(cameraFramePool);
+				if (mDetectingCBSW.GetElapsedTimeSec(false) > 0.5)
+				{
+					std::vector<cv::Rect> bodies;
+					cascade.detectMultiScale(staticImage->GetFullFrameGray(), bodies, 1.1, 3, 0 | CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+					if (bodies.empty() == false)
+					{
+						mean_point = (bodies[0].tl() + bodies[0].br()) * 0.5;
+						mMessageQueue.Clear();
+					}
+					mDetectingCBSW.Reset();
+				}
+				cv::imshow("ptzMapping", ptzImage->GetFullFrameBGR());
+				mPtzControl->ModifyPan(mPtzId, map.at<cv::Vec2f>(mean_point.y, mean_point.x)[1]);
+				mPtzControl->ModifyTilt(mPtzId, map.at<cv::Vec2f>(mean_point.y, mean_point.x)[0]);
+				cv::waitKey(1);
+			}
