@@ -1,0 +1,2 @@
+1MHz-es belsõ oszcillátorhoz ez a kód felel meg:
+http://www.hobbielektronika.hu/cikkek/will-i_v20_robotika_es_avr_kezdoknek.html?pg=8&Submit=OK
