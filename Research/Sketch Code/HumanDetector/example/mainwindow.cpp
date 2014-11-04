@@ -49,6 +49,11 @@ void MainWindow::startClient()
     }
 
 
+
+    cv::namedWindow("Cam", CV_WINDOW_NORMAL);
+    cv::setWindowProperty("Cam", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
+
+
     while(true)
     {
         vcap >> raw_image;
@@ -66,4 +71,6 @@ void MainWindow::startClient()
 
         if (cv::waitKey(30) >= 0) break;
     }
+
+    cv::destroyWindow("Cam");
 }
