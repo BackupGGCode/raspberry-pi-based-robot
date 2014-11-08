@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = example
 TEMPLATE = app
 
-INCLUDEPATH += D:/3rdParty/opencv-2.4.7/include
+INCLUDEPATH += D:/3rdParty/opencv-2.4.10/include
 
 #Itt mindíg az opencv verziójának megfelelően változik a lib neve:
 #Pl. A 2.4.0-ás opencv-ben: libopencv_core240, míg a
@@ -43,7 +43,6 @@ LIBS += -LD:/3rdParty/opencv-2.4.7/vc11x86/lib \
     opencv_calib3d2410d.lib \
     opencv_legacy2410d.lib
 }
-
 
 SOURCES += main.cpp\
         mainwindow.cpp
