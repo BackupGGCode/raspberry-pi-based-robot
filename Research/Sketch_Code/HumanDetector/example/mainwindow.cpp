@@ -49,7 +49,19 @@ void MainWindow::startClient()
     }
 
 
+    //Követés - gyorsítás
     //https://gist.github.com/yoggy/1451097
+    //Többszálúsítás
+    //Qt - GUI
+    //Jobb arc detektor
+    //Arc kivágása kis ablakba
+    //Animált rect
+
+    //Nem mindíg a nullás rect a legnagyobb, néha talál kissebbeket is és átugrál arra.
+    //Ne a nullás indexűt rajzolja ki mindíg, hanem azt, amelyiknek a rectje ténylegesen
+    //a legnagyobb cv::Rect::area()
+
+
 
     //cv::namedWindow("Cam", CV_WINDOW_NORMAL);
     //cv::setWindowProperty("Cam", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
@@ -66,6 +78,11 @@ void MainWindow::startClient()
         if (bodies.empty() == false)
         {
            //mean_point = (bodies[0].tl() + bodies[0].br()) * 0.5;
+
+            for(int i = 1; i < bodies.size(); i++)
+            {
+              cv::rectangle(raw_image,bodies[i],cv::Scalar(0,255,0),2,8);
+            }
 
            //cv::rectangle(raw_image,bodies[0],cv::Scalar(0,255,0),2,8);
 
