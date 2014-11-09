@@ -49,9 +49,12 @@ void MainWindow::startClient()
     }
 
 
+    //https://gist.github.com/yoggy/1451097
 
     //cv::namedWindow("Cam", CV_WINDOW_NORMAL);
     //cv::setWindowProperty("Cam", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
+
+    cv::Scalar lineColor(0,255,255);
 
 
     while(true)
@@ -71,26 +74,26 @@ void MainWindow::startClient()
 
            cv::ellipse( raw_image, center,
                          cv::Size( bodies[0].width*0.5, bodies[0].height*0.5),
-                    0, 0, 360, cv::Scalar( 255, 0, 255 ), 4, 8, 0 );
+                    0, 0, 360, lineColor, 4, 8, 0 );
 
 
            cv::Point up1(bodies[0].x + (bodies[0].width / 2), bodies[0].y);
            cv::Point up2(bodies[0].x + (bodies[0].width / 2), 0);
-           cv::line(raw_image,up1,up2,cv::Scalar(255,0,255),2,8);
+           cv::line(raw_image,up1,up2,lineColor,2,8);
 
 
            cv::Point down1(bodies[0].x + (bodies[0].width / 2), bodies[0].y + bodies[0].height);
            cv::Point down2(bodies[0].x + (bodies[0].width / 2), raw_image.rows);
-           cv::line(raw_image,down1,down2,cv::Scalar(255,0,255),2,8);
+           cv::line(raw_image,down1,down2,lineColor,2,8);
 
 
            cv::Point left1(bodies[0].x, bodies[0].y + (bodies[0].height / 2));
            cv::Point left2(0, bodies[0].y + (bodies[0].height / 2));
-           cv::line(raw_image,left1,left2,cv::Scalar(255,0,255),2,8);
+           cv::line(raw_image,left1,left2,lineColor,2,8);
 
            cv::Point right1(bodies[0].x + bodies[0].width, bodies[0].y + (bodies[0].height / 2));
            cv::Point right2(raw_image.cols, bodies[0].y + (bodies[0].height / 2));
-           cv::line(raw_image,right1,right2,cv::Scalar(255,0,255),2,8);
+           cv::line(raw_image,right1,right2, lineColor,2,8);
 
         }
 
