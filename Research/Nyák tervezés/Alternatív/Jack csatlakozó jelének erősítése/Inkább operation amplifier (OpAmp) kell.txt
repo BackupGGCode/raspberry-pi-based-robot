@@ -1,0 +1,14 @@
+A mûveleti erõsítõ jó lehet a feladatra:
+http://www.edaboard.com/thread94513.html
+
+(1000 x 2,5)-õs erõsítés kell majd.:
+
+
+Most csak 1000-es erõsítést számolok:
+Uki/Ube=1000
+
+1+(R1/R2)=1000
+999=R1/R2
+R1=999*R2
+
+Ha R2=1kOhm akkor R1=1MOhm

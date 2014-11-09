@@ -1,0 +1,1 @@
+- Offset kompenzálás: A fenti feszültség osztó eredõ ellenállását, be rakva a jelforrás után eltûnk a kimeneten a hiba.
