@@ -2,10 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
+#include <QImage>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
+
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -21,13 +25,16 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void startClient();
-
-signals:
-    void startC();
+    void getFrame();
 
 private:
+    void drawRects(cv::Mat& img, std::vector<cv::Rect>& objects);
+
     Ui::MainWindow *ui;
+    QTimer timer_;
+    cv::VideoCapture vcap;
+    cv::CascadeClassifier cascade;
+    cv::Scalar lineColor;
 };
 
 #endif // MAINWINDOW_H
