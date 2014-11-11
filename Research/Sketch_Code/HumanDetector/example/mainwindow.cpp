@@ -45,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     lineColor = cv::Scalar(0,255,255);
 
+    this->show();
+
     connect(&timer_,SIGNAL(timeout()),this,SLOT(getFrame()));
 
 }
@@ -56,6 +58,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {     
+    //throw_line("Test");
 
     if(!vcap.isOpened())
     {

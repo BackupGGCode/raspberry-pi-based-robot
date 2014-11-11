@@ -2,14 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QTimer>
 #include <QImage>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 
-#include <QTimer>
+#include "myerrorhandler.h"
+
 
 namespace Ui {
 class MainWindow;

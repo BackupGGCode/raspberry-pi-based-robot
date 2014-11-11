@@ -45,8 +45,11 @@ LIBS += -LD:/3rdParty/opencv-2.4.7/vc11x86/lib \
 }
 
 SOURCES += main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    myapplication.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    myapplication.h \
+    myerrorhandler.h
 
 FORMS    += mainwindow.ui

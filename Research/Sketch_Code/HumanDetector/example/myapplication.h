@@ -19,8 +19,8 @@ Fontos: http://stackoverflow.com/questions/8247404/why-does-this-simple-qt-appli
 
 #include <QObject>
 #include <QApplication>
-#include "Common/myerrorhandler.h"
-#include "Gui/mainwindow.h"
+#include "myerrorhandler.h"
+#include "mainwindow.h"
 
 class MyApplication : public QApplication
 {
