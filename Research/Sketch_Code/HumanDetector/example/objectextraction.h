@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QThread>
 #include <typeinfo>
+#include <qwaitcondition.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -26,9 +27,12 @@ public:
     void run();
 
     void Stop();
-   // bool IsActive();//Már vanak ilyenen néven fv.-ek a QThread-ben.
-   // bool Pause();
-   // bool Continue();
+
+    void Pause();
+
+    void Resume();
+
+    bool isPaused();
 
 signals:
     void SendFrame(QImage image);
@@ -36,6 +40,10 @@ signals:
 private:
     void Search();
     void drawRects(cv::Mat &img, std::vector<cv::Rect> &objects);
+
+    QMutex sync;
+    QWaitCondition pauseCond;
+    bool pause_;
 
     bool stopRecived_;
     cv::VideoCapture vcap_;

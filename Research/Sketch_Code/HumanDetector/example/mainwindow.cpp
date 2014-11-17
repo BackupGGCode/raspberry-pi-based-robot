@@ -47,8 +47,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {     
-    //throw_line("Test");
-
     QString detectorXML("d://3rdParty/haarcascade_frontalface_alt.xml");
     int cameraID = 0;
 
@@ -61,18 +59,17 @@ void MainWindow::on_pushButton_clicked()
         extractor->Init(detectorXML, cameraID);
         extractor->start();
     }
-
-
-/*
-    if(timer_.isActive())
-    {
-        timer_.stop();
-    }
     else
     {
-        timer_.start(50);//20Fps
+        if(extractor->isPaused())
+        {
+            extractor->Resume();
+        }
+        else
+        {
+            extractor->Pause();
+        }
     }
-*/
 }
 
 void MainWindow::ReciveFrame(QImage image)

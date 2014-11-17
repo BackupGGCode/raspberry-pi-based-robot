@@ -23,6 +23,7 @@ ObjectExtraction::ObjectExtraction(QObject *parent) :
     QThread(parent)
 {
     stopRecived_ = false;
+    pause_ = false;
     lineColor = cv::Scalar(0,255,255);
 }
 
@@ -71,15 +72,44 @@ void ObjectExtraction::run()
 
 void ObjectExtraction::Stop()
 {
+    pauseCond.wakeAll();
+    sync.lock();
     stopRecived_ = true;
+    sync.unlock();
     QThread::msleep(500);
     return;
+}
+
+void ObjectExtraction::Resume()
+{
+    sync.lock();
+    pause_ = false;
+    sync.unlock();
+    pauseCond.wakeAll();
+}
+
+void ObjectExtraction::Pause()
+{
+    sync.lock();
+    pause_ = true;
+    sync.unlock();
+}
+
+bool ObjectExtraction::isPaused()
+{
+    return pause_;
 }
 
 void ObjectExtraction::Search()
 {
     while(!stopRecived_)
     {
+
+        sync.lock();
+        if(pause_)
+            pauseCond.wait(&sync); // in this place, your thread will stop to execute until someone calls resume
+        sync.unlock();
+
         cv::Mat raw_image;
         vcap_ >> raw_image;
 
