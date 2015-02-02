@@ -1,0 +1,12 @@
+C++ GPIO:
+http://hertaville.com/2012/11/18/introduction-to-accessing-the-raspberry-pis-gpio-in-c/
+http://visualgdb.com/tutorials/raspberry/LED/
+
+C++ PWM:
+http://hertaville.com/2014/07/07/rpipwm/
+
+Kapcsolás:
+https://www.npmjs.com/package/pi-motor
+Valahogy így csak a PWM-et kétfelé osztva és még két GPIO-t kell használni az irány állítására. 
+
+Ha ez meglenne, akkor azt kellene megcsinálni, hogy wifi hotspot legyen a pi.
