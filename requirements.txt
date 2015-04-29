@@ -1,0 +1,18 @@
+Raspberry pi + Doboz + adapter (13749 HUF)
+ - Memória kártya (a 8Gb-os az 3100 Ft körül volt akkoriban)
+ - Wifi adapter (kb 2700Ft körül van.)
+ - Webkamera 6000 Ft
+ - Szallagkábel és csatlakozó (?)
+
+Motorvezérlő panel(7000Ft)
+ - ATmega8 (800Ft)
+ - Motorvezérlő IC (200Ft)
+ - Egyéb alkatrészek (?)
+
+Akkumulátor pakk (2000 Ft)
+Hordozható töltő (9000 Ft)?
+
+Robot alváz (13040 Ft)
+(Szálítási költséggel együtt mind)
+
+Munka órák
